@@ -1,14 +1,13 @@
-import { PizzaList, PizzaItem } from "./components";
-import "./App.css";
+import  Container from "./Container"
 
 function App() {
   return (
-    <>
-      <PizzaList name="napoletana" price="10">
-        <PizzaItem  />
-      </PizzaList>
-    </>
-  );
+    <Container>
+      <div className="bg-sky-500"><h1 className="text-3xl font-bold underline hover:bg-sky-700">Hallo Andrik</h1></div>
+    </Container>
+    
+    
+  )
 }
 
 export default App;
