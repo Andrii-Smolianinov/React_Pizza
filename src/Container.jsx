@@ -9,7 +9,7 @@ export default function Container({ children }) {
     px-4 
     py-4    
     md:px-5
-    md:py-5       
+    md:py-7       
     lg:px-10
     lg:py-10
     " 

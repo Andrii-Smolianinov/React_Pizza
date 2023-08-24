@@ -8,10 +8,21 @@ export default function Header() {
           width="60"
           height="60"
         />
-        <span className="uppercase drop-shadow-lg ml-2">
-          <span className="font-bold italic text-xl text-lime-600">rea</span>
-          <span className="font-bold italic text-xl text-transparent bg-clip-text bg-gradient-to-r from-lime-600 to-red-600">ctp</span>
-          <span className="font-bold italic text-xl text-red-600">izza</span>
+        <span className="
+        uppercase 
+        font-black 
+        italic 
+        text-xl 
+        drop-shadow-lg 
+        ml-2">
+          <span className="
+          text-lime-600">rea</span>
+          <span className="
+          text-transparent 
+          bg-clip-text 
+          bg-gradient-to-r from-lime-600 to-red-600">ctpi</span>
+          <span className="
+          text-red-600">zza</span>
         </span>
       </a>
     </header>
