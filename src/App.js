@@ -1,13 +1,16 @@
-import  Container from "./Container"
+import Container from "./Container";
+import Header from "./components/Header";
+import Sort from "./components/Sort";
 
 function App() {
   return (
+    
     <Container>
-      <h1 className="text-3xl font-bold underline hover:bg-sky-700">Hallo Andrik</h1>
+      <Header />
+      <Sort />
     </Container>
     
-    
-  )
+  );
 }
 
 export default App;

@@ -1,15 +1,18 @@
 export default function Container({ children }) {
   return (
     <div
-      className="     
+      className=" 
+      
     w-screen
-    h-screen      
+    h-screen
+    bg-gradient-to-r from-green-500 via-orange-50 to-red-500            
     px-4 
-    py-4 
-    md:px-10
-    md:py-10
-    xl:px-20 
-    xl:py-20"
+    py-4    
+    md:px-5
+    md:py-5       
+    lg:px-10
+    lg:py-10
+    " 
     >
       {children}
     </div>
