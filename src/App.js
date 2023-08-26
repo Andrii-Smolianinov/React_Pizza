@@ -1,6 +1,7 @@
 import Container from "./Container";
 import Header from "./components/Header";
-import Sort from "./components/Sort";
+import Sort from "./components/Sort/Sort";
+import Main from "./pages/Main";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
     <Container>
       <Header />
       <Sort />
+      <Main />
     </Container>
     
   );
