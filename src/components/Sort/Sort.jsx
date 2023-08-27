@@ -52,9 +52,7 @@ export default function Sort() {
         flex 
         flex-wrap
         justify-start
-             
-        
-    "
+        "
       >
         {elements}
       </ul>
