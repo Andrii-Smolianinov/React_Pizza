@@ -2,9 +2,8 @@ import PizzaItem from "./PizzaItem";
 
 export default function PizzaList() {
   return (
-    <div>
-     
+    <ul className="p-6">     
       <PizzaItem />
-    </div>
+    </ul>
   );
 }

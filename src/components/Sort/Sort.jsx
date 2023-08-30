@@ -6,7 +6,7 @@ const categories = [
   { text: "Вегатеріанські" },
   { text: "Гриль" },
   { text: "Гострі" },
-  { text: "Закриті" },
+  { text: "Акційні" },
 ];
 
 export default function Sort() {
