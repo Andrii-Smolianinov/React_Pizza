@@ -6,7 +6,7 @@ export default function Main() {
       className="
     bg-yellow-100"
     >
-      <h1 className="text-2xl font-black pl-6">Усі піци</h1>
+      <h1 className="text-3xl font-extrabold text-green-600 pl-[40px]">Усі піци</h1>
       <PizzaList />
     </div>
   );

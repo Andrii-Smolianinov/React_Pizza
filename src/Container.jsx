@@ -4,7 +4,7 @@ export default function Container({ children }) {
       className=" 
       
     w-screen
-    h-screen
+    h-100%
     bg-gradient-to-r from-green-500 via-orange-50 to-red-500            
     px-4 
     py-4    
