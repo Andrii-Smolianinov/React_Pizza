@@ -1,9 +1,16 @@
+import React from "react";
 import data from "../data/data.json";
 
 const categories = [{ text: "тонкі" }, { text: "традиційні" }];
 const diameters = [{ text: "26см" }, { text: "30см" }, { text: "40см" }];
 
 export default function PizzaItem() {
+const [count, setCount] = React.useState(0)
+
+const onClickButton = function(){
+  setCount(count + 1)
+}
+ 
   const elementsCategorie = categories.map(({ text }) => (
     <li
       className="
@@ -113,20 +120,21 @@ export default function PizzaItem() {
         >
           {el.price} грн.
         </p>
-        <button
+        <button onClick={onClickButton}
+
           className="
-        p-3        
-        font-bold
-        border-2
-        rounded-md
-        border-rose-300 
-        hover:bg-rose-300
-        hover:text-amber-50
-        transition-all duration-350              
-        "
+          p-3        
+          font-bold
+          border-2
+          rounded-md
+          border-rose-300 
+          hover:bg-rose-300
+          hover:text-amber-50
+          transition-all duration-350"
+
           type="button"
         >
-          Замовити
+          Замовити <span>{count}</span>
         </button>
       </div>
     </li>

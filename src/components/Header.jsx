@@ -1,12 +1,14 @@
+
+
 export default function Header() {
   return (
     <header className="flex bg-yellow-100">
       <a href="/" className="cursor-pointer flex items-center">
         <img
-          src="https://previews.123rf.com/images/igorvkv/igorvkv1602/igorvkv160200006/52287514-italian-pizza-logo.jpg"
+          src='images/logo.jpg'
           alt="logo"
-          width="60"
-          height="60"
+          className="w-16 h-15"
+          
         />
         <span className="
         uppercase 
