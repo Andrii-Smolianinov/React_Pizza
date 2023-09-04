@@ -5,14 +5,11 @@ import Main from "./pages/Main";
 
 function App() {
   return (
-    
     <Container>
       <Header />
       <Sort />
       <Main />
-      
     </Container>
-    
   );
 }
 

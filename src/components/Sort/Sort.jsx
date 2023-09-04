@@ -13,14 +13,16 @@ const categories = [
 
 export default function Sort() {
   const [activeIndexSort, setActiveIndexSort] = React.useState(0);
+  const [activeTypePizza, setActiveTypePizza] = React.useState("Усі");
 
-  const onClickButtonSort = function (index) {
+  const onClickButtonSort = function (index, text) {
     setActiveIndexSort(index);
+    setActiveTypePizza(text);
   };
 
   const elements = categories.map(({ text }, index) => (
     <li
-      onClick={() => onClickButtonSort(index)}
+      onClick={() => onClickButtonSort(index, text)}
       key={index}
       className={`
       inline-block
@@ -38,7 +40,7 @@ export default function Sort() {
       ${
         activeIndexSort === index
           ? "bg-lime-700 text-green-200 hover:bg-lime-700"
-          : "bg-lime-400 text-green-600 hover:bg-green-400 hover:text-green-100"
+          : "bg-lime-200 text-green-600 hover:bg-green-400 hover:text-green-100"
       }      
       `}
     >
@@ -47,8 +49,9 @@ export default function Sort() {
   ));
 
   return (
-    <div
-      className="
+    <>
+      <div
+        className="
       flex 
       flex-wrap      
       px-8 
@@ -58,17 +61,21 @@ export default function Sort() {
       border-t-2      
       border-red-600 
       bg-yellow-100"
-    >
-      <ul
-        className="
+      >
+        <ul
+          className="
         flex 
         flex-wrap
         justify-start
         "
-      >
-        {elements}
-      </ul>
-      <Filter />
-    </div>
+        >
+          {elements}
+        </ul>
+        <Filter />
+      </div>
+      <h1 className="text-3xl font-extrabold text-lime-700 pl-[40px] bg-yellow-100">
+        {activeTypePizza} піци
+      </h1>
+    </>
   );
 }
