@@ -40,7 +40,7 @@ export default function Sort() {
       ${
         activeIndexSort === index
           ? "bg-lime-700 text-green-200 hover:bg-lime-700"
-          : "bg-lime-200 text-green-600 hover:bg-green-400 hover:text-green-100"
+          : "bg-lime-200 text-green-600 hover:bg-teal-500 hover:text-green-100"
       }      
       `}
     >
@@ -71,6 +71,7 @@ export default function Sort() {
         >
           {elements}
         </ul>
+
         <Filter />
       </div>
       <h1 className="text-3xl font-extrabold text-lime-700 pl-[40px] bg-yellow-100">
