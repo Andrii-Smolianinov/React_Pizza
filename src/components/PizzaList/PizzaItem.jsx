@@ -1,17 +1,38 @@
 import React from "react";
 import pizzasData from "../../assets/data/data.json";
 
-const categories = ["тонкі", "традиційні"];
-// const diameters = ["26см", "30см", "40см"];
+const categories = [{ text: "тонкі" }, { text: "традиційні" }];
+const diameters = [{ text: "26см" }, { text: "30см" }, { text: "40см" }];
 
 export default function PizzaItem() {
   const [activeType, setActiveType] = React.useState(0);
-  // console.log("activeType", activeType);
-
   const [activeDiameter, setActiveDiameter] = React.useState(0);
-  // console.log("activeDiameter", activeDiameter);
 
-  return pizzasData.map(({ id, images, tittle, price, sizes, types }, indexCard) => (    
+  const elementsCategorie = categories.map(({ text }, index) => (
+    <li
+      key={text}
+      onClick={() => setActiveType(index)}
+      className={`p-1 mx-1 font-bold rounded ${
+        activeType === index ? "bg-amber-50" : "hover:bg-rose-200"
+      }`}
+    >
+      <button>{text}</button>
+    </li>
+  ));
+
+  const elementDiameter = diameters.map(({ text }, index) => (
+    <li key={text}
+      onClick={() => setActiveDiameter(index)}
+      className={`p-1 mx-1 font-bold rounded ${
+        activeDiameter === index ? "bg-amber-50" : "hover:bg-rose-200"
+      }`}
+      
+    >
+      <button>{text}</button>
+    </li>
+  ));
+
+  return pizzasData.map(({ id, images, tittle, price }) => (
     <li
       key={id}
       className="
@@ -30,36 +51,32 @@ export default function PizzaItem() {
       </h2>
       <div className="border-solid border-2 border-rose-300">
         <ul className="flex justify-center border-solid border-2 border-rose-300 bg-rose-300">
-          {types.map((index) => {
-            return (
-              <li
-                onClick={() => setActiveType(index)}
-                className={`p-1 mx-1 font-bold rounded ${
-                  activeType === index ? "bg-amber-50" : "hover:bg-rose-200"
-                }`}
-                key={index}
-              >
-                <button>{categories[index]}</button>
-              </li>
-            );
-          })}
+          {
+            elementsCategorie
+            // <li
+            //   onClick={() => setActiveType(index)}
+            //   className={`p-1 mx-1 font-bold rounded ${
+            //     activeType === index ? "bg-amber-50" : "hover:bg-rose-200"
+            //   }`}
+            //   key={index}
+            // >
+            //   <button>{categories[index]}</button>
+            // </li>
+          }
         </ul>
         <ul className="flex justify-center border-solid border-2 border-rose-300 bg-rose-300">
-          {sizes.map((size, index) => {
-            return (
-              <li
-                onClick={() => setActiveDiameter(index)}
-                className={`p-1 mx-1 font-bold rounded ${
-                  activeDiameter === index
-                    ? "bg-amber-50"
-                    : "hover:bg-rose-200"
-                }`}
-                key={index}
-              >
-                <button>{size}см.</button>
-              </li>
-            );
-          })}
+          {
+            elementDiameter
+            // <li
+            //   onClick={() => setActiveDiameter(index)}
+            //   className={`p-1 mx-1 font-bold rounded ${
+            //     activeDiameter === index ? "bg-amber-50" : "hover:bg-rose-200"
+            //   }`}
+            //   key={index}
+            // >
+            //   <button>{size}см.</button>
+            // </li>
+          }
         </ul>
       </div>
       <div className="flex justify-around items-center my-5">
