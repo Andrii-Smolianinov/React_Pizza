@@ -9,11 +9,11 @@ export default function PizzaItem() {
     <li
       key={id}
       className="flex-col max-w-[280px] h-[450px] border-solid border-2 rounded-md border-rose-600 bg-amber-50 
-      overflow-hidden hover:shadow-lg hover:shadow-indigo-500/90 transition-all duration-300"
+      overflow-hidden group hover:shadow-lg hover:shadow-indigo-500/90 transition-all duration-300"
     >
       <div className="overflow-hidden">
         <img
-          className="hover:scale-110 transition-all duration-350"
+          className="group-hover:scale-110 transition-all duration-350"
           src={images}
           alt="element pizza"
         ></img>
@@ -35,7 +35,7 @@ export default function PizzaItem() {
           className="p-3 font-bold border-2 rounded-md border-rose-300 hover:bg-rose-300 hover:text-amber-50 transition-all duration-350"
           type="button"
         >
-          Замовити <span>1</span>
+          Замовити <span></span>
         </button>
       </div>
     </li>
