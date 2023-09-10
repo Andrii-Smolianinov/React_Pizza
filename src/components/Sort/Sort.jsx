@@ -25,17 +25,7 @@ export default function Sort() {
       onClick={() => onClickButtonSort(index, text)}
       key={index}
       className={`
-      inline-block
-      py-[2px]
-      px-[8px]
-      m-1
-      md:px-[15px]
-      md:m-2 
-      lg:px-[25px]
-      lg:m-3  
-      font-bold
-      rounded-xl
-      cursor-pointer
+      inline-block py-[2px] px-[8px] m-1 md:px-[15px] md:m-2 lg:px-[25px] lg:m-3 font-bold rounded-xl cursor-pointer
       transition-all duration-350
       ${
         activeIndexSort === index
@@ -52,26 +42,15 @@ export default function Sort() {
     <>
       <div
         className="
-      flex 
-      flex-wrap      
-      px-8 
-      py-6
-      items-center
-      justify-between
-      border-t-2      
-      border-red-600 
-      bg-yellow-100"
+        flex flex-wrap px-8 py-6 items-center justify-between border-t-2 border-red-600 bg-yellow-100"
       >
         <ul
           className="
-        flex 
-        flex-wrap
-        justify-start
+        flex flex-wrap justify-start
         "
         >
           {elements}
         </ul>
-
         <Filter />
       </div>
       <h1 className="text-3xl font-extrabold text-lime-700 pl-[40px] bg-yellow-100">

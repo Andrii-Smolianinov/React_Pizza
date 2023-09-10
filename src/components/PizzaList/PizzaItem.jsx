@@ -1,11 +1,13 @@
 import React from "react";
-import pizzaData from "../../assets/data.json";
+// import pizzaData from "../../assets/data.json";
 
 import CategorieEL from "./elements/CategorieEL";
 import DiameterEL from "./elements/DiameterEL";
 
-export default function PizzaItem() {
-  return pizzaData.map(({ id, images, tittle, price }) => (
+export default function PizzaItem({items}) {
+  console.log('itemsInComponent', items);
+  
+  return items.map(({ id, images, tittle, price }) => (
     <li
       key={id}
       className="flex-col max-w-[280px] h-[450px] border-solid border-2 rounded-md border-rose-600 bg-amber-50 
