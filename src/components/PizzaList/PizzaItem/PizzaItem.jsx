@@ -1,12 +1,9 @@
 import React from "react";
-// import pizzaData from "../../assets/data.json";
 
-import CategorieEL from "./elements/CategorieEL";
-import DiameterEL from "./elements/DiameterEL";
+import CategorieEL from "../elements/CategorieEL";
+import DiameterEL from "../elements/DiameterEL";
 
-export default function PizzaItem({items}) {
-  console.log('itemsInComponent', items);
-  
+export default function PizzaItem({ items }) {
   return items.map(({ id, images, tittle, price }) => (
     <li
       key={id}
@@ -15,7 +12,7 @@ export default function PizzaItem({items}) {
     >
       <div className="overflow-hidden">
         <img
-          className="group-hover:scale-110 transition-all duration-350"
+          className="max-w-full h-[184px] group-hover:scale-110 transition-all duration-350"
           src={images}
           alt="element pizza"
         ></img>
