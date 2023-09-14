@@ -42,7 +42,7 @@ export default function Sort() {
     <>
       <div
         className="
-        flex flex-wrap px-8 py-6 items-center justify-between border-t-2 border-red-600 bg-yellow-100"
+        flex flex-wrap px-8 py-6 items-center justify-between  bg-yellow-100"
       >
         <ul
           className="

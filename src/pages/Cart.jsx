@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function NotFoundBlock() {
+export default function Cart() {
   return (
     <div>
-      Not Found :(
+      cart
     </div>
   )
 }
