@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Filter() {
+  // eslint-disable-next-line
   const [selectCategory, setSelectCategory] = React.useState("");
 
   const handleSelect = function (event) {
