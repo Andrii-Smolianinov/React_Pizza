@@ -1,4 +1,4 @@
 import React from "react";
 export default function Cart() {
-  return <>cart</>;
+  return <>this cart page</>;
 }
