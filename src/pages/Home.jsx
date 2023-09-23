@@ -28,6 +28,7 @@ export default function Home() {
       .catch((error) => {
         console.log("catchError", error);
       });
+      window.scrollTo(0, 0)
   }, []);
 
 
