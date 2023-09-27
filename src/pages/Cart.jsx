@@ -8,8 +8,9 @@ export default function Cart({items, isLoading}) {
   const [itemCart, setItemCart] = React.useState([null]);
 
   return (
-    <div className="bg-yellow-100 px-8 py-10 min-h-[82vh]">
+    <section className="bg-yellow-100 min-h-[82vh]
+      p-2 sm:p-3 lg:p-8">
       {itemCart ? <CartList items={items} isLoading={isLoading}/> : <EmptyCart />}
-    </div>
+    </section>
   );
 }

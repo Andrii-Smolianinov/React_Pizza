@@ -25,7 +25,13 @@ export default function Sort() {
       onClick={() => onClickButtonSort(index, text)}
       key={index}
       className={`
-      inline-block py-[2px] px-[8px] m-1 md:px-[15px] md:m-2 lg:px-[25px] lg:m-3 font-bold rounded-xl cursor-pointer
+      inline-block 
+      m-2 sm:m-3 
+      px-2 sm:px-3 lg:px-4
+      py-px 
+      text-base sm:text-lg lg:text-xl 
+      font-medium sm:font-semibold lg:font-bold
+      rounded-xl cursor-pointer
       transition-all duration-350
       ${
         activeIndexSort === index
@@ -40,20 +46,19 @@ export default function Sort() {
 
   return (
     <>
-      <div
-        className="
-        flex flex-wrap px-8 py-6 items-center justify-between  bg-yellow-100"
-      >
-        <ul
-          className="
-        flex flex-wrap justify-start
-        "
-        >
-          {elements}
-        </ul>
+      <nav className="flex flex-wrap items-center justify-between  bg-yellow-100 
+        p-2 sm:p-3 lg:p-6">
+        <ul className="flex flex-wrap justify-start">{elements}</ul>
         <Filter />
-      </div>
-      <h1 className="text-3xl font-extrabold text-lime-700 pl-[40px] bg-yellow-100">
+      </nav>
+      <h1
+        className="
+      text-xl sm:text-2xl lg:text-3xl
+      font-semibold sm:font-bold lg:font-extrabold
+      pl-4 sm:pl-6 lg:pl-10
+      mb-4 sm:mb-6 lg:mb-8
+       text-lime-700  bg-yellow-100"
+      >
         {activeTypePizza} піци
       </h1>
     </>

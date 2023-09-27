@@ -10,15 +10,10 @@ export default function Filter() {
 
   return (
     <div className="flex p-[10px]">
-      <p>Сортування по:</p>
+      <p className="text-base sm:text-lg lg:text-xl ">Сортування по:</p>
       <select
-        className="
-      bg-transparent
-      font-bold
-      mb-[5px]
-      ml-2
-      cursor-pointer
-      "
+        className="bg-transparent ml-2 font-bold cursor-pointer
+        text-base sm:text-lg lg:text-xl"
         onChange={handleSelect}
         name="select-category"
       >

@@ -5,9 +5,9 @@ import Sort from "../components/Sort/Sort";
 
 export default function Home({ items, isLoading }) {
   return (
-    <div className="bg-yellow-100">
+    <main className="bg-yellow-100">
       <Sort />
       <PizzaList items={items} isLoading={isLoading} />
-    </div>
+    </main>
   );
 }

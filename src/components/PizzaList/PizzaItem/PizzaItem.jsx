@@ -8,7 +8,7 @@ export default function PizzaItem({ items }) {
     <li
       key={id}
       className="flex-col max-w-[280px] h-[450px] border-solid border-2 rounded-md border-rose-600 bg-amber-50 
-      overflow-hidden group hover:shadow-lg hover:shadow-indigo-500/90 transition-all duration-300"
+      overflow-hidden group hover:shadow-lg hover:shadow-indigo-500/90 transition-all duration-300 cursor-pointer"
     >
       <div className="overflow-hidden">
         <img

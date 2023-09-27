@@ -26,13 +26,14 @@ function App() {
         setTimeout(() => {
           setItems(data);
           setIsLoading(false);
-        }, 1500);
-        console.log("data", data);
+          // window.scrollTo(0, 0);
+        }, 1500);        
+        
       })
       .catch((error) => {
         console.log("catchError", error);
       });
-    window.scrollTo(0, 0);
+    
   }, []);
   return (
     <Container>
