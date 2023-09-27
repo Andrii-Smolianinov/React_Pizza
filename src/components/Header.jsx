@@ -1,15 +1,21 @@
 import { Link } from "react-router-dom";
 
-import ButtonCart from "./ButtonCart"
+import ButtonCart from "./ButtonCart";
 
 export default function Header() {
   return (
-    <header className="flex flex-wrap items-center justify-between p-2 pr-9 bg-yellow-100 border-b-2 border-red-600 ">
+    <header className="flex flex-wrap items-center justify-between p-2 sm:p-3 lg:p-4 bg-yellow-100 border-b-2 border-red-600 ">
       <Link to="/" className="cursor-pointer flex items-center">
-        <img src="images/favicon.ico" alt="logo" className="w-16 h-15 m-1" />
-        <span className="uppercase font-black italic text-xl drop-shadow-lg ml-2">
+        <img
+          src="images/favicon.ico"
+          alt="logo"
+          className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 m-1"
+        />
+        <span className="uppercase font-black italic text-base sm:text-lg lg:text-xl drop-shadow-lg ml-2">
           <span className="text-lime-600">rea</span>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-600 to-red-600">ctpi</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-600 to-red-600">
+            ctpi
+          </span>
           <span className="text-red-600">zza</span>
         </span>
       </Link>
