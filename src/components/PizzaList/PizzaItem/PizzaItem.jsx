@@ -17,7 +17,7 @@ export default function PizzaItem({ items }) {
           alt="element pizza"
         ></img>
       </div>
-      <h2 className="text-center my-8 text-2xl font-extrabold italic text-red-600">
+      <h2 className="text-center my-8 text-2xl font-bold text-red-600">
         {tittle}
       </h2>
       <div className="border-solid border-2 border-rose-300">
@@ -29,7 +29,7 @@ export default function PizzaItem({ items }) {
         </ul>
       </div>
       <div className="flex justify-around items-center my-5">
-        <p className="ml-5 text-2xl font-extrabold">{price} грн.</p>
+        <p className="ml-5 text-2xl font-medium">{price} грн<span className="font-serif">.</span></p>
         <button
           className="p-3 font-bold border-2 rounded-md border-rose-300 hover:bg-rose-300 hover:text-amber-50 transition-all duration-350"
           type="button"

@@ -52,7 +52,7 @@ export default function Sort() {
         <Filter />
       </nav>
       <h1
-        className="
+        className="        
       text-xl sm:text-2xl lg:text-3xl
       font-semibold sm:font-bold lg:font-extrabold
       pl-4 sm:pl-6 lg:pl-10

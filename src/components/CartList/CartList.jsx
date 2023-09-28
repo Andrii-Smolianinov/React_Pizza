@@ -12,14 +12,14 @@ export default function CartList({ items, isLoading }) {
       <CartCap />
       <ul className="flex flex-col items-center      
       gap-3 sm:gap-4 lg:gap-6
-      px-0 sm:px-10 lg:px-80
+      px-0 sm:px-10 lg:px-20 xl:px-40
       py-4 lg:py-10">
         {isLoading ? <h1>Loading...</h1> : <CartItem items={items} />}
       </ul>
       <Link
         to="/"
         className="inline-flex px-3 py-px items-center rounded-xl
-        ml-0 sm:ml-10 lg:ml-80 
+        ml-0 sm:ml-10 lg:ml-20 xl:ml-40
         font-medium sm:font-semibold lg:font-bold 
         text-base sm:text-lg lg:text-xl
         bg-lime-700 text-green-200

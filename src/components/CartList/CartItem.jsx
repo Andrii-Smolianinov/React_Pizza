@@ -15,7 +15,7 @@ export default function CartItem({ items }) {
           alt="element pizza"
         ></img>
       </div>
-      <h2 className="text-center text-base sm:text-lg lg:text-xl font-extrabold italic text-red-600">
+      <h2 className="text-center text-base sm:text-lg lg:text-xl font-extrabold text-red-600">
         {tittle}
       </h2>
     </li>

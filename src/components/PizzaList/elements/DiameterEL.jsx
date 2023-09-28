@@ -1,6 +1,6 @@
 import React from "react";
 
-const diameters = ["26см", "30см", "40см"];
+const diameters = ["26", "30", "40"];
 
 export default function DiameterEL() {
   const [activeDiameter, setActiveDiameter] = React.useState(0);
@@ -13,7 +13,7 @@ export default function DiameterEL() {
         activeDiameter === index ? "bg-amber-50" : "hover:bg-rose-200"
       }`}
     >
-      <button>{diameter}</button>
+      <button><span className="font-serif">{diameter}</span>см</button>
     </li>
   ));
 }
