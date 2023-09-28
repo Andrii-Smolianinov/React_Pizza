@@ -5,7 +5,7 @@ import ButtonClearCart from "../ButtonClearCart";
 
 export default function CartCap() {
   return (
-    <div className="flex flex-wrap items-center justify-between
+    <div className="flex flex-wrap items-center justify-between 
     px-0 sm:px-10 lg:px-20 xl:px-40"
       >
       <div className="flex items-center my-4">
