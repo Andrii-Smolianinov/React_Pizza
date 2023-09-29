@@ -11,13 +11,18 @@ const categories = [
   { text: "Акційні" },
 ];
 
-export default function Sort() {
-  const [activeIndexSort, setActiveIndexSort] = React.useState(0);
-  const [activeTypePizza, setActiveTypePizza] = React.useState("Усі");
-
+export default function Sort({
+  activeIndexSort,
+  setActiveIndexSort,
+  activeTypePizza,
+  setActiveTypePizza,
+  selectCategory,
+  setSelectCategory,
+}) {
   const onClickButtonSort = function (index, text) {
     setActiveIndexSort(index);
     setActiveTypePizza(text);
+    console.log("index", index);
   };
 
   const elements = categories.map(({ text }, index) => (
@@ -46,17 +51,22 @@ export default function Sort() {
 
   return (
     <>
-      <nav className="flex flex-wrap items-center justify-between  bg-yellow-100 
-        p-2 sm:p-3 lg:p-6">
+      <nav
+        className="flex flex-wrap items-center justify-between  bg-yellow-100 
+        p-2 sm:p-3 lg:p-6"
+      >
         <ul className="flex flex-wrap justify-start">{elements}</ul>
-        <Filter />
+        <Filter
+          selectCategory={selectCategory}
+          setSelectCategory={setSelectCategory}
+        />
       </nav>
       <h1
         className="        
       text-xl sm:text-2xl lg:text-3xl
       font-semibold sm:font-bold lg:font-extrabold
       pl-4 sm:pl-6 lg:pl-10
-      mb-4 sm:mb-6 lg:mb-8
+      mb-2 sm:mb-4 lg:mb-6
        text-lime-700  bg-yellow-100"
       >
         {activeTypePizza} піци
