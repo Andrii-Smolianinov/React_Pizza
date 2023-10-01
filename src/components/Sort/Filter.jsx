@@ -21,7 +21,7 @@ export default function Filter({ selectCategory, setSelectCategory }) {
       >
         <option value="rating">популярності</option>
         <option value="price">ціні</option>
-        <option value="tittle">назві</option>
+        <option value="tittle">назві</option>        
       </select>
     </div>
   );

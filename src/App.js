@@ -31,7 +31,8 @@ function App() {
       })
       .then((data) => {
         setItems(data);
-        setIsLoading(false);
+        setIsLoading(false)
+        
       })
       .catch((error) => {
         console.log("catchError", error);
