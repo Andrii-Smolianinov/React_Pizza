@@ -4,8 +4,7 @@ export default function Filter({ selectCategory, setSelectCategory }) {
   // eslint-disable-next-line
 
   const handleSelect = function (event) {
-    setSelectCategory(event.target.value);
-    console.log(event.target.value);
+    setSelectCategory(event.target.value);   
   };
 
   return (
@@ -21,7 +20,7 @@ export default function Filter({ selectCategory, setSelectCategory }) {
       >
         <option value="rating">популярності</option>
         <option value="price">ціні</option>
-        <option value="tittle">назві</option>        
+        <option value="tittle">назві</option>   
       </select>
     </div>
   );
