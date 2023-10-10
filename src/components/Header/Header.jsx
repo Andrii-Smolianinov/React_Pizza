@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
 
-import ButtonCart from "./ButtonCart";
+import SearchPizza from "./SearchPizza";
+import ButtonCart from "../ButtonCart";
 
-export default function Header() {
+export default function Header({
+  searchPizza,
+  setSearchPizza,
+  showSearch,
+  showButtonCart,
+}) { 
+
   return (
     <header className="flex flex-wrap items-center justify-between p-2 sm:p-3 lg:p-4 bg-yellow-100 border-b-2 border-red-600 ">
       <Link to="/" className="cursor-pointer flex items-center">
@@ -19,7 +26,13 @@ export default function Header() {
           <span className="text-red-600">zza</span>
         </span>
       </Link>
-      <ButtonCart />
+      {showSearch && (
+        <SearchPizza
+          searchPizza={searchPizza}
+          setSearchPizza={setSearchPizza}
+        />
+      )}
+      {showButtonCart && <ButtonCart />}
     </header>
   );
 }

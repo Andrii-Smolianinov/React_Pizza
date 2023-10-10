@@ -18,7 +18,7 @@ export default function EmptyCart() {
         className="mx-auto"
       ></img>
       <Link to='/'
-        className="flex mt-5 items-center rounded-xl font-bold text-xl bg-lime-700 text-green-200
+        className="flex mt-5 px-2 items-center rounded-xl font-bold text-xl bg-lime-700 text-green-200
       hover:bg-lime-200 hover:text-green-700 transition-all duration-350"
       >
         <IoReturnUpBackSharp className="mr-2" />

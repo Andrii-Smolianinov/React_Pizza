@@ -12,7 +12,12 @@ export default function Home({
   setActiveTypePizza,
   selectCategory,
   setSelectCategory,
+  setShowSearch,
+  setShowButtonCart,
+  searchPizza,
 }) {
+  setShowSearch(true);
+  setShowButtonCart(true);
   return (
     <main className="bg-yellow-100">
       <Sort
@@ -23,7 +28,11 @@ export default function Home({
         selectCategory={selectCategory}
         setSelectCategory={setSelectCategory}
       />
-      <PizzaList items={items} isLoading={isLoading} />
+      <PizzaList
+        items={items}
+        isLoading={isLoading}
+        searchPizza={searchPizza}
+      />
     </main>
   );
 }

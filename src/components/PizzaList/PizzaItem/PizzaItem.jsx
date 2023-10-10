@@ -3,40 +3,49 @@ import React from "react";
 import CategorieEL from "../elements/CategorieEL";
 import DiameterEL from "../elements/DiameterEL";
 
-export default function PizzaItem({ items }) {
-  return items.map(({ id, images, tittle, price }) => (
-    <li
-      key={id}
-      className="flex-col max-w-[280px] h-[450px] border-solid border-2 rounded-md border-rose-600 bg-amber-50 
+export default function PizzaItem({ items, searchPizza }) {
+  return items
+    .filter((item) => {
+      if (item.tittle.toLowerCase().includes(searchPizza.toLowerCase())) {
+        return true;
+      }
+      return false;
+    })
+    .map(({ id, images, tittle, price }) => (
+      <li
+        key={id}
+        className="flex-col max-w-[280px] h-[450px] border-solid border-2 rounded-md border-rose-600 bg-amber-50 
       overflow-hidden group hover:shadow-lg hover:shadow-indigo-500/90 transition-all duration-300 cursor-pointer"
-    >
-      <div className="overflow-hidden">
-        <img
-          className="max-w-full h-[184px] group-hover:scale-110 transition-all duration-350"
-          src={images}
-          alt="element pizza"
-        ></img>
-      </div>
-      <h2 className="text-center my-8 text-2xl font-bold text-red-600">
-        {tittle}
-      </h2>
-      <div className="border-solid border-2 border-rose-300">
-        <ul className="flex justify-center border-solid border-2 border-rose-300 bg-rose-300">
-          {<CategorieEL />}
-        </ul>
-        <ul className="flex justify-center border-solid border-2 border-rose-300 bg-rose-300">
-          {<DiameterEL />}
-        </ul>
-      </div>
-      <div className="flex justify-around items-center my-5">
-        <p className="ml-5 text-2xl font-medium">{price} грн<span className="font-serif">.</span></p>
-        <button
-          className="p-3 font-bold border-2 rounded-md border-rose-300 hover:bg-rose-300 hover:text-amber-50 transition-all duration-350"
-          type="button"
-        >
-          Замовити <span></span>
-        </button>
-      </div>
-    </li>
-  ));
+      >
+        <div className="overflow-hidden">
+          <img
+            className="max-w-full h-[184px] group-hover:scale-110 transition-all duration-350"
+            src={images}
+            alt="element pizza"
+          ></img>
+        </div>
+        <h2 className="text-center my-8 text-2xl font-bold text-red-600">
+          {tittle}
+        </h2>
+        <div className="border-solid border-2 border-rose-300">
+          <ul className="flex justify-center border-solid border-2 border-rose-300 bg-rose-300">
+            {<CategorieEL />}
+          </ul>
+          <ul className="flex justify-center border-solid border-2 border-rose-300 bg-rose-300">
+            {<DiameterEL />}
+          </ul>
+        </div>
+        <div className="flex justify-around items-center my-5">
+          <p className="ml-5 text-2xl font-medium">
+            {price} грн<span className="font-serif">.</span>
+          </p>
+          <button
+            className="p-3 font-bold border-2 rounded-md border-rose-300 hover:bg-rose-300 hover:text-amber-50 transition-all duration-350"
+            type="button"
+          >
+            Замовити <span></span>
+          </button>
+        </div>
+      </li>
+    ));
 }
