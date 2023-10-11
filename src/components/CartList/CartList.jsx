@@ -6,7 +6,7 @@ import CartCap from "./CartCap";
 
 import { IoReturnUpBackSharp } from "react-icons/io5";
 
-export default function CartList({ items, isLoading }) {
+export default function CartList({ itemsData, isLoading }) {
   return (
     <>
       <CartCap />
@@ -26,7 +26,7 @@ export default function CartList({ items, isLoading }) {
       gap-3 sm:gap-4 lg:gap-6
       px-0 sm:px-10 lg:px-20 xl:px-40
       pt-4 lg:pt-10">
-        {isLoading ? <h1>Loading...</h1> : <CartItem items={items} />}
+        {isLoading ? <h1>Loading...</h1> : <CartItem itemsData={itemsData} />}
       </ul>
       <div className="flex flex-wrap justify-between content-between py-4 
       px-0 sm:px-10 lg:px-20 xl:px-40                 

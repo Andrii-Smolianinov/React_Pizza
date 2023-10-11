@@ -3,7 +3,7 @@ import React from "react";
 import PizzaItem from "./PizzaItem/PizzaItem";
 import Skeleton from "./PizzaItem/Skeleton";
 
-export default function PizzaList({ items, isLoading, searchPizza }) {
+export default function PizzaList({ itemsData, isLoading, searchPizza }) {
   return (
     <ul className="flex flex-wrap justify-center min-h-[65vh]
     p-2 sm:p-3 lg:p-8 
@@ -11,7 +11,7 @@ export default function PizzaList({ items, isLoading, searchPizza }) {
       {isLoading ? (
         [...new Array(5)].map((_, index) => <Skeleton key={index} />)
       ) : (
-        <PizzaItem items={items} searchPizza={searchPizza} />
+        <PizzaItem itemsData={itemsData} searchPizza={searchPizza} />
       )}
     </ul>
   );

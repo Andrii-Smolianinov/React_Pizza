@@ -3,9 +3,9 @@ import {AiOutlineMinusCircle} from 'react-icons/ai'
 import {AiOutlinePlusCircle} from 'react-icons/ai'
 import { RiDeleteBin6Line } from "react-icons/ri";
 
-export default function CartItem({ items }) {  
+export default function CartItem({ itemsData }) {  
 
-  return items.map(({ id, images, tittle, price }) => (
+  return itemsData.map(({ id, images, tittle, price }) => (
     <li key={id} className=" flex items-center content-between border-solid border-2 rounded-md border-lime-600 overflow-hidden    
     w-full 
     pr-2 sm:pr-4 lg:pr-6 xl:pr-8

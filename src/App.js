@@ -8,7 +8,7 @@ import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 
 function App() {
-  const [items, setItems] = React.useState([]);
+  const [itemsData, setItemsData] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [activeIndexSort, setActiveIndexSort] = React.useState(0);
   const [activeTypePizza, setActiveTypePizza] = React.useState("Усі");
@@ -20,9 +20,12 @@ function App() {
   const [isEmptyCart, setIsEmptyCart] = React.useState(true);
 
   React.useEffect(() => {
+    const category = activeIndexSort > 0 ? `category=${activeIndexSort}` : "";
+    const sortBy = selectCategory ? `sortBy=${selectCategory}` : "";
+
     setIsLoading(true);
     fetch(
-      `https://64fad951cb9c00518f7a461b.mockapi.io/items?category=${activeIndexSort}&sortBy=${selectCategory}`,
+      `https://64fad951cb9c00518f7a461b.mockapi.io/items?${category}&${sortBy}`,
       {
         method: "GET",
         headers: { "content-type": "application/json" },
@@ -35,7 +38,7 @@ function App() {
         console.log("response error", res.status);
       })
       .then((data) => {
-        setItems(data);
+        setItemsData(data);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -56,7 +59,7 @@ function App() {
           path="/"
           element={
             <Home
-              items={items}
+              itemsData={itemsData}
               isLoading={isLoading}
               searchPizza={searchPizza}
               activeIndexSort={activeIndexSort}
@@ -74,7 +77,7 @@ function App() {
           path="/cart"
           element={
             <Cart
-              items={items}
+              itemsData={itemsData}
               isLoading={isLoading}
               isEmptyCart={isEmptyCart}
               setShowSearch={setShowSearch}

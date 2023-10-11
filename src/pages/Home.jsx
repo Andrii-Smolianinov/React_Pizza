@@ -4,7 +4,7 @@ import PizzaList from "../components/PizzaList/PizzaList";
 import Sort from "../components/Sort/Sort";
 
 export default function Home({
-  items,
+  itemsData,
   isLoading,
   activeIndexSort,
   setActiveIndexSort,
@@ -29,7 +29,7 @@ export default function Home({
         setSelectCategory={setSelectCategory}
       />
       <PizzaList
-        items={items}
+        itemsData={itemsData}
         isLoading={isLoading}
         searchPizza={searchPizza}
       />

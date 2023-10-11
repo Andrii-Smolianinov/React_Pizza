@@ -4,7 +4,7 @@ import CartList from "../components/CartList/CartList";
 import EmptyCart from "../components/CartList/EmptyCart";
 
 export default function Cart({
-  items,
+  itemsData,
   isLoading,
   setShowSearch,
   setShowButtonCart,
@@ -19,7 +19,7 @@ export default function Cart({
       p-2 sm:p-3 lg:p-8"
     >
       {isEmptyCart ? (
-        <CartList items={items} isLoading={isLoading} />
+        <CartList itemsData={itemsData} isLoading={isLoading} />
       ) : (
         <EmptyCart />
       )}

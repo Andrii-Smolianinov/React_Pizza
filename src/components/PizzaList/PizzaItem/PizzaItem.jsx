@@ -3,8 +3,8 @@ import React from "react";
 import CategorieEL from "../elements/CategorieEL";
 import DiameterEL from "../elements/DiameterEL";
 
-export default function PizzaItem({ items, searchPizza }) {
-  return items
+export default function PizzaItem({ itemsData, searchPizza }) {
+  return itemsData
     .filter((item) => {
       if (item.tittle.toLowerCase().includes(searchPizza.toLowerCase())) {
         return true;

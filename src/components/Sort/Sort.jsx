@@ -21,8 +21,7 @@ export default function Sort({
 }) {
   const onClickButtonSort = function (index, text) {
     setActiveIndexSort(index);
-    setActiveTypePizza(text);
-    console.log("index", index);
+    setActiveTypePizza(text);    
   };
 
   const elements = categories.map(({ text }, index) => (
