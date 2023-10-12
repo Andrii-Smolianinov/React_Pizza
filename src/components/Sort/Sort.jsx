@@ -28,8 +28,8 @@ export default function Sort({
     <li
       onClick={() => onClickButtonSort(index, text)}
       key={index}
-      className={`
-      inline-block 
+      className={`      
+      inline-block
       m-2 sm:m-3 
       px-2 sm:px-3 lg:px-4
       py-px 

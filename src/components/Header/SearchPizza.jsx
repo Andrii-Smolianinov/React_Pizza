@@ -5,7 +5,8 @@ import { BiSearch } from "react-icons/bi";
 
 export default function SearchPizza({ searchPizza, setSearchPizza }) {
   return (
-    <div className="flex items-center relative">
+    <div className="flex items-center relative 
+    my-2 sm:my-0">
       <BiSearch className="absolute left-2" />
       <input
         value={searchPizza}

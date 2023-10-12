@@ -1,7 +1,7 @@
 import React from "react";
 
-import CartList from "../components/CartList/CartList";
-import EmptyCart from "../components/CartList/EmptyCart";
+import CartList from "../components/Cart/CartList";
+import EmptyCart from "../components/Cart/EmptyCart";
 
 export default function Cart({
   itemsData,
