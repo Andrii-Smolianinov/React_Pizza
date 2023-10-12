@@ -11,7 +11,8 @@ export default function Header({
 }) { 
 
   return (
-    <header className="flex flex-wrap items-center justify-between p-2 sm:p-3 lg:p-4 bg-yellow-100 border-b-2 border-red-600">
+    <header className="flex flex-wrap items-center justify-between bg-yellow-100 border-b-2 border-red-600
+    p-2 sm:p-3 lg:p-4">
       <Link to="/" className="cursor-pointer flex items-center">
         <img
           src="images/favicon.ico"
