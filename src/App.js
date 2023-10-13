@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 
+export const AppContext = React.createContext();
+
 function App() {
   const [itemsData, setItemsData] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
@@ -48,53 +50,52 @@ function App() {
 
   return (
     <Container>
-      <Header
-        searchPizza={searchPizza}
-        setSearchPizza={setSearchPizza}
-        showSearch={showSearch}
-        showButtonCart={showButtonCart}
-      />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              itemsData={itemsData}
-              isLoading={isLoading}
-              searchPizza={searchPizza}
-              activeIndexSort={activeIndexSort}
-              setActiveIndexSort={setActiveIndexSort}
-              activeTypePizza={activeTypePizza}
-              setActiveTypePizza={setActiveTypePizza}
-              selectCategory={selectCategory}
-              setSelectCategory={setSelectCategory}
-              setShowSearch={setShowSearch}
-              setShowButtonCart={setShowButtonCart}
-            />
-          }
-        />
-        <Route
-          path="/cart"
-          element={
-            <Cart
-              itemsData={itemsData}
-              isLoading={isLoading}
-              isEmptyCart={isEmptyCart}
-              setShowSearch={setShowSearch}
-              setShowButtonCart={setShowButtonCart}
-            />
-          }
-        />
-        <Route
-          path="*"
-          element={
-            <NotFound
-              setShowSearch={setShowSearch}
-              setShowButtonCart={setShowButtonCart}
-            />
-          }
-        />
-      </Routes>
+      <AppContext.Provider
+        value={{
+          searchPizza,
+          setSearchPizza,
+          activeIndexSort,
+          setActiveIndexSort,
+          activeTypePizza,
+          setActiveTypePizza,
+          selectCategory,
+          setSelectCategory,
+          itemsData,
+          isLoading,
+        }}
+      >
+        <Header showSearch={showSearch} showButtonCart={showButtonCart} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                setShowSearch={setShowSearch}
+                setShowButtonCart={setShowButtonCart}
+              />
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <Cart
+                isEmptyCart={isEmptyCart}
+                setShowSearch={setShowSearch}
+                setShowButtonCart={setShowButtonCart}
+              />
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <NotFound
+                setShowSearch={setShowSearch}
+                setShowButtonCart={setShowButtonCart}
+              />
+            }
+          />
+        </Routes>
+      </AppContext.Provider>
     </Container>
   );
 }

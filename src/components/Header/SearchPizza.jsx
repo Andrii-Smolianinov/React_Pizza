@@ -2,11 +2,16 @@ import React from "react";
 
 import { AiOutlineClose } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
+import { AppContext } from "../../App";
 
-export default function SearchPizza({ searchPizza, setSearchPizza }) {
+export default function SearchPizza() {
+  const { searchPizza, setSearchPizza } = React.useContext(AppContext);
+
   return (
-    <div className="flex items-center relative 
-    my-2 sm:my-0">
+    <div
+      className="flex items-center relative 
+    my-2 sm:my-0"
+    >
       <BiSearch className="absolute left-2" />
       <input
         value={searchPizza}

@@ -1,6 +1,7 @@
 import React from "react";
 
 import Filter from "./Filter";
+import { AppContext } from "../../App";
 
 const categories = [
   { text: "Усі" },
@@ -11,17 +12,17 @@ const categories = [
   { text: "Акційні" },
 ];
 
-export default function Sort({
-  activeIndexSort,
-  setActiveIndexSort,
-  activeTypePizza,
-  setActiveTypePizza,
-  selectCategory,
-  setSelectCategory,
-}) {
+export default function Sort() {
+  const {
+    activeIndexSort,
+    setActiveIndexSort,
+    activeTypePizza,
+    setActiveTypePizza,
+  } = React.useContext(AppContext);
+
   const onClickButtonSort = function (index, text) {
     setActiveIndexSort(index);
-    setActiveTypePizza(text);    
+    setActiveTypePizza(text);
   };
 
   const elements = categories.map(({ text }, index) => (
@@ -55,10 +56,7 @@ export default function Sort({
         p-2 sm:p-3 lg:p-6"
       >
         <ul className="flex flex-wrap justify-start">{elements}</ul>
-        <Filter
-          selectCategory={selectCategory}
-          setSelectCategory={setSelectCategory}
-        />
+        <Filter />
       </nav>
       <h1
         className="        

@@ -6,8 +6,11 @@ import ButtonClearCart from "../ButtonClearCart";
 
 import { BsCart } from "react-icons/bs";
 import { IoReturnUpBackSharp } from "react-icons/io5";
+import { AppContext } from "../../App";
 
-export default function CartList({ itemsData, isLoading }) {
+export default function CartList() {
+  const { isLoading } = React.useContext(AppContext);
+
   return (
     <>
       <div
@@ -41,7 +44,7 @@ export default function CartList({ itemsData, isLoading }) {
       px-0 sm:px-10 lg:px-20 xl:px-40
       pt-4 lg:pt-10"
       >
-        {isLoading ? <h1>Loading...</h1> : <CartItem itemsData={itemsData} />}
+        {isLoading ? <h1>Loading...</h1> : <CartItem />}
       </ul>
       <div
         className="flex flex-wrap justify-between content-between py-4 

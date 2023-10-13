@@ -1,10 +1,11 @@
 import React from "react";
+import { AppContext } from "../../App";
 
-export default function Filter({ selectCategory, setSelectCategory }) {
-  // eslint-disable-next-line
+export default function Filter() {
+  const { setSelectCategory } = React.useContext(AppContext);
 
   const handleSelect = function (event) {
-    setSelectCategory(event.target.value);   
+    setSelectCategory(event.target.value);
   };
 
   return (
@@ -20,7 +21,7 @@ export default function Filter({ selectCategory, setSelectCategory }) {
       >
         <option value="rating">популярності</option>
         <option value="price">ціні</option>
-        <option value="tittle">назві</option>   
+        <option value="tittle">назві</option>
       </select>
     </div>
   );

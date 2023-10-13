@@ -2,8 +2,11 @@ import React from "react";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { AppContext } from "../../App";
 
-export default function CartItem({ itemsData }) {
+export default function CartItem() {
+  const { itemsData } = React.useContext(AppContext);
+
   return itemsData.map(({ id, images, tittle, price }) => (
     <li
       key={id}
