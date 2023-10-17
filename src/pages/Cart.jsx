@@ -2,12 +2,11 @@ import React from "react";
 
 import CartList from "../components/Cart/CartList";
 import EmptyCart from "../components/Cart/EmptyCart";
+import { AppContext } from "../App";
 
-export default function Cart({
-  setShowSearch,
-  setShowButtonCart,
-  isEmptyCart,
-}) {
+export default function Cart() {
+  const { setShowSearch, setShowButtonCart, isEmptyCart } = React.useContext(AppContext);
+
   React.useEffect(() => {
     setShowSearch(false);
     setShowButtonCart(false);

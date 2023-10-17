@@ -8,7 +8,6 @@ import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 
 export const AppContext = React.createContext();
-
 function App() {
   const [itemsData, setItemsData] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
@@ -62,38 +61,16 @@ function App() {
           setSelectCategory,
           itemsData,
           isLoading,
+          setShowSearch,
+          setShowButtonCart,
+          isEmptyCart,
         }}
       >
         <Header showSearch={showSearch} showButtonCart={showButtonCart} />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Home
-                setShowSearch={setShowSearch}
-                setShowButtonCart={setShowButtonCart}
-              />
-            }
-          />
-          <Route
-            path="/cart"
-            element={
-              <Cart
-                isEmptyCart={isEmptyCart}
-                setShowSearch={setShowSearch}
-                setShowButtonCart={setShowButtonCart}
-              />
-            }
-          />
-          <Route
-            path="*"
-            element={
-              <NotFound
-                setShowSearch={setShowSearch}
-                setShowButtonCart={setShowButtonCart}
-              />
-            }
-          />
+          <Route path="/" element={<Home  />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </AppContext.Provider>
     </Container>
