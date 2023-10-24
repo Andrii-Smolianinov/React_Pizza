@@ -1,7 +1,9 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import Filter from "./Filter";
-import { AppContext } from "../../App";
+
+import { setSortCategory, setTypePizza } from "../../redux/slices/sortSlice";
 
 const categories = [
   { text: "Усі" },
@@ -13,16 +15,13 @@ const categories = [
 ];
 
 export default function Sort() {
-  const {
-    activeIndexSort,
-    setActiveIndexSort,
-    activeTypePizza,
-    setActiveTypePizza,
-  } = React.useContext(AppContext);
+  const dispatch = useDispatch();
+  const sortCategory = useSelector((state) => state.sort.sortCategory);
+  const activeTypePizza = useSelector(state => state.sort.typePizza)
 
   const onClickButtonSort = function (index, text) {
-    setActiveIndexSort(index);
-    setActiveTypePizza(text);
+    dispatch(setSortCategory(index));
+    dispatch(setTypePizza(text));   
   };
 
   const elements = categories.map(({ text }, index) => (
@@ -39,7 +38,7 @@ export default function Sort() {
       rounded-xl cursor-pointer
       transition-all duration-350
       ${
-        activeIndexSort === index
+        sortCategory === index
           ? "bg-lime-700 text-green-200 hover:bg-lime-700"
           : "bg-lime-200 text-green-600 hover:bg-teal-500 hover:text-green-100"
       }      

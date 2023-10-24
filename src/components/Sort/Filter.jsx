@@ -1,11 +1,13 @@
 import React from "react";
-import { AppContext } from "../../App";
+import { useDispatch } from "react-redux";
+
+import { setFilterCategory } from "../../redux/slices/filterSlice";
 
 export default function Filter() {
-  const { setSelectCategory } = React.useContext(AppContext);
+  const dispatch = useDispatch();
 
   const handleSelect = function (event) {
-    setSelectCategory(event.target.value);
+    dispatch(setFilterCategory(event.target.value));
   };
 
   return (
