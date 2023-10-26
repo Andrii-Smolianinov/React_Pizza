@@ -10,9 +10,11 @@ export default function SearchPizza() {
   const dispatch = useDispatch();
   const searchPizza = useSelector((state) => state.search.searchPizza);
 
+  const inputRef = React.useRef();
+
   const onClear = function () {
     dispatch(setSearchPizza(""));
-    document.querySelector("input").focus();
+    inputRef.current.focus();
   };
 
   return (
@@ -22,6 +24,7 @@ export default function SearchPizza() {
     >
       <BiSearch className="absolute left-2" />
       <input
+        ref={inputRef}
         value={searchPizza}
         onChange={(e) => dispatch(setSearchPizza(e.target.value))}
         type="text"
