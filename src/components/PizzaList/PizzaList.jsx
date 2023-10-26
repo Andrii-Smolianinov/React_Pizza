@@ -5,7 +5,7 @@ import Skeleton from "./PizzaItem/Skeleton";
 import { AppContext } from "../../App";
 
 export default function PizzaList() {
-  const { itemsData, isLoading, searchPizza } = React.useContext(AppContext);
+  const { itemsData, isLoading } = React.useContext(AppContext);
 
   return (
     <ul
@@ -16,7 +16,7 @@ export default function PizzaList() {
       {isLoading ? (
         [...new Array(5)].map((_, index) => <Skeleton key={index} />)
       ) : (
-        <PizzaItem itemsData={itemsData} searchPizza={searchPizza} />
+        <PizzaItem itemsData={itemsData} />
       )}
     </ul>
   );

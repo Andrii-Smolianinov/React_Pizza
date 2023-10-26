@@ -1,9 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import CategorieEL from "../elements/CategorieEL";
 import DiameterEL from "../elements/DiameterEL";
 
-export default function PizzaItem({ itemsData, searchPizza }) {
+export default function PizzaItem({ itemsData }) {
+  const searchPizza = useSelector((state) => state.search.searchPizza);
+
   return itemsData
     .filter((item) => {
       if (item.tittle.toLowerCase().includes(searchPizza.toLowerCase())) {

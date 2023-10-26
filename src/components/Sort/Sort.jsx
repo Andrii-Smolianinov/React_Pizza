@@ -1,9 +1,9 @@
 import React from "react";
+
 import { useDispatch, useSelector } from "react-redux";
+import { setSortCategory, setTypePizza } from "../../redux/slices/sortSlice";
 
 import Filter from "./Filter";
-
-import { setSortCategory, setTypePizza } from "../../redux/slices/sortSlice";
 
 const categories = [
   { text: "Усі" },
@@ -16,12 +16,11 @@ const categories = [
 
 export default function Sort() {
   const dispatch = useDispatch();
-  const sortCategory = useSelector((state) => state.sort.sortCategory);
-  const activeTypePizza = useSelector(state => state.sort.typePizza)
+  const { sortCategory, activeTypePizza } = useSelector((state) => state.sort);
 
   const onClickButtonSort = function (index, text) {
     dispatch(setSortCategory(index));
-    dispatch(setTypePizza(text));   
+    dispatch(setTypePizza(text));
   };
 
   const elements = categories.map(({ text }, index) => (

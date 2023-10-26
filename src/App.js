@@ -11,12 +11,10 @@ import NotFound from "./pages/NotFound";
 export const AppContext = React.createContext();
 
 function App() {
-  const filterCategory = useSelector((state) => state.filter.filterCategory);  
-  const sortCategory = useSelector((state) => state.sort.sortCategory);
-  
+  const { sortCategory, filterCategory } = useSelector((state) => state.sort);
+
   const [itemsData, setItemsData] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);  
-  const [searchPizza, setSearchPizza] = React.useState("");
+  const [isLoading, setIsLoading] = React.useState(true);
   const [showSearch, setShowSearch] = React.useState(true);
   const [showButtonCart, setShowButtonCart] = React.useState(true);
   const [isEmptyCart] = React.useState(true);
@@ -52,8 +50,6 @@ function App() {
     <Container>
       <AppContext.Provider
         value={{
-          searchPizza,
-          setSearchPizza,          
           itemsData,
           isLoading,
           setShowSearch,

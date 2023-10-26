@@ -1,7 +1,7 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 
-import { setFilterCategory } from "../../redux/slices/filterSlice";
+import { useDispatch } from "react-redux";
+import { setFilterCategory } from "../../redux/slices/sortSlice";
 
 export default function Filter() {
   const dispatch = useDispatch();
