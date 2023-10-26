@@ -10,6 +10,11 @@ export default function SearchPizza() {
   const dispatch = useDispatch();
   const searchPizza = useSelector((state) => state.search.searchPizza);
 
+  const onClear = function () {
+    dispatch(setSearchPizza(""));
+    document.querySelector("input").focus();
+  };
+
   return (
     <div
       className="flex items-center relative 
@@ -18,7 +23,7 @@ export default function SearchPizza() {
       <BiSearch className="absolute left-2" />
       <input
         value={searchPizza}
-        onChange={(e) => dispatch(setSearchPizza(e.target.value)) }
+        onChange={(e) => dispatch(setSearchPizza(e.target.value))}
         type="text"
         placeholder="пошук піци"
         className="px-7 py-1 border-solid border-2 border-red-600 rounded
@@ -27,7 +32,7 @@ export default function SearchPizza() {
       {searchPizza && (
         <AiOutlineClose
           size={18}
-          onClick={() => dispatch(setSearchPizza(""))}
+          onClick={onClear}
           className="absolute right-2 fill-indigo-500 hover:fill-red-700 cursor-pointer 
             shadow-lg shadow-indigo-500/40 hover:shadow-red-500/40"
         />
