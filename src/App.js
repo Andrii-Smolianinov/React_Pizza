@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import qs from "qs";
 
 import Container from "./Container";
 import Header from "./components/Header/Header";
@@ -37,6 +38,14 @@ function App() {
       .catch((error) => {
         console.log("catchError", error);
       });
+  }, [sortCategory, filterCategory]);
+
+  React.useEffect(() => {
+    const queryString = qs.stringify({
+      sortCategory,
+      filterCategory,
+    });
+    console.log('queryString', queryString);
   }, [sortCategory, filterCategory]);
 
   return (
