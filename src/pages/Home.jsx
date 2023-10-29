@@ -1,7 +1,7 @@
 import React from "react";
 
 import PizzaList from "../components/PizzaList/PizzaList";
-import Sort from "../components/Sort/Sort";
+import Filter from "../components/Sort/Filter";
 import { AppContext } from "../App";
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <main className="bg-yellow-100">
-      <Sort />
+      <Filter />
       <PizzaList />
     </main>
   );

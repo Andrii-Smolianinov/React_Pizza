@@ -1,8 +1,10 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import qs from "qs";
+
+import { setFiltersFromURL } from "./redux/slices/sortSlice";
 
 import Container from "./Container";
 import Header from "./components/Header/Header";
@@ -21,9 +23,12 @@ function App() {
   const [showButtonCart, setShowButtonCart] = React.useState(true);
   const [isEmptyCart] = React.useState(true);
 
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   React.useEffect(() => {
-    const category = sortCategory > 0 ? `category=${sortCategory}` : "";
-    const sortBy = filterCategory ? `sortBy=${filterCategory}` : "";
+    const category = filterCategory > 0 ? `category=${filterCategory}` : "";
+    const sortBy = sortCategory ? `sortBy=${sortCategory}` : "";
 
     setIsLoading(true);
 
@@ -42,10 +47,21 @@ function App() {
 
   React.useEffect(() => {
     const queryString = qs.stringify({
-      sortCategory,
       filterCategory,
+      sortCategory,
     });
-    console.log('queryString', queryString);
+
+    navigate(`?${queryString}`);
+    // eslint-disable-next-line
+  }, [sortCategory, filterCategory]);
+
+  React.useEffect(() => {
+    if (window.location.search) {
+      const params = qs.parse(window.location.search.substring(1));
+      console.log("parseParams", params);
+      dispatch(setFiltersFromURL(params));
+    }
+    // eslint-disable-next-line
   }, [sortCategory, filterCategory]);
 
   return (
