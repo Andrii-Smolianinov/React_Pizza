@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import qs from "qs";
 
-import { setFiltersFromURL } from "./redux/slices/sortSlice";
+import { setParamsFromURL } from "./redux/slices/sortSlice";
 
 import Container from "./Container";
 import Header from "./components/Header/Header";
@@ -15,21 +15,26 @@ import NotFound from "./pages/NotFound";
 export const AppContext = React.createContext();
 
 function App() {
-  const { sortCategory, filterCategory } = useSelector((state) => state.sort);
-
   const [itemsData, setItemsData] = React.useState([]);
+  const [activeTypePizza, setActiveTypePizza] = React.useState('Усі');
   const [isLoading, setIsLoading] = React.useState(true);
   const [showSearch, setShowSearch] = React.useState(true);
   const [showButtonCart, setShowButtonCart] = React.useState(true);
   const [isEmptyCart] = React.useState(true);
 
+  const { sortCategory, filterCategory } = useSelector((state) => state.sort);
+  console.log('sortCategory from redux', sortCategory);
+  console.log('filterCategory from redux', filterCategory);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+    
   React.useEffect(() => {
     const category = filterCategory > 0 ? `category=${filterCategory}` : "";
     const sortBy = sortCategory ? `sortBy=${sortCategory}` : "";
-
+    console.log("category 1 useEffect - axios", category);
+    console.log("sortBy 1 useEffect - axios", sortBy);
     setIsLoading(true);
 
     axios
@@ -50,19 +55,27 @@ function App() {
       filterCategory,
       sortCategory,
     });
-
     navigate(`?${queryString}`);
+    console.log("queryString 2 useEffect - navigate", queryString);
+    console.log("filterCategory 2 useEffect - navigate", filterCategory);
+    console.log("sortCategory 2 useEffect - navigate", sortCategory);
     // eslint-disable-next-line
   }, [sortCategory, filterCategory]);
 
   React.useEffect(() => {
     if (window.location.search) {
       const params = qs.parse(window.location.search.substring(1));
-      console.log("parseParams", params);
-      dispatch(setFiltersFromURL(params));
+      console.log("window.location.search 3 useEffect", window.location.search);
+      console.log("window.location 3 useEffect", window.location);
+      console.log("params 3 useEffect", params);
+      
+      dispatch(setParamsFromURL({ ...params }));
     }
     // eslint-disable-next-line
   }, [sortCategory, filterCategory]);
+
+  
+  
 
   return (
     <Container>
@@ -73,6 +86,7 @@ function App() {
           setShowSearch,
           setShowButtonCart,
           isEmptyCart,
+          activeTypePizza, setActiveTypePizza
         }}
       >
         <Header showSearch={showSearch} showButtonCart={showButtonCart} />
