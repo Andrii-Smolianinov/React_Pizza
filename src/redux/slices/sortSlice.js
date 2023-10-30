@@ -1,26 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  filterCategory: 0,  
+export const initialState = {
+  filterCategory: 0,
   sortCategory: "price",
 };
 
-export const sortSlice = createSlice({
+const sortSlice = createSlice({
   name: "sort",
   initialState,
   reducers: {
     setFilterCategory(state, action) {
       state.filterCategory = action.payload;
-    },    
+    },
     setSortCategory(state, action) {
       state.sortCategory = action.payload;
     },
     setParamsFromURL(state, action) {
-      state.filterCategory = Number(action.payload.filterCategory)  
-      state.sortCategory = action.payload.sortCategory
-      console.log("state.filterCategory", state.filterCategory);
-      console.log("state.sortCategory", state.sortCategory);
-    }
+      state.filterCategory = Number(action.payload.filterCategory);
+      console.log("action.payload.filterCategory", action.payload.filterCategory);
+      state.sortCategory = action.payload.sortCategory;
+      console.log("action.payload.sortCategory", action.payload.sortCategory);
+    },
+    
   },
 });
 

@@ -16,25 +16,35 @@ export const AppContext = React.createContext();
 
 function App() {
   const [itemsData, setItemsData] = React.useState([]);
-  const [activeTypePizza, setActiveTypePizza] = React.useState('Усі');
+  const [activeTypePizza, setActiveTypePizza] = React.useState("Усі");
   const [isLoading, setIsLoading] = React.useState(true);
   const [showSearch, setShowSearch] = React.useState(true);
   const [showButtonCart, setShowButtonCart] = React.useState(true);
   const [isEmptyCart] = React.useState(true);
 
   const { sortCategory, filterCategory } = useSelector((state) => state.sort);
-  console.log('sortCategory from redux', sortCategory);
-  console.log('filterCategory from redux', filterCategory);
+  console.log("1 render sortCategory", sortCategory);
+  console.log("1 render filterCategory", filterCategory);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-    
+  React.useEffect(() => {   //отримуємо дані з адресної строки
+    if (window.location.search) {
+      const params = qs.parse(window.location.search.substring(1)); 
+     
+      dispatch(setParamsFromURL( {...params} ));
+      console.log("params in 1 useEffect", params);
+    }
+    // eslint-disable-next-line
+  }, []);
+
   React.useEffect(() => {
     const category = filterCategory > 0 ? `category=${filterCategory}` : "";
+    console.log("category", category);
     const sortBy = sortCategory ? `sortBy=${sortCategory}` : "";
-    console.log("category 1 useEffect - axios", category);
-    console.log("sortBy 1 useEffect - axios", sortBy);
+    console.log("sortBy", sortBy);
+
     setIsLoading(true);
 
     axios
@@ -51,30 +61,16 @@ function App() {
   }, [sortCategory, filterCategory]);
 
   React.useEffect(() => {
-    const queryString = qs.stringify({
+    const queryString = qs.stringify({  //qs - формує адресну строку
       filterCategory,
       sortCategory,
     });
-    navigate(`?${queryString}`);
-    console.log("queryString 2 useEffect - navigate", queryString);
-    console.log("filterCategory 2 useEffect - navigate", filterCategory);
-    console.log("sortCategory 2 useEffect - navigate", sortCategory);
+    navigate(`?${queryString}`);   //передаємо параметри у адресну строку
+    console.log(queryString);
+
     // eslint-disable-next-line
   }, [sortCategory, filterCategory]);
 
-  React.useEffect(() => {
-    if (window.location.search) {
-      const params = qs.parse(window.location.search.substring(1));
-      console.log("window.location.search 3 useEffect", window.location.search);
-      console.log("window.location 3 useEffect", window.location);
-      console.log("params 3 useEffect", params);
-      
-      dispatch(setParamsFromURL({ ...params }));
-    }
-    // eslint-disable-next-line
-  }, [sortCategory, filterCategory]);
-
-  
   
 
   return (
@@ -86,7 +82,8 @@ function App() {
           setShowSearch,
           setShowButtonCart,
           isEmptyCart,
-          activeTypePizza, setActiveTypePizza
+          activeTypePizza,
+          setActiveTypePizza,
         }}
       >
         <Header showSearch={showSearch} showButtonCart={showButtonCart} />
