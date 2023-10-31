@@ -16,10 +16,8 @@ const sortSlice = createSlice({
       state.sortCategory = action.payload;
     },
     setParamsFromURL(state, action) {
-      state.filterCategory = Number(action.payload.filterCategory);
-      console.log("action.payload.filterCategory", action.payload.filterCategory);
+      state.filterCategory = Number(action.payload.filterCategory);      
       state.sortCategory = action.payload.sortCategory;
-      console.log("action.payload.sortCategory", action.payload.sortCategory);
     },
     
   },

@@ -23,8 +23,6 @@ function App() {
   const [isEmptyCart] = React.useState(true);
 
   const { sortCategory, filterCategory } = useSelector((state) => state.sort);
-  console.log("1 render sortCategory", sortCategory);
-  console.log("1 render filterCategory", filterCategory);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -33,17 +31,14 @@ function App() {
     if (window.location.search) {
       const params = qs.parse(window.location.search.substring(1)); 
      
-      dispatch(setParamsFromURL( {...params} ));
-      console.log("params in 1 useEffect", params);
+      dispatch(setParamsFromURL( {...params} ));      
     }
     // eslint-disable-next-line
   }, []);
 
   React.useEffect(() => {
-    const category = filterCategory > 0 ? `category=${filterCategory}` : "";
-    console.log("category", category);
-    const sortBy = sortCategory ? `sortBy=${sortCategory}` : "";
-    console.log("sortBy", sortBy);
+    const category = filterCategory > 0 ? `category=${filterCategory}` : "";    
+    const sortBy = sortCategory ? `sortBy=${sortCategory}` : "";   
 
     setIsLoading(true);
 
@@ -66,8 +61,7 @@ function App() {
       sortCategory,
     });
     navigate(`?${queryString}`);   //передаємо параметри у адресну строку
-    console.log(queryString);
-
+    
     // eslint-disable-next-line
   }, [sortCategory, filterCategory]);
 
