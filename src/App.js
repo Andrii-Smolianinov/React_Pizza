@@ -16,7 +16,6 @@ export const AppContext = React.createContext();
 
 function App() {
   const [itemsData, setItemsData] = React.useState([]);
-  const [activeTypePizza, setActiveTypePizza] = React.useState("Усі");
   const [isLoading, setIsLoading] = React.useState(true);
   const [showSearch, setShowSearch] = React.useState(true);
   const [showButtonCart, setShowButtonCart] = React.useState(true);
@@ -27,18 +26,19 @@ function App() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  React.useEffect(() => {   //отримуємо дані з адресної строки
+  React.useEffect(() => {
+    //отримуємо дані з адресної строки
     if (window.location.search) {
-      const params = qs.parse(window.location.search.substring(1)); 
-     
-      dispatch(setParamsFromURL( {...params} ));      
+      const params = qs.parse(window.location.search.substring(1));
+
+      dispatch(setParamsFromURL({ ...params }));
     }
     // eslint-disable-next-line
   }, []);
 
   React.useEffect(() => {
-    const category = filterCategory > 0 ? `category=${filterCategory}` : "";    
-    const sortBy = sortCategory ? `sortBy=${sortCategory}` : "";   
+    const category = filterCategory > 0 ? `category=${filterCategory}` : "";
+    const sortBy = sortCategory ? `sortBy=${sortCategory}` : "";
 
     setIsLoading(true);
 
@@ -56,16 +56,15 @@ function App() {
   }, [sortCategory, filterCategory]);
 
   React.useEffect(() => {
-    const queryString = qs.stringify({  //qs - формує адресну строку
+    const queryString = qs.stringify({
+      //qs - формує адресну строку
       filterCategory,
       sortCategory,
     });
-    navigate(`?${queryString}`);   //передаємо параметри у адресну строку
-    
+    navigate(`?${queryString}`); //передаємо параметри у адресну строку
+
     // eslint-disable-next-line
   }, [sortCategory, filterCategory]);
-
-  
 
   return (
     <Container>
@@ -76,8 +75,6 @@ function App() {
           setShowSearch,
           setShowButtonCart,
           isEmptyCart,
-          activeTypePizza,
-          setActiveTypePizza,
         }}
       >
         <Header showSearch={showSearch} showButtonCart={showButtonCart} />

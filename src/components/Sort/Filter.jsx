@@ -1,9 +1,10 @@
 import React from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { setFilterCategory } from "../../redux/slices/sortSlice";
-
-import { AppContext } from "../../App";
+import {
+  setFilterCategory,
+  setActiveTypePizza,
+} from "../../redux/slices/sortSlice";
 
 import Sort from "./Sort";
 
@@ -17,14 +18,12 @@ const categories = [
 ];
 
 export default function Filter() {
-  const { activeTypePizza, setActiveTypePizza } = React.useContext(AppContext);
-
   const dispatch = useDispatch();
-  const { filterCategory } = useSelector((state) => state.sort);
+  const { filterCategory, activeTypePizza } = useSelector((state) => state.sort);
 
   const onClickFilterButton = function (index, text) {
     dispatch(setFilterCategory(index));
-    setActiveTypePizza(text);
+    dispatch(setActiveTypePizza(text));
   };
 
   const elements = categories.map(({ text }, index) => (

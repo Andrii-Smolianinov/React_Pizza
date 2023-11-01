@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const initialState = {
   filterCategory: 0,
   sortCategory: "price",
+  activeTypePizza: "Усі",
 };
 
 const sortSlice = createSlice({
@@ -16,14 +17,20 @@ const sortSlice = createSlice({
       state.sortCategory = action.payload;
     },
     setParamsFromURL(state, action) {
-      state.filterCategory = Number(action.payload.filterCategory);      
+      state.filterCategory = Number(action.payload.filterCategory);
       state.sortCategory = action.payload.sortCategory;
     },
-    
+    setActiveTypePizza(state, action) {
+      state.activeTypePizza = action.payload;
+    },
   },
 });
 
-export const { setSortCategory, setFilterCategory, setParamsFromURL } =
-  sortSlice.actions;
+export const {
+  setSortCategory,
+  setFilterCategory,
+  setParamsFromURL,
+  setActiveTypePizza,
+} = sortSlice.actions;
 
 export default sortSlice.reducer;
