@@ -4,13 +4,13 @@ import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import qs from "qs";
 
-import { setParamsFromURL } from "./redux/slices/sortSlice";
-
-import Container from "./Container";
-import Header from "./components/Header/Header";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
+import Container from "./Container";
+import Header from "./components/Header/Header";
+
+import { setParamsFromURL } from "./redux/slices/sortSlice";
 
 export const AppContext = React.createContext();
 
@@ -25,18 +25,9 @@ function App() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const isSearch = React.useRef(false)
 
-  React.useEffect(() => {
-    //отримуємо дані з адресної строки
-    if (window.location.search) {
-      const params = qs.parse(window.location.search.substring(1));
-
-      dispatch(setParamsFromURL({ ...params }));
-    }
-    // eslint-disable-next-line
-  }, []);
-
-  React.useEffect(() => {
+  const fetchPizzas = () => {
     const category = filterCategory > 0 ? `category=${filterCategory}` : "";
     const sortBy = sortCategory ? `sortBy=${sortCategory}` : "";
 
@@ -53,18 +44,37 @@ function App() {
       .catch((error) => {
         console.log("catchError", error);
       });
-  }, [sortCategory, filterCategory]);
+  }
+
+  // React.useEffect(() => {
+  //   //отримуємо дані з адресної строки
+  //   if (window.location.search) {
+  //     const params = qs.parse(window.location.search.substring(1));
+
+  //     dispatch(setParamsFromURL({ ...params }));
+  //   }
+  //   isSearch.current = true
+  //   // eslint-disable-next-line
+  // }, []);
 
   React.useEffect(() => {
-    const queryString = qs.stringify({
-      //qs - формує адресну строку
-      filterCategory,
-      sortCategory,
-    });
-    navigate(`?${queryString}`); //передаємо параметри у адресну строку
-
+    if(!isSearch.current) {
+      fetchPizzas()
+    } 
+    isSearch.current = false
     // eslint-disable-next-line
   }, [sortCategory, filterCategory]);
+
+  // React.useEffect(() => {
+  //   const queryString = qs.stringify({
+  //     //qs - формує адресну строку
+  //     filterCategory,
+  //     sortCategory,
+  //   });
+  //   navigate(`?${queryString}`); //передаємо параметри у адресну строку
+
+  //   // eslint-disable-next-line
+  // }, [sortCategory, filterCategory]);
 
   return (
     <Container>
