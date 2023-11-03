@@ -15,11 +15,7 @@ const sortSlice = createSlice({
     },
     setSortCategory(state, action) {
       state.sortCategory = action.payload;
-    },
-    setParamsFromURL(state, action) {
-      state.filterCategory = Number(action.payload.filterCategory);
-      state.sortCategory = action.payload.sortCategory;
-    },
+    },    
     setActiveTypePizza(state, action) {
       state.activeTypePizza = action.payload;
     },
@@ -29,7 +25,6 @@ const sortSlice = createSlice({
 export const {
   setSortCategory,
   setFilterCategory,
-  setParamsFromURL,
   setActiveTypePizza,
 } = sortSlice.actions;
 
