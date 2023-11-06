@@ -4,7 +4,7 @@ const initialState = {
   searchPizza: "",
 };
 
-export const searchSlise = createSlice({
+export const searchSlice = createSlice({
   name: "searchPizza",
   initialState,
   reducers: {
@@ -14,6 +14,6 @@ export const searchSlise = createSlice({
   },
 });
 
-export const { setSearchPizza } = searchSlise.actions;
+export const { setSearchPizza } = searchSlice.actions;
 
-export default searchSlise.reducer;
+export default searchSlice.reducer;

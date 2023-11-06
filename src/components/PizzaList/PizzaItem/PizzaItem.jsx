@@ -1,11 +1,18 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import CategorieEL from "../elements/CategorieEL";
 import DiameterEL from "../elements/DiameterEL";
 
+import { addItemInCart } from "../../../redux/slices/cartSlice";
+
 export default function PizzaItem({ itemsData }) {
   const searchPizza = useSelector((state) => state.search.searchPizza);
+  const dispatch = useDispatch();
+
+  const onAddPizzaToCart = (item) => {
+    dispatch(addItemInCart(item));    
+  };
 
   return itemsData
     .filter((item) => {
@@ -45,6 +52,7 @@ export default function PizzaItem({ itemsData }) {
           <button
             className="p-3 font-bold border-2 rounded-md border-rose-300 hover:bg-rose-300 hover:text-amber-50 transition-all duration-350"
             type="button"
+            onClick={onAddPizzaToCart}
           >
             Замовити <span></span>
           </button>

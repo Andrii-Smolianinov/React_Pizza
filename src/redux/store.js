@@ -13,8 +13,9 @@ import storage from "redux-persist/lib/storage";
 
 import sort from "./slices/sortSlice";
 import search from "./slices/searchSlice";
+import cart from './slices/cartSlice'
 
-const rootReducer = combineReducers({ sort, search });
+const rootReducer = combineReducers({ sort, search, cart });
 
 const persistConfig = {
   key: "root",

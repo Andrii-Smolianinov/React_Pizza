@@ -1,13 +1,17 @@
 import React from "react";
+import { useSelector } from "react-redux";
+
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { AppContext } from "../../App";
+// import { AppContext } from "../../App";
 
 export default function CartItem() {
-  const { itemsData } = React.useContext(AppContext);
+  // const { itemsData } = React.useContext(AppContext);
+  const { itemsCart } = useSelector((state) => state.cart);
+  console.log("itemsCart", itemsCart);
 
-  return itemsData.map(({ id, images, tittle, price }) => (
+  return itemsCart.map(({ id, images, tittle, price }) => (
     <li
       key={id}
       className=" flex items-center content-between border-solid border-2 rounded-md border-lime-600 overflow-hidden    

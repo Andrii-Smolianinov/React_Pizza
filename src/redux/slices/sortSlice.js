@@ -18,7 +18,7 @@ const sortSlice = createSlice({
     },    
     setActiveTypePizza(state, action) {
       state.activeTypePizza = action.payload;
-    },
+    },    
   },
 });
 
