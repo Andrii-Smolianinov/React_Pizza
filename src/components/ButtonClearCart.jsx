@@ -10,7 +10,7 @@ export default function ButtonClearCart() {
 
   const onClickClear = () => {
     dispatch(clearCart());
-    dispatch(clearTotalPrice());
+    dispatch(clearTotalPrice());    
   };
 
   return (

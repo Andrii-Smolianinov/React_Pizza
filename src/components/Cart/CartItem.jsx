@@ -12,10 +12,9 @@ export default function CartItem() {
     <li
       key={index}
       className=" flex items-center content-between border-solid border-2 rounded-md border-lime-600 overflow-hidden    
-    w-full 
-    pr-2 sm:pr-4 lg:pr-6 xl:pr-8
-    gap-1 sm:gap-6 lg:gap-8
-    "
+      w-full 
+      pr-2 sm:pr-4 lg:pr-6 xl:pr-8
+      gap-1 sm:gap-6 lg:gap-8"
     >
       <div className="overflow-hidden contents">
         <img
@@ -27,8 +26,7 @@ export default function CartItem() {
       </div>
       <h2
         className="text-center text-base sm:text-lg lg:text-xl font-extrabold text-red-600
-      w-3/5 lg:w-4/5
-      "
+        w-3/5 lg:w-4/5"
       >
         {tittle}
       </h2>
@@ -39,8 +37,8 @@ export default function CartItem() {
         />
         <span
           className="font-bold font-mono      
-      m-2 sm:m-3 lg:m-4 xl:m-5
-      text-base sm:text-lg lg:text-xl"
+          m-2 sm:m-3 lg:m-4 xl:m-5
+          text-base sm:text-lg lg:text-xl"
         >
           3
         </span>
@@ -52,7 +50,7 @@ export default function CartItem() {
       <div className="flex items-center">
         <span
           className="font-bold font-mono
-      text-base sm:text-lg lg:text-xl"
+          text-base sm:text-lg lg:text-xl"
         >
           {price}
         </span>

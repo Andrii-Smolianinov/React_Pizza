@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 import Container from "./Container";
-import Header from "./components/Header/Header";
+import Header from "./components/Header";
 
 export const AppContext = React.createContext();
 
@@ -40,7 +40,7 @@ function App() {
   };
 
   React.useEffect(() => {
-    fetchPizzas();
+    fetchPizzas();    
     // eslint-disable-next-line
   }, [sortCategory, filterCategory]);
 
@@ -52,7 +52,7 @@ function App() {
           isLoading,
           setShowSearch,
           setShowButtonCart,
-          isEmptyCart,
+          isEmptyCart
         }}
       >
         <Header showSearch={showSearch} showButtonCart={showButtonCart} />

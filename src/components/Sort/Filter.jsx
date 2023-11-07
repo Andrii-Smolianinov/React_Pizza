@@ -61,11 +61,11 @@ export default function Filter() {
       </nav>
       <h1
         className="        
-      text-xl sm:text-2xl lg:text-3xl
-      font-semibold sm:font-bold lg:font-extrabold
-      pl-4 sm:pl-6 lg:pl-10
-      mb-2 sm:mb-4 lg:mb-6
-       text-lime-700  bg-yellow-100"
+        text-xl sm:text-2xl lg:text-3xl
+        font-semibold sm:font-bold lg:font-extrabold
+        pl-4 sm:pl-6 lg:pl-10
+        mb-2 sm:mb-4 lg:mb-6
+        text-lime-700  bg-yellow-100"
       >
         {activeTypePizza} піци
       </h1>

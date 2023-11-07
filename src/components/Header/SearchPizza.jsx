@@ -20,7 +20,7 @@ export default function SearchPizza() {
   return (
     <div
       className="flex items-center relative 
-    my-2 sm:my-0"
+      my-2 sm:my-0"
     >
       <BiSearch className="absolute left-2" />
       <input
@@ -37,7 +37,7 @@ export default function SearchPizza() {
           size={18}
           onClick={onClear}
           className="absolute right-2 fill-indigo-500 hover:fill-red-700 cursor-pointer 
-            shadow-lg shadow-indigo-500/40 hover:shadow-red-500/40"
+          shadow-lg shadow-indigo-500/40 hover:shadow-red-500/40"
         />
       )}
     </div>

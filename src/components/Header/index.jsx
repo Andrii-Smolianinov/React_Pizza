@@ -7,7 +7,7 @@ export default function Header({ showSearch, showButtonCart }) {
   return (
     <header
       className="flex flex-wrap items-center justify-between bg-yellow-100 border-b-2 border-red-600
-    p-2 sm:p-3 lg:p-4"
+      p-2 sm:p-3 lg:p-4"
     >
       <Link to="/" className="cursor-pointer flex items-center">
         <img

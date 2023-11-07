@@ -12,7 +12,7 @@ export default function Sort() {
 
   return (
     <div className="flex p-2 items-center">
-      <p className="text-base sm:text-lg lg:text-xl ">
+      <p className="text-base sm:text-lg lg:text-xl">
         Сортування по<span className="font-serif">:</span>
       </p>
       <select

@@ -1,6 +1,6 @@
 import React from "react";
 
-import PizzaList from "../components/PizzaList/PizzaList";
+import PizzaList from "../components/PizzaList";
 import Filter from "../components/Sort/Filter";
 import { AppContext } from "../App";
 
