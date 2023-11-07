@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import CartItem from "./CartItem";
 import ButtonClearCart from "../ButtonClearCart";
@@ -10,6 +11,7 @@ import { AppContext } from "../../App";
 
 export default function CartList() {
   const { isLoading } = React.useContext(AppContext);
+  const { totalPrice } = useSelector((state) => state.cart);
 
   return (
     <>
@@ -61,7 +63,7 @@ export default function CartList() {
           замовленн<span className="font-bold font-mono text-lg">’</span>я
           <span className="font-bold font-mono text-lg">:</span>
           <span className="font-bold font-mono text-3xl text-red-700 m-2">
-            1275
+            {totalPrice}
           </span>
           грн<span className="font-bold font-mono text-lg">.</span>
         </p>

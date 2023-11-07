@@ -4,16 +4,13 @@ import { useSelector } from "react-redux";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { RiDeleteBin6Line } from "react-icons/ri";
-// import { AppContext } from "../../App";
 
 export default function CartItem() {
-  // const { itemsData } = React.useContext(AppContext);
   const { itemsCart } = useSelector((state) => state.cart);
-  console.log("itemsCart", itemsCart);
 
-  return itemsCart.map(({ id, images, tittle, price }) => (
+  return itemsCart.map(({ id, images, tittle, price }, index) => (
     <li
-      key={id}
+      key={index}
       className=" flex items-center content-between border-solid border-2 rounded-md border-lime-600 overflow-hidden    
     w-full 
     pr-2 sm:pr-4 lg:pr-6 xl:pr-8
@@ -57,7 +54,7 @@ export default function CartItem() {
           className="font-bold font-mono
       text-base sm:text-lg lg:text-xl"
         >
-          125
+          {price}
         </span>
         <span className="ml-px sm:ml-1 lg:ml-1.5 xl:ml-2">грн</span>
       </div>

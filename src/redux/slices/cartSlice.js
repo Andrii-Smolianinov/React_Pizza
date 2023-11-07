@@ -9,18 +9,32 @@ export const cartSlise = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addToItemCart(state, action) {
+    addItemToCart(state, action) {
       state.itemsCart.push(action.payload);
     },
-    removeFromItemCart(state, action) {
-      state.itemsCart = state.itemsCart.filter((obj) => obj.id !== action.payload)
+    removeItemFromCart(state, action) {
+      state.itemsCart = state.itemsCart.filter(
+        (obj) => obj.id !== action.payload
+      );
     },
-    clearItemsCart(state, action) {
+    clearCart(state) {
       state.itemsCart = [];
+    },
+    setTotalPrice(state, action) {
+      state.totalPrice += Number(action.payload);
+    },
+    clearTotalPrice(state) {
+      state.totalPrice = Number(0);
     },
   },
 });
 
-export const { addToItemCart, removeFromItemCart, clearItemsCart } = cartSlise.actions;
+export const {
+  addItemToCart,
+  removeItemFromCart,
+  clearCart,
+  setTotalPrice,
+  clearTotalPrice,
+} = cartSlise.actions;
 
 export default cartSlise.reducer;

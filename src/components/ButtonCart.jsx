@@ -1,8 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
+
 import { Link } from "react-router-dom";
 import { BsCart } from "react-icons/bs";
 
 export default function ButtonCart() {
+  const { totalPrice, itemsCart } = useSelector((state) => state.cart);
+
   return (
     <Link
       to="/cart"
@@ -13,10 +17,10 @@ export default function ButtonCart() {
     >
       <span className="flex items-center">
         <span className="pr-2 lg:pr-3 border-r border-green-200 group-hover:border-lime-700">
-          <span className="font-bold font-mono">2579</span>{" "}
-          грн
+          <span className="font-bold font-mono">{totalPrice}</span> грн
         </span>
-        <BsCart className="m-2" /><span className="font-bold font-mono">5</span>
+        <BsCart className="m-2" />
+        <span className="font-bold font-mono">{itemsCart.length}</span>
       </span>
     </Link>
   );
