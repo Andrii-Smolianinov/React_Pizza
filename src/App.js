@@ -40,7 +40,7 @@ function App() {
   };
 
   React.useEffect(() => {
-    fetchPizzas();    
+    fetchPizzas();
     // eslint-disable-next-line
   }, [sortCategory, filterCategory]);
 
@@ -52,7 +52,7 @@ function App() {
           isLoading,
           setShowSearch,
           setShowButtonCart,
-          isEmptyCart
+          isEmptyCart,
         }}
       >
         <Header showSearch={showSearch} showButtonCart={showButtonCart} />

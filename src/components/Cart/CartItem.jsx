@@ -8,7 +8,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 export default function CartItem() {
   const { itemsCart } = useSelector((state) => state.cart);
 
-  return itemsCart.map(({ id, images, tittle, price }, index) => (
+  return itemsCart.map(({ id, images, tittle, price, selectDiameter }, index) => (
     <li
       key={index}
       className=" flex items-center content-between border-solid border-2 rounded-md border-lime-600 overflow-hidden    
@@ -23,13 +23,14 @@ export default function CartItem() {
           src={images}
           alt="element pizza"
         ></img>
-      </div>
+      </div>      
       <h2
         className="text-center text-base sm:text-lg lg:text-xl font-extrabold text-red-600
         w-3/5 lg:w-4/5"
       >
         {tittle}
       </h2>
+      <p className="text-center text-lime-600">діаметр: {selectDiameter}см</p>
       <div className="flex items-center">
         <AiOutlineMinusCircle
           size={25}
@@ -40,7 +41,7 @@ export default function CartItem() {
           m-2 sm:m-3 lg:m-4 xl:m-5
           text-base sm:text-lg lg:text-xl"
         >
-          3
+          1
         </span>
         <AiOutlinePlusCircle
           size={25}
