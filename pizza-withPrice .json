@@ -2,7 +2,7 @@
   {
     "id": 1,
     "tittle": "Сімейна",
-    "price": [314, 334, 350],
+    "price": [314, 334, 354],
     "category": [0, 1, 5],
     "rating": 6,
     "images": "https://images.ntile.app/0203db42d70036f5d6958db2514110697195d1a72e5a6740dc8728ffaef36803?width=623&format=webp"
@@ -74,7 +74,7 @@
   {
     "id": 10,
     "tittle": "Морський коктейль",
-    "price": [275, 295, 315],
+    "price": [274, 294, 314],
     "category": [0, 2],
     "rating": 4,
     "images": "https://images.ntile.app/f8bfb3e9c7d9faa03b10bcf098a28437bfda2a10825e91fdf90a6c78f0273cd14ede95d4db933ffcc98f302a5109176b?width=623&format=webp"

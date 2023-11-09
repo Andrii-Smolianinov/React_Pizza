@@ -15,7 +15,9 @@ export default function PizzaItem({ id, images, tittle, price }) {
       images,
       tittle,
       price: price[activeDiameter],
-      selectDiameter: diameters[activeDiameter]
+      selectDiameter: diameters[activeDiameter],
+      count: 1,
+      itemPrice: price[activeDiameter] 
     };
 
     dispatch(addItemToCart(item));
