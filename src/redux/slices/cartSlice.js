@@ -24,14 +24,17 @@ export const cartSlise = createSlice({
     // },
     removeItemFromCart(state, action) {
       state.itemsCart = state.itemsCart.filter(
-        (obj) => obj.id !== action.payload
-      );
+        (_, i) => i !== action.payload
+      );             
     },
     clearCart(state) {
       state.itemsCart = [];
     },
-    setTotalPrice(state, action) {
+    setIncrementTotalPrice(state, action) {
       state.totalPrice += Number(action.payload);
+    },
+    setDecrementTotalPrice(state, action) {
+      state.totalPrice -= Number(action.payload);
     },
     clearTotalPrice(state) {
       state.totalPrice = Number(0);
@@ -43,7 +46,8 @@ export const {
   addItemToCart,
   removeItemFromCart,
   clearCart,
-  setTotalPrice,
+  setIncrementTotalPrice,
+  setDecrementTotalPrice,
   clearTotalPrice,
 } = cartSlise.actions;
 

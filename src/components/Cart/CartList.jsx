@@ -14,9 +14,8 @@ export default function CartList() {
   const { totalPrice } = useSelector((state) => state.cart);
 
   return (
-    <>
-      <div
-        className="flex flex-wrap items-center justify-between 
+    <div className="px-40">
+      <div className="flex flex-wrap items-center justify-between 
         px-0 sm:px-10 lg:px-20 xl:px-40"
       >
         <div className="flex items-center my-4">
@@ -39,14 +38,23 @@ export default function CartList() {
         <IoReturnUpBackSharp className="mr-2" />
         Назад до головного меню
       </Link>
-      <ul
-        className="flex flex-col items-center      
+      <div className="flex justify-center">
+        <ul
+          className="flex flex-col items-center      
           gap-3 sm:gap-4 lg:gap-6
-          px-0 sm:px-10 lg:px-20 xl:px-40
+          px-0 
           pt-4 lg:pt-10"
-      >
-        {isLoading ? <h1>Loading...</h1> : <CartItem />}
-      </ul>
+        >
+          {isLoading ? <h1>Loading...</h1> : <CartItem />}
+        </ul>
+
+        <img
+          alt="cart-images"
+          src="images/cart-img.jpg"
+          className="w-[420px] h-[480px]"
+        ></img>
+      </div>
+
       <div
         className="flex flex-wrap justify-between content-between py-4 
         px-0 sm:px-10 lg:px-20 xl:px-40"
@@ -75,6 +83,6 @@ export default function CartList() {
           Замовити
         </button>
       </div>
-    </>
+    </div>
   );
 }

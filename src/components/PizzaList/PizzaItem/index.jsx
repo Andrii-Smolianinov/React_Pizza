@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 
 import CategorieEL from "../elements/CategorieEL";
-import { addItemToCart, setTotalPrice } from "../../../redux/slices/cartSlice";
+import { addItemToCart, setIncrementTotalPrice } from "../../../redux/slices/cartSlice";
 const diameters = ["26", "30", "40"];
 
 export default function PizzaItem({ id, images, tittle, price }) {
@@ -19,7 +19,7 @@ export default function PizzaItem({ id, images, tittle, price }) {
     };
 
     dispatch(addItemToCart(item));
-    dispatch(setTotalPrice(price[activeDiameter]));
+    dispatch(setIncrementTotalPrice(price[activeDiameter]));
   };
 
   return (
