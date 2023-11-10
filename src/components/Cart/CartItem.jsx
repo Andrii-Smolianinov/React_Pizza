@@ -1,7 +1,11 @@
 import React from "react";
 
 import { useSelector, useDispatch } from "react-redux";
-import { removeItemFromCart } from "../../redux/slices/cartSlice";
+import {
+  removeItemFromCart,
+  setIncrementCount,
+  setDecrementCount,
+} from "../../redux/slices/cartSlice";
 
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { AiOutlineMinusCircle } from "react-icons/ai";
@@ -16,7 +20,19 @@ export default function CartItem() {
   };
 
   return itemsCart.map(
-    ({ id, images, tittle, price, selectDiameter, itemPrice, count }, index) => (
+    (
+      {
+        id,
+        images,
+        tittle,
+        price,
+        count,
+        itemPrice,
+        selectDiameter,
+        
+      },
+      index
+    ) => (
       <li
         key={index}
         className=" flex items-center content-between border-solid border-2 rounded-md border-lime-600 overflow-hidden    
@@ -28,17 +44,14 @@ export default function CartItem() {
         <div className="overflow-hidden contents">
           <img
             className="h-9 sm:h-12 lg:h-16 
-          w-12 sm:w-16 lg:w-20"
+            w-12 sm:w-16 lg:w-20"
             src={images}
             alt="element pizza"
           ></img>
         </div>
 
         {/* tittle */}
-        <h2
-          className="text-center text-base sm:text-lg lg:text-xl font-extrabold text-red-600
-        w-1/2"
-        >
+        <h2 className="text-center text-base sm:text-lg lg:text-xl font-extrabold text-red-600 w-1/2">
           {tittle}
         </h2>
 
@@ -51,7 +64,7 @@ export default function CartItem() {
           <div className="flex items-center justify-center">
             <span
               className="font-bold font-mono 
-          text-base sm:text-lg lg:text-xl"
+              text-base sm:text-lg lg:text-xl"
             >
               {price}
             </span>
@@ -64,19 +77,23 @@ export default function CartItem() {
           <AiOutlineMinusCircle
             size={25}
             className="hover:fill-lime-700 cursor-pointer"
-            onClick={() => {}}
+            onClick={() => {
+              dispatch(setDecrementCount(index));
+            }}
           />
           <span
             className="font-bold font-mono      
-          m-2 sm:m-3 lg:m-4 xl:m-5
-          text-base sm:text-lg lg:text-xl"
+            m-2 sm:m-3 lg:m-4 xl:m-5
+            text-base sm:text-lg lg:text-xl"
           >
             {count}
           </span>
           <AiOutlinePlusCircle
             size={25}
             className="hover:fill-lime-700 cursor-pointer"
-            onClick={() => {}}
+            onClick={() => {
+              dispatch(setIncrementCount(index));
+            }}
           />
         </div>
 
@@ -86,7 +103,7 @@ export default function CartItem() {
           <div className="flex items-center justify-center">
             <span
               className="font-bold font-mono 
-          text-base sm:text-lg lg:text-xl"
+              text-base sm:text-lg lg:text-xl"
             >
               {itemPrice}
             </span>

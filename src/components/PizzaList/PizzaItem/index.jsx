@@ -1,12 +1,11 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-
-import CategorieEL from "../elements/CategorieEL";
-import { addItemToCart, setIncrementTotalPrice } from "../../../redux/slices/cartSlice";
+import { addItemToCart, setTotalPrice } from "../../../redux/slices/cartSlice";
 const diameters = ["26", "30", "40"];
 
 export default function PizzaItem({ id, images, tittle, price }) {
   const [activeDiameter, setActiveDiameter] = React.useState(0);
+
   const dispatch = useDispatch();
 
   const onClickAddToCart = () => {
@@ -14,21 +13,21 @@ export default function PizzaItem({ id, images, tittle, price }) {
       id,
       images,
       tittle,
-      price: price[activeDiameter],
-      selectDiameter: diameters[activeDiameter],
       count: 1,
-      itemPrice: price[activeDiameter] 
+      price: price[activeDiameter],
+      itemPrice: price[activeDiameter],
+      selectDiameter: diameters[activeDiameter],
     };
 
     dispatch(addItemToCart(item));
-    dispatch(setIncrementTotalPrice(price[activeDiameter]));
+    dispatch(setTotalPrice(price[activeDiameter]));
   };
 
   return (
     <li
       key={id}
       className="flex-col w-[280px] h-[450px] border-solid border-2 rounded-md border-rose-600 bg-amber-50 
-      overflow-hidden group hover:shadow-lg hover:shadow-indigo-500/90 transition-all duration-300 cursor-pointer"
+      overflow-hidden group hover:shadow-lg hover:shadow-indigo-500/90 transition-all duration-300"
     >
       <div className="overflow-hidden">
         <img
@@ -41,9 +40,9 @@ export default function PizzaItem({ id, images, tittle, price }) {
         {tittle}
       </h2>
       <div className="border-solid border-2 border-rose-300">
-        <ul className="flex justify-center border-solid border-2 border-rose-300 bg-rose-300">
-          {<CategorieEL />}
-        </ul>
+        <p className="flex justify-center border-solid border-2 border-rose-300 bg-rose-300 text-red-600">
+          Виберіть діаметр піци
+        </p>
         <ul className="flex justify-center border-solid border-2 border-rose-300 bg-rose-300">
           {diameters.map((diameter, index) => (
             <li

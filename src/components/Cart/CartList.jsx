@@ -51,7 +51,7 @@ export default function CartList() {
         <img
           alt="cart-images"
           src="images/cart-img.jpg"
-          className="w-[420px] h-[480px]"
+          className="w-[420px] h-[480px] ml-3 hover:scale-105 transition-all duration-350"
         ></img>
       </div>
 
