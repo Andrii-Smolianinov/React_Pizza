@@ -68,7 +68,7 @@ export default function PizzaItem({ id, images, tittle, price }) {
           type="button"
           onClick={onClickAddToCart}
         >
-          Замовити <span></span>
+          Замовити
         </button>
       </div>
     </li>
