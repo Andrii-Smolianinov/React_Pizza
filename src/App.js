@@ -20,23 +20,22 @@ function App() {
 
   const { sortCategory, filterCategory } = useSelector((state) => state.sort);
 
-  const fetchPizzas = () => {
+  const fetchPizzas = async () => {
     const category = filterCategory > 0 ? `category=${filterCategory}` : "";
     const sortBy = sortCategory ? `sortBy=${sortCategory}` : "";
 
     setIsLoading(true);
 
-    axios
-      .get(
+    try {
+      const res = await axios.get(
         `https://64fad951cb9c00518f7a461b.mockapi.io/items?${category}&${sortBy}`
-      )
-      .then((res) => {
-        setItemsData(res.data);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.log("catchError", error);
-      });
+      );
+      setItemsData(res.data);
+      setIsLoading(false);
+    } catch (error) {
+      console.log("catchError", error);
+      setIsLoading(false);
+    }
   };
 
   React.useEffect(() => {
