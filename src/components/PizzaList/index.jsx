@@ -3,11 +3,13 @@ import { useSelector } from "react-redux";
 
 import PizzaItem from "./PizzaItem";
 import Skeleton from "./PizzaItem/Skeleton";
+
 import { AppContext } from "../../App";
 
 export default function PizzaList() {
-  const { itemsData, isLoading } = React.useContext(AppContext);
+  const { isLoading } = React.useContext(AppContext);
   const searchPizza = useSelector((state) => state.search.searchPizza);
+  const itemsData = useSelector((state) => state.pizzas.itemsData);
 
   return (
     <ul

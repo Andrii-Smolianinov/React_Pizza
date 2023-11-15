@@ -1,7 +1,9 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
-import { useSelector } from "react-redux";
 import axios from "axios";
+import { Route, Routes } from "react-router-dom";
+
+import { useSelector, useDispatch } from "react-redux";
+import { setItemsData } from "./redux/slices/pizzasSlice";
 
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
@@ -12,13 +14,13 @@ import Header from "./components/Header";
 export const AppContext = React.createContext();
 
 function App() {
-  const [itemsData, setItemsData] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [showSearch, setShowSearch] = React.useState(true);
   const [showButtonCart, setShowButtonCart] = React.useState(true);
   const [isEmptyCart] = React.useState(true);
 
   const { sortCategory, filterCategory } = useSelector((state) => state.sort);
+  const dispatch = useDispatch();
 
   const fetchPizzas = async () => {
     const category = filterCategory > 0 ? `category=${filterCategory}` : "";
@@ -27,13 +29,13 @@ function App() {
     setIsLoading(true);
 
     try {
-      const res = await axios.get(
+      const { data } = await axios.get(
         `https://64fad951cb9c00518f7a461b.mockapi.io/items?${category}&${sortBy}`
       );
-      setItemsData(res.data);
-      setIsLoading(false);
+      dispatch(setItemsData(data));
     } catch (error) {
       console.log("catchError", error);
+    } finally {
       setIsLoading(false);
     }
   };
@@ -46,8 +48,7 @@ function App() {
   return (
     <Container>
       <AppContext.Provider
-        value={{
-          itemsData,
+        value={{          
           isLoading,
           setShowSearch,
           setShowButtonCart,
