@@ -1,9 +1,9 @@
 import React from "react";
-import axios from "axios";
+
 import { Route, Routes } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
-import { setItemsData } from "./redux/slices/pizzasSlice";
+import { fetchPizzasSlice } from "./redux/slices/pizzasSlice";
 
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
@@ -14,7 +14,6 @@ import Header from "./components/Header";
 export const AppContext = React.createContext();
 
 function App() {
-  const [isLoading, setIsLoading] = React.useState(true);
   const [showSearch, setShowSearch] = React.useState(true);
   const [showButtonCart, setShowButtonCart] = React.useState(true);
   const [isEmptyCart] = React.useState(true);
@@ -26,18 +25,7 @@ function App() {
     const category = filterCategory > 0 ? `category=${filterCategory}` : "";
     const sortBy = sortCategory ? `sortBy=${sortCategory}` : "";
 
-    setIsLoading(true);
-
-    try {
-      const { data } = await axios.get(
-        `https://64fad951cb9c00518f7a461b.mockapi.io/items?${category}&${sortBy}`
-      );
-      dispatch(setItemsData(data));
-    } catch (error) {
-      console.log("catchError", error);
-    } finally {
-      setIsLoading(false);
-    }
+    dispatch(fetchPizzasSlice({ category, sortBy }));
   };
 
   React.useEffect(() => {
@@ -48,8 +36,7 @@ function App() {
   return (
     <Container>
       <AppContext.Provider
-        value={{          
-          isLoading,
+        value={{
           setShowSearch,
           setShowButtonCart,
           isEmptyCart,

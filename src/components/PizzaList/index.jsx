@@ -4,22 +4,22 @@ import { useSelector } from "react-redux";
 import PizzaItem from "./PizzaItem";
 import Skeleton from "./PizzaItem/Skeleton";
 
-import { AppContext } from "../../App";
 
 export default function PizzaList() {
-  const { isLoading } = React.useContext(AppContext);
+ 
   const searchPizza = useSelector((state) => state.search.searchPizza);
-  const itemsData = useSelector((state) => state.pizzas.itemsData);
+  const {items, status} = useSelector((state) => state.pizzas);
 
   return (
+    
     <ul
       className="flex flex-wrap justify-center min-h-[65vh]
       p-2 sm:p-3 lg:p-8 
       gap-3 sm:gap-6 lg:gap-8"
     >
-      {isLoading
+      {status === 'loading'
         ? [...new Array(5)].map((_, index) => <Skeleton key={index} />)
-        : itemsData
+        : items
             .filter((item) => {
               if (
                 item.tittle.toLowerCase().includes(searchPizza.toLowerCase())
