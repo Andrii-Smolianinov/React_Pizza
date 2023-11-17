@@ -74,4 +74,6 @@ export const {
   setDecrementCount,
 } = cartSlise.actions;
 
+export const selectCart = state => state.cart;
+
 export default cartSlise.reducer;

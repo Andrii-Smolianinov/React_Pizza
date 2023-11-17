@@ -1,9 +1,9 @@
 import React from "react";
-
 import { Route, Routes } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
 import { fetchPizzasSlice } from "./redux/slices/pizzasSlice";
+import { selectSort } from "./redux/slices/sortSlice";
 
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
@@ -18,7 +18,7 @@ function App() {
   const [showButtonCart, setShowButtonCart] = React.useState(true);
   const [isEmptyCart] = React.useState(true);
 
-  const { sortCategory, filterCategory } = useSelector((state) => state.sort);
+  const { sortCategory, filterCategory } = useSelector(selectSort);
   const dispatch = useDispatch();
 
   const fetchPizzas = async () => {

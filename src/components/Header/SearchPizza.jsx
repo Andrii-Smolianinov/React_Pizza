@@ -1,14 +1,14 @@
 import React from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { setSearchPizza } from "../../redux/slices/searchSlice";
+import { selectSearch, setSearchPizza } from "../../redux/slices/searchSlice";
 
 import { AiOutlineClose } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 
 export default function SearchPizza() {
   const dispatch = useDispatch();
-  const searchPizza = useSelector((state) => state.search.searchPizza);
+  const { searchPizza } = useSelector(selectSearch);
 
   const inputRef = React.useRef();
 

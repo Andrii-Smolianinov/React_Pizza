@@ -3,21 +3,20 @@ import { useSelector } from "react-redux";
 
 import PizzaItem from "./PizzaItem";
 import Skeleton from "./PizzaItem/Skeleton";
-
+import { selectSearch } from "../../redux/slices/searchSlice";
+import { selectPizzas } from "../../redux/slices/pizzasSlice";
 
 export default function PizzaList() {
- 
-  const searchPizza = useSelector((state) => state.search.searchPizza);
-  const {items, status} = useSelector((state) => state.pizzas);
+  const { searchPizza } = useSelector(selectSearch);
+  const { items, status } = useSelector(selectPizzas);
 
   return (
-    
     <ul
       className="flex flex-wrap justify-center min-h-[65vh]
       p-2 sm:p-3 lg:p-8 
       gap-3 sm:gap-6 lg:gap-8"
     >
-      {status === 'loading'
+      {status === "loading"
         ? [...new Array(5)].map((_, index) => <Skeleton key={index} />)
         : items
             .filter((item) => {

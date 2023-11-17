@@ -8,10 +8,11 @@ import ButtonClearCart from "../ButtonClearCart";
 import { BsCart } from "react-icons/bs";
 import { IoReturnUpBackSharp } from "react-icons/io5";
 import { AppContext } from "../../App";
+import { selectCart } from "../../redux/slices/cartSlice";
 
 export default function CartList() {
   const { isLoading } = React.useContext(AppContext);
-  const { totalPrice } = useSelector((state) => state.cart);
+  const { totalPrice } = useSelector(selectCart);
 
   return (
     <div className="px-40">

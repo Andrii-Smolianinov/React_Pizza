@@ -3,9 +3,10 @@ import { useSelector } from "react-redux";
 
 import { Link } from "react-router-dom";
 import { BsCart } from "react-icons/bs";
+import { selectCart } from "../redux/slices/cartSlice";
 
 export default function ButtonCart() {
-  const { totalPrice, itemsCart } = useSelector((state) => state.cart);
+  const { totalPrice, itemsCart } = useSelector(selectCart);
 
   return (
     <Link

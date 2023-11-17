@@ -5,6 +5,7 @@ import {
   removeItemFromCart,
   setIncrementCount,
   setDecrementCount,
+  selectCart,
 } from "../../redux/slices/cartSlice";
 
 import { RiDeleteBin6Line } from "react-icons/ri";
@@ -12,7 +13,7 @@ import { AiOutlineMinusCircle } from "react-icons/ai";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 
 export default function CartItem() {
-  const { itemsCart } = useSelector((state) => state.cart);
+  const { itemsCart } = useSelector(selectCart);
   const dispatch = useDispatch();
 
   const onRemoveItem = (index) => {

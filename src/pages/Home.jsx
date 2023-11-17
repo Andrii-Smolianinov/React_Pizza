@@ -5,10 +5,11 @@ import PizzaList from "../components/PizzaList";
 import Filter from "../components/Sort/Filter";
 import ErrorServer from "../components/ErrorServer";
 import { AppContext } from "../App";
+import { selectPizzas } from "../redux/slices/pizzasSlice";
 
 export default function Home() {
   const { setShowSearch, setShowButtonCart } = React.useContext(AppContext);
-  const status = useSelector((state) => state.pizzas.status);
+  const { status } = useSelector(selectPizzas);
 
   React.useEffect(() => {
     setShowSearch(true);
@@ -17,14 +18,8 @@ export default function Home() {
 
   return (
     <main className="bg-yellow-100">
-      {status === "error" ? (
-        <ErrorServer />
-      ) : (
-        <>
-          <Filter />
-          <PizzaList />
-        </>
-      )}
+      <Filter />
+      {status === "error" ? <ErrorServer /> : <PizzaList />}
     </main>
   );
 }

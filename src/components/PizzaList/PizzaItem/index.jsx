@@ -1,11 +1,11 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addItemToCart, setTotalPrice } from "../../../redux/slices/cartSlice";
+
 const diameters = ["26", "30", "40"];
 
 export default function PizzaItem({ id, images, tittle, price }) {
   const [activeDiameter, setActiveDiameter] = React.useState(0);
-
   const dispatch = useDispatch();
 
   const onClickAddToCart = () => {
@@ -41,7 +41,7 @@ export default function PizzaItem({ id, images, tittle, price }) {
       </h2>
       <div className="border-solid border-2 border-rose-300">
         <p className="flex justify-center border-solid border-2 border-rose-300 bg-rose-300 text-red-600">
-          Виберіть діаметр піци
+          Діаметр піци
         </p>
         <ul className="flex justify-center border-solid border-2 border-rose-300 bg-rose-300">
           {diameters.map((diameter, index) => (

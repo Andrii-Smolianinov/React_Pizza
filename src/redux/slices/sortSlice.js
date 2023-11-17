@@ -22,7 +22,8 @@ const sortSlice = createSlice({
   },
 });
 
-export const { setSortCategory, setFilterCategory, setActiveTypePizza } =
-  sortSlice.actions;
+export const { setSortCategory, setFilterCategory, setActiveTypePizza } = sortSlice.actions;
+
+export const selectSort = state => state.sort;
 
 export default sortSlice.reducer;

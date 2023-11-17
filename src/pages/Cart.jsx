@@ -4,10 +4,11 @@ import { useSelector } from "react-redux";
 import CartList from "../components/Cart/CartList";
 import EmptyCart from "../components/Cart/EmptyCart";
 import { AppContext } from "../App";
+import { selectCart } from "../redux/slices/cartSlice";
 
 export default function Cart() {
   const { setShowSearch, setShowButtonCart } = React.useContext(AppContext);
-  const { itemsCart } = useSelector((state) => state.cart);
+  const { itemsCart } = useSelector(selectCart);
 
   React.useEffect(() => {
     setShowSearch(false);
