@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 import PizzaItem from "./PizzaItem";
 import Skeleton from "./PizzaItem/Skeleton";
+
 import { selectSearch } from "../../redux/slices/searchSlice";
 import { selectPizzas } from "../../redux/slices/pizzasSlice";
 

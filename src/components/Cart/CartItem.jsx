@@ -22,16 +22,7 @@ export default function CartItem() {
 
   return itemsCart.map(
     (
-      {
-        id,
-        images,
-        tittle,
-        price,
-        count,
-        itemPrice,
-        selectDiameter,
-        
-      },
+      { id, images, tittle, price, count, itemPrice, selectDiameter },
       index
     ) => (
       <li

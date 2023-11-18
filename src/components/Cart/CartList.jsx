@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import { useSelector } from "react-redux";
+import { selectCart } from "../../redux/slices/cartSlice";
 
 import CartItem from "./CartItem";
 import ButtonClearCart from "../ButtonClearCart";
@@ -8,7 +10,6 @@ import ButtonClearCart from "../ButtonClearCart";
 import { BsCart } from "react-icons/bs";
 import { IoReturnUpBackSharp } from "react-icons/io5";
 import { AppContext } from "../../App";
-import { selectCart } from "../../redux/slices/cartSlice";
 
 export default function CartList() {
   const { isLoading } = React.useContext(AppContext);
@@ -16,7 +17,8 @@ export default function CartList() {
 
   return (
     <div className="px-40">
-      <div className="flex flex-wrap items-center justify-between 
+      <div
+        className="flex flex-wrap items-center justify-between 
         px-0 sm:px-10 lg:px-20 xl:px-40"
       >
         <div className="flex items-center my-4">

@@ -9,7 +9,6 @@ import { BiSearch } from "react-icons/bi";
 export default function SearchPizza() {
   const dispatch = useDispatch();
   const { searchPizza } = useSelector(selectSearch);
-
   const inputRef = React.useRef();
 
   const onClear = function () {
