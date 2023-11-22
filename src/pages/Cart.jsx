@@ -17,8 +17,9 @@ export default function Cart() {
 
   return (
     <section
-      className="bg-yellow-100 min-h-[82vh] 
-      p-2 sm:p-3 lg:p-8"
+      className="bg-yellow-100 min-h-[82vh]
+      px-2 sm:px-10 lg:px-20 xl:px-40
+      py-1"
     >
       {itemsCart.length > 0 ? <CartList /> : <EmptyCart />}
     </section>

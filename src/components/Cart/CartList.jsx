@@ -16,11 +16,8 @@ export default function CartList() {
   const { totalPrice } = useSelector(selectCart);
 
   return (
-    <div className="px-40">
-      <div
-        className="flex flex-wrap items-center justify-between 
-        px-0 sm:px-10 lg:px-20 xl:px-40"
-      >
+    <div className="">
+      <div className="flex flex-wrap items-center justify-between">
         <div className="flex items-center my-4">
           <BsCart size="30" className="fill-lime-700" />
           <h1 className="font-bold text-base sm:text-lg lg:text-xl ml-2 text-lime-700">
@@ -31,8 +28,7 @@ export default function CartList() {
       </div>
       <Link
         to="/"
-        className="inline-flex px-3 py-px items-center rounded-xl
-        ml-0 sm:ml-10 lg:ml-20 xl:ml-40
+        className="inline-flex px-3 py-px items-center rounded-xl        
         font-medium sm:font-semibold lg:font-bold 
         text-base sm:text-lg lg:text-xl
         bg-lime-700 text-green-200
@@ -54,13 +50,15 @@ export default function CartList() {
         <img
           alt="cart-images"
           src="images/cart-img.jpg"
-          className="w-[420px] h-[480px] ml-3 hover:scale-105 transition-all duration-350"
+          className="invisible lg:visible transition-all duration-350
+          w-0 lg:w-[354px] xl:w-[450px]
+          h-0 lg:h-[374px] xl:h-[480px]
+          "
         ></img>
       </div>
 
       <div
-        className="flex flex-wrap justify-between content-between py-4 
-        px-0 sm:px-10 lg:px-20 xl:px-40"
+        className="flex flex-wrap justify-between content-between py-4"
       >
         <p
           className="py-2

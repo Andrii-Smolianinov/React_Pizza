@@ -27,16 +27,18 @@ export default function CartItem() {
     ) => (
       <li
         key={index}
-        className=" flex items-center content-between border-solid border-2 rounded-md border-lime-600 overflow-hidden    
-        w-[800px]
-        pr-2 sm:pr-4 lg:pr-6 xl:pr-8
+        className=" flex items-center content-between border-solid border-2 rounded-md border-lime-600 overflow-hidden
+        w-[315px] sm:w-[550px] lg:w-[595px] xl:w-[750px]
+        h-[55px] sm:h-[66px]         
+        pr-1 sm:pr-4 lg:pr-6 xl:pr-8
         gap-1 sm:gap-3 lg:gap-4"
       >
         {/* images */}
         <div className="overflow-hidden contents">
           <img
-            className="h-9 sm:h-12 lg:h-16 
-            w-12 sm:w-16 lg:w-20"
+            className="invisible sm:visible
+            h-0 sm:h-16  
+            w-0 sm:w-20"
             src={images}
             alt="element pizza"
           ></img>
@@ -48,11 +50,18 @@ export default function CartItem() {
         </h2>
 
         {/* diameter */}
-        <p className="text-center text-lime-600">діаметр: {selectDiameter}см</p>
+        <p className="text-center text-lime-600">
+          <span className="block invisible sm:visible w-0 sm:w-1/4 h-0 sm:h-4">
+            діаметр:
+          </span>{" "}
+          {selectDiameter}см
+        </p>
 
         {/* price for 1 */}
-        <div className="w-1/5 text-center">
-          <p className="text-lime-600">ціна за шт</p>
+        <div className="invisible sm:visible w-0 sm:w-1/5 text-center">
+          <p className="text-lime-600">
+            <span className="font-mono">1</span> шт
+          </p>
           <div className="flex items-center justify-center">
             <span
               className="font-bold font-mono 
@@ -68,7 +77,7 @@ export default function CartItem() {
         <div className="flex items-center">
           <AiOutlineMinusCircle
             size={25}
-            className="hover:fill-lime-700 cursor-pointer"
+            className="hover:fill-lime-700 cursor-pointer "
             onClick={() => {
               dispatch(setDecrementCount(index));
             }}
