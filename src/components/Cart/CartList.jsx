@@ -1,14 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import { useSelector } from "react-redux";
 import { selectCart } from "../../redux/slices/cartSlice";
 
 import CartItem from "./CartItem";
 import ButtonClearCart from "../ButtonClearCart";
+import ButtonComeBack from "../ButtonComeBack";
+import CartHeadSection from "./CartHeadSection";
 
-import { BsCart } from "react-icons/bs";
-import { IoReturnUpBackSharp } from "react-icons/io5";
 import { AppContext } from "../../App";
 
 export default function CartList() {
@@ -19,24 +18,13 @@ export default function CartList() {
     <div className="">
       <div className="flex flex-wrap items-center justify-between">
         <div className="flex items-center my-4">
-          <BsCart size="30" className="fill-lime-700" />
-          <h1 className="font-bold text-base sm:text-lg lg:text-xl ml-2 text-lime-700">
-            Корзина
-          </h1>
+          <CartHeadSection tittle={"Корзина"} />
         </div>
         <ButtonClearCart />
       </div>
-      <Link
-        to="/"
-        className="inline-flex px-3 py-px items-center rounded-xl        
-        font-medium sm:font-semibold lg:font-bold 
-        text-base sm:text-lg lg:text-xl
-        bg-lime-700 text-green-200
-        hover:bg-lime-200 hover:text-green-700 transition-all duration-350"
-      >
-        <IoReturnUpBackSharp className="mr-2" />
-        Назад до головного меню
-      </Link>
+
+      <ButtonComeBack tittle={"Назад до головного меню"} />
+
       <div className="flex justify-center">
         <ul
           className="flex flex-col items-center      
@@ -57,9 +45,7 @@ export default function CartList() {
         ></img>
       </div>
 
-      <div
-        className="flex flex-wrap justify-between content-between py-4"
-      >
+      <div className="flex flex-wrap justify-between content-between py-4">
         <p
           className="py-2
           text-xl sm:text-2xl lg:text-3xl

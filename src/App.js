@@ -6,8 +6,10 @@ import { fetchPizzasSlice } from "./redux/slices/pizzasSlice";
 import { selectSort } from "./redux/slices/sortSlice";
 
 import Home from "./pages/Home";
+import FullPizza from "./pages/FullPizza";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
+
 import Container from "./Container";
 import Header from "./components/Header";
 
@@ -45,6 +47,7 @@ function App() {
         <Header showSearch={showSearch} showButtonCart={showButtonCart} />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/pizza/:id" element={<FullPizza />}></Route>
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
