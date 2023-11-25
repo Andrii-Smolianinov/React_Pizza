@@ -32,6 +32,7 @@ function App() {
 
   React.useEffect(() => {
     fetchPizzas();
+
     // eslint-disable-next-line
   }, [sortCategory, filterCategory]);
 
