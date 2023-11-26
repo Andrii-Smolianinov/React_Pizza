@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import SearchPizza from "./SearchPizza";
 import ButtonCart from "../ButtonCart";
 
+import logoJPG from "../../assets/img/logo.jpg";
+
 export default function Header({ showSearch, showButtonCart }) {
   return (
     <header
@@ -11,7 +13,7 @@ export default function Header({ showSearch, showButtonCart }) {
     >
       <Link to="/" className="cursor-pointer flex items-center">
         <img
-          src="images/favicon.ico"
+          src={logoJPG}
           alt="logo"
           className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 m-1"
         />

@@ -38,7 +38,7 @@ const FullPizzaComponent = () => {
       <ButtonComeBack tittle={"Назад до головного меню"} />
       <div className="flex">
         <div>
-          <img src={pizza.images} alt="PizzaImage" />
+          <img src={pizza.images} alt="PizzaImage"  className="max-w-[500px] max-h-[335px]"/>
           <h2>{pizza.tittle}</h2>
         </div>
         <div>
