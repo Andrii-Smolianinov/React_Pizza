@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { useDispatch } from "react-redux";
 import { clearCart, clearTotalPrice } from "../redux/slices/cartSlice";
@@ -7,10 +8,11 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 
 export default function ButtonClearCart() {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const onClickClear = () => {
     dispatch(clearCart());
-    dispatch(clearTotalPrice());    
+    dispatch(clearTotalPrice());
   };
 
   return (
@@ -22,7 +24,7 @@ export default function ButtonClearCart() {
     >
       <span className="flex items-center text-base sm:text-lg lg:text-xl">
         <RiDeleteBin6Line className="mr-1" />
-        Очистити корзину
+        {t("clear")}
       </span>
     </button>
   );

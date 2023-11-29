@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 import SearchPizza from "./SearchPizza";
 import ButtonCart from "../ButtonCart";
+import ChangeLanguage from "./ChangeLanguage";
 
 import logoJPG from "../../assets/img/logo.jpg";
 
@@ -26,6 +27,7 @@ export default function Header({ showSearch, showButtonCart }) {
         </span>
       </Link>
       {showSearch && <SearchPizza />}
+      <ChangeLanguage />
       {showButtonCart && <ButtonCart />}
     </header>
   );

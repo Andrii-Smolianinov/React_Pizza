@@ -7,7 +7,7 @@ const ButtonComeBack = ({ tittle }) => {
     <Link
       to="/"
       className="inline-flex py-px items-center rounded-xl        
-        font-medium sm:font-semibold lg:font-bold 
+        font-medium  
         px-2 lg:px-3
         text-base sm:text-lg lg:text-xl
         bg-lime-700 text-green-200

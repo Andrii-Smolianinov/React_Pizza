@@ -1,0 +1,22 @@
+{
+  "sort": "Sort by",
+  "price": "prices",
+  "tittle": "tittle",
+  "rating": "rating",
+  "diametr": "Diametr pizza",
+  "diametrCart": "diametr",
+  "sm": "sm",
+  "order": "Order",
+  "uah": "uah",
+  "search": "search pizza",
+  "clear": "clear the cart",
+  "total": "total",
+  "cart": "Cart",
+  "pc": "pc",
+  "backMain": "Back to main menu",
+  "backOrder": "Back to main menu",
+  "cost": "The cost",
+  "costOrder": "of the order",
+  "empty": "shopping cart is empty",
+  "makeOrder": "Make an order"
+}

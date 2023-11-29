@@ -1,17 +1,19 @@
 import React from "react";
 import { useSelector } from "react-redux";
-
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 import { BsCart } from "react-icons/bs";
 import { selectCart } from "../redux/slices/cartSlice";
 
 export default function ButtonCart() {
   const { totalPrice, itemsCart } = useSelector(selectCart);
+  const { t } = useTranslation();
 
   return (
     <Link
       to="/cart"
-      className="block rounded-xl 
+      className="block rounded-xl w-[178px]
       px-2 lg:px-3
       py-px lg:py-1
       text-lg sm:text-xl lg:text-2xl
@@ -20,7 +22,8 @@ export default function ButtonCart() {
     >
       <span className="flex items-center">
         <span className="pr-2 lg:pr-3 border-r border-green-200 group-hover:border-lime-700">
-          <span className="font-bold font-mono">{totalPrice}</span> грн
+          <span className="font-bold font-mono">{totalPrice}</span>
+          {t("uah")}{" "}
         </span>
         <BsCart className="m-2" />
         <span className="font-bold font-mono">{itemsCart.length}</span>

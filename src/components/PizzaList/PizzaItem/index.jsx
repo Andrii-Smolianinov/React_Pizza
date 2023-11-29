@@ -1,6 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 import { addItemToCart, setTotalPrice } from "../../../redux/slices/cartSlice";
 
 const diameters = ["26", "30", "40"];
@@ -8,6 +10,7 @@ const diameters = ["26", "30", "40"];
 export default function PizzaItem({ id, images, tittle, price }) {
   const [activeDiameter, setActiveDiameter] = React.useState(0);
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const onClickAddToCart = () => {
     const item = {
@@ -45,7 +48,7 @@ export default function PizzaItem({ id, images, tittle, price }) {
 
       <div className="border-solid border-2 border-rose-300">
         <p className="flex justify-center border-solid border-2 border-rose-300 bg-rose-300 text-red-600">
-          Діаметр піци
+          {t("diametr")}
         </p>
         <ul className="flex justify-center border-solid border-2 border-rose-300 bg-rose-300">
           {diameters.map((diameter, index) => (
@@ -57,7 +60,8 @@ export default function PizzaItem({ id, images, tittle, price }) {
               }`}
             >
               <button>
-                <span className="font-serif">{diameter}</span>см
+                <span className="font-serif">{diameter}</span>
+                {t("sm")}
               </button>
             </li>
           ))}
@@ -65,14 +69,14 @@ export default function PizzaItem({ id, images, tittle, price }) {
       </div>
       <div className="flex justify-around items-center my-5">
         <p className="ml-5 text-2xl font-medium">
-          {price[activeDiameter]} грн<span className="font-serif">.</span>
+          {price[activeDiameter]} {t("uah")}
         </p>
         <button
           className="p-3 font-bold border-2 rounded-md border-rose-300 hover:bg-rose-300 hover:text-amber-50 transition-all duration-350"
           type="button"
           onClick={onClickAddToCart}
         >
-          Замовити
+          {t("order")}
         </button>
       </div>
     </li>

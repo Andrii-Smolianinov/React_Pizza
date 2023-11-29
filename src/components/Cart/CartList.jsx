@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { useSelector } from "react-redux";
 import { selectCart } from "../../redux/slices/cartSlice";
@@ -13,17 +14,18 @@ import { AppContext } from "../../App";
 export default function CartList() {
   const { isLoading } = React.useContext(AppContext);
   const { totalPrice } = useSelector(selectCart);
+  const { t } = useTranslation();
 
   return (
     <div className="">
       <div className="flex flex-wrap items-center justify-between">
         <div className="flex items-center my-4">
-          <CartHeadSection tittle={"Корзина"} />
+          <CartHeadSection tittle={t("cart")} />
         </div>
         <ButtonClearCart />
       </div>
 
-      <ButtonComeBack tittle={"Назад до головного меню"} />
+      <ButtonComeBack tittle={t("backMain")} />
 
       <div className="flex justify-center">
         <ul
@@ -51,13 +53,13 @@ export default function CartList() {
           text-xl sm:text-2xl lg:text-3xl
           font-semibold sm:font-bold lg:font-extrabold"
         >
-          Вартість <br />
-          замовленн<span className="font-bold font-mono text-lg">’</span>я
+          {t("cost")} <br />
+          {t("costOrder")}
           <span className="font-bold font-mono text-lg">:</span>
           <span className="font-bold font-mono text-3xl text-red-700 m-2">
             {totalPrice}
           </span>
-          грн<span className="font-bold font-mono text-lg">.</span>
+          {t("uah")}
         </p>
         <button
           type="button"
@@ -67,7 +69,7 @@ export default function CartList() {
           text-lg sm:text-xl lg:text-2xl
           transition-all duration-350"
         >
-          Замовити
+          {t("order")}
         </button>
       </div>
     </div>

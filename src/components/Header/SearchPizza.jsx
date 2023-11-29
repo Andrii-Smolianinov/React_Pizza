@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { useDispatch, useSelector } from "react-redux";
 import { selectSearch, setSearchPizza } from "../../redux/slices/searchSlice";
@@ -10,6 +11,7 @@ export default function SearchPizza() {
   const dispatch = useDispatch();
   const { searchPizza } = useSelector(selectSearch);
   const inputRef = React.useRef();
+  const { t } = useTranslation();
 
   const onClear = function () {
     dispatch(setSearchPizza(""));
@@ -27,7 +29,7 @@ export default function SearchPizza() {
         value={searchPizza}
         onChange={(e) => dispatch(setSearchPizza(e.target.value))}
         type="text"
-        placeholder="пошук піци"
+        placeholder={t("search")}
         className="px-7 py-1 border-solid border-2 border-red-600 rounded
           text-base font-normal"
       ></input>

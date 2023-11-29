@@ -1,10 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { useDispatch } from "react-redux";
 import { setSortCategory } from "../../redux/slices/sortSlice";
 
 export default function Sort() {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const handleSelect = function (event) {
     dispatch(setSortCategory(event.target.value));
@@ -13,18 +15,18 @@ export default function Sort() {
   return (
     <div className="flex p-2 items-center">
       <p className="text-base sm:text-lg lg:text-xl">
-        Сортування по<span className="font-serif">:</span>
+        {t("sort")}
+        <span className="font-serif">:</span>
       </p>
       <select
-        className="bg-transparent ml-2 font-bold cursor-pointer
+        className="bg-transparent ml-2 font-normal cursor-pointer w-[153px]
         text-base sm:text-lg lg:text-xl"
         onChange={handleSelect}
         name="select-category"
       >
-        <option value="price">ціні</option>
-        <option value="tittle">назві</option>
-        <option value="rating">популярності</option>        
-        
+        <option value="price">{t("price")}</option>
+        <option value="tittle">{t("tittle")}</option>
+        <option value="rating">{t("rating")}</option>
       </select>
     </div>
   );

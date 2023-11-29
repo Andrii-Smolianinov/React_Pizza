@@ -9,22 +9,32 @@ import {
 
 import Sort from "./Sort";
 
+// const categories = [
+//   { text: "Усі" },
+//   { text: "Мясні" },
+//   { text: "Вегатеріанські" },
+//   { text: "Гриль" },
+//   { text: "Гострі" },
+//   { text: "Акційні" },
+// ];
+
 const categories = [
-  { text: "Усі" },
-  { text: "Мясні" },
-  { text: "Вегатеріанські" },
-  { text: "Гриль" },
-  { text: "Гострі" },
-  { text: "Акційні" },
+  { text: ["Усі", "all"] },
+  { text: ["Мясні", "meat"] },
+  { text: ["Вегатеріанські", "vegetarian"] },
+  { text: ["Гриль", "grill"] },
+  { text: ["Гострі", "hot"] },
+  { text: ["Акційні", "promotional"] },
 ];
 
 export default function Filter() {
   const dispatch = useDispatch();
-  const { filterCategory, activeTypePizza } = useSelector(selectSort);
+  const { filterCategory, activeTypePizza, activeIndexLang } = useSelector(selectSort);
+  
 
   const onClickFilterButton = function (index, text) {
     dispatch(setFilterCategory(index));
-    dispatch(setActiveTypePizza(text));
+    dispatch(setActiveTypePizza(text[activeIndexLang]));
   };
 
   const elements = categories.map(({ text }, index) => (
@@ -47,7 +57,7 @@ export default function Filter() {
       }      
       `}
     >
-      {text}
+      {text[activeIndexLang]}
     </li>
   ));
 

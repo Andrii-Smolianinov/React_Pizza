@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
 import ButtonComeBack from "./ButtonComeBack";
 import ImagePizza from "../assets/img/id-not-found.png";
@@ -9,6 +10,7 @@ const FullPizzaComponent = () => {
   const [pizza, setPizza] = useState();
   const { id } = useParams();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (showDoubleRender.current) {
@@ -37,7 +39,7 @@ const FullPizzaComponent = () => {
   return (
     <div>
       <div className="my-4">
-        <ButtonComeBack tittle={"Назад до головного меню"} />
+        <ButtonComeBack tittle={t("backMain")} />
       </div>
       <div className="flex justify-start mt-4">
         <div className="relative h-[335px]">

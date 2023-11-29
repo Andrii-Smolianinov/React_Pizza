@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -15,6 +16,7 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 export default function CartItem() {
   const { itemsCart } = useSelector(selectCart);
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const onRemoveItem = (index) => {
     dispatch(removeItemFromCart(index));
@@ -52,15 +54,16 @@ export default function CartItem() {
         {/* diameter */}
         <p className="text-center text-lime-600">
           <span className="block invisible sm:visible w-0 sm:w-1/4 h-0 sm:h-4">
-            діаметр:
+            {t("diametrCart")}:
           </span>{" "}
-          {selectDiameter}см
+          {selectDiameter}
+          {t("sm")}
         </p>
 
         {/* price for 1 */}
         <div className="invisible sm:visible w-0 sm:w-1/5 text-center">
           <p className="text-lime-600">
-            <span className="font-mono">1</span> шт
+            <span className="font-mono">1</span> {t("pc")}
           </p>
           <div className="flex items-center justify-center">
             <span
@@ -69,7 +72,7 @@ export default function CartItem() {
             >
               {price}
             </span>
-            <span className="ml-px sm:ml-1 lg:ml-1.5 xl:ml-2">грн</span>
+            <span className="ml-px sm:ml-1 lg:ml-1.5 xl:ml-2">{t("uah")}</span>
           </div>
         </div>
 
@@ -100,7 +103,7 @@ export default function CartItem() {
 
         {/* price all */}
         <div className="w-1/4 text-center">
-          <p className="text-lime-600">всього</p>
+          <p className="text-lime-600">{t("total")}</p>
           <div className="flex items-center justify-center">
             <span
               className="font-bold font-mono 
@@ -108,7 +111,7 @@ export default function CartItem() {
             >
               {itemPrice}
             </span>
-            <span className="ml-px sm:ml-1 lg:ml-1.5 xl:ml-2">грн</span>
+            <span className="ml-px sm:ml-1 lg:ml-1.5 xl:ml-2">{t("uah")}</span>
           </div>
         </div>
 
