@@ -15,8 +15,7 @@ export default function Sort() {
   return (
     <div className="flex p-2 items-center">
       <p className="text-base sm:text-lg lg:text-xl">
-        {t("sort")}
-        <span className="font-serif">:</span>
+        {t("sort")}:
       </p>
       <select
         className="bg-transparent ml-2 font-normal cursor-pointer w-[153px]

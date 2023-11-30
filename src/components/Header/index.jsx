@@ -18,7 +18,7 @@ export default function Header({ showSearch, showButtonCart }) {
           alt="logo"
           className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 m-1"
         />
-        <span className="uppercase font-extrabold text-base sm:text-xl lg:text-3xl drop-shadow-lg ml-2">
+        <span className="uppercase font-black sm:text-xl lg:text-3xl drop-shadow-lg ml-2">
           <span className="text-lime-600">rea</span>
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-600 to-red-600">
             ctpi

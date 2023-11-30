@@ -60,7 +60,7 @@ const FullPizzaComponent = () => {
           </div>
         </div>
         <div>
-          <p className="max-w-[800px] font-mono font-semibold text-justify ml-14 mr-8">
+          <p className="max-w-[800px] font-semibold text-justify ml-14 mr-8">
             {pizza.description[activeIndexLang]}
           </p>
         </div>

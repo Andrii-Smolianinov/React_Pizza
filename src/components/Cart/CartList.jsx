@@ -54,9 +54,8 @@ export default function CartList() {
           font-semibold sm:font-bold lg:font-extrabold"
         >
           {t("cost")} <br />
-          {t("costOrder")}
-          <span className="font-bold font-mono text-lg">:</span>
-          <span className="font-bold font-mono text-3xl text-red-700 m-2">
+          {t("costOrder")}:
+          <span className="font-bold text-3xl text-red-700 m-2">
             {totalPrice}
           </span>
           {t("uah")}

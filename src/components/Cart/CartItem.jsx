@@ -8,12 +8,14 @@ import {
   setDecrementCount,
   selectCart,
 } from "../../redux/slices/cartSlice";
+import { selectSort } from "../../redux/slices/sortSlice";
 
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 
 export default function CartItem() {
+  const { activeIndexLang } = useSelector(selectSort);
   const { itemsCart } = useSelector(selectCart);
   const dispatch = useDispatch();
   const { t } = useTranslation();
@@ -48,7 +50,7 @@ export default function CartItem() {
 
         {/* tittle */}
         <h2 className="text-center text-base sm:text-lg lg:text-xl font-extrabold text-red-600 w-1/2">
-          {tittle}
+          {tittle[activeIndexLang]}
         </h2>
 
         {/* diameter */}
@@ -62,12 +64,10 @@ export default function CartItem() {
 
         {/* price for 1 */}
         <div className="invisible sm:visible w-0 sm:w-1/5 text-center">
-          <p className="text-lime-600">
-            <span className="font-mono">1</span> {t("pc")}
-          </p>
+          <p className="text-lime-600">1 {t("pc")}</p>
           <div className="flex items-center justify-center">
             <span
-              className="font-bold font-mono 
+              className="font-bold 
               text-base sm:text-lg lg:text-xl"
             >
               {price}
@@ -80,13 +80,13 @@ export default function CartItem() {
         <div className="flex items-center">
           <AiOutlineMinusCircle
             size={25}
-            className="hover:fill-lime-700 cursor-pointer "
+            className="hover:fill-lime-700 cursor-pointer"
             onClick={() => {
               dispatch(setDecrementCount(index));
             }}
           />
           <span
-            className="font-bold font-mono      
+            className="font-bold  
             m-2 sm:m-3 lg:m-4 xl:m-5
             text-base sm:text-lg lg:text-xl"
           >
@@ -106,7 +106,7 @@ export default function CartItem() {
           <p className="text-lime-600">{t("total")}</p>
           <div className="flex items-center justify-center">
             <span
-              className="font-bold font-mono 
+              className="font-bold 
               text-base sm:text-lg lg:text-xl"
             >
               {itemPrice}

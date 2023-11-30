@@ -13,20 +13,20 @@ export default function ButtonCart() {
   return (
     <Link
       to="/cart"
-      className="block rounded-xl w-[178px]
+      className="block rounded-xl min-w-[178px]
       px-2 lg:px-3
       py-px lg:py-1
       text-lg sm:text-xl lg:text-2xl
       bg-lime-700 text-green-200 
       hover:bg-lime-200 hover:text-green-700 transition-all duration-350"
     >
-      <span className="flex items-center">
+      <span className="flex items-center justify-center">
         <span className="pr-2 lg:pr-3 border-r border-green-200 group-hover:border-lime-700">
-          <span className="font-bold font-mono">{totalPrice}</span>
-          {t("uah")}{" "}
+          <span className="font-bold">{totalPrice}</span>
+          <span className="text-xl">{t("uah")}</span>{" "}
         </span>
         <BsCart className="m-2" />
-        <span className="font-bold font-mono">{itemsCart.length}</span>
+        <span className="font-bold">{itemsCart.length}</span>
       </span>
     </Link>
   );

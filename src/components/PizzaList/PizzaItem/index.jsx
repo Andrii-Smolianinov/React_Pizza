@@ -44,7 +44,7 @@ export default function PizzaItem({ id, images, tittle, price }) {
             alt="element pizza"
           ></img>
         </div>
-        <h2 className="text-center my-8 text-2xl font-bold text-red-600">
+        <h2 className="text-center my-8 text-2xl font-black text-red-600 h-[36px]">
           {tittle[activeIndexLang]}
         </h2>
       </Link>
@@ -62,16 +62,13 @@ export default function PizzaItem({ id, images, tittle, price }) {
                 activeDiameter === index ? "bg-amber-50" : "hover:bg-rose-200"
               }`}
             >
-              <button>
-                <span className="font-serif">{diameter}</span>
-                {t("sm")}
-              </button>
+              <button>{diameter}{t("sm")}</button>
             </li>
           ))}
         </ul>
       </div>
       <div className="flex justify-around items-center my-5">
-        <p className="ml-5 text-2xl font-medium">
+        <p className="ml-5 text-2xl font-black">
           {price[activeDiameter]} {t("uah")}
         </p>
         <button
