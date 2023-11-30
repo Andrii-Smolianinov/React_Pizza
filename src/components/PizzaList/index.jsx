@@ -6,10 +6,12 @@ import Skeleton from "./PizzaItem/Skeleton";
 
 import { selectSearch } from "../../redux/slices/searchSlice";
 import { selectPizzas } from "../../redux/slices/pizzasSlice";
+import { selectSort } from "../../redux/slices/sortSlice";
 
 export default function PizzaList() {
   const { searchPizza } = useSelector(selectSearch);
   const { items, status } = useSelector(selectPizzas);
+  const { activeIndexLang } = useSelector(selectSort);
 
   return (
     <ul
@@ -22,7 +24,7 @@ export default function PizzaList() {
         : items
             .filter((item) => {
               if (
-                item.tittle.toLowerCase().includes(searchPizza.toLowerCase())
+                item.tittle[activeIndexLang].toLowerCase().includes(searchPizza.toLowerCase())
               ) {
                 return true;
               }

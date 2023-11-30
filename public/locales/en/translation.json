@@ -18,5 +18,6 @@
   "cost": "The cost",
   "costOrder": "of the order",
   "empty": "shopping cart is empty",
-  "makeOrder": "Make an order"
+  "makeOrder": "Make an order",
+  "pizza": "pizzas"
 }

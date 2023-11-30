@@ -1,209 +1,113 @@
 [
   {
     "id": "1",
-    "tittle": "Сімейна",
-    "price": [
-      314,
-      334,
-      350
-    ],
-    "category": [
-      0,
-      1,
-      5
-    ],
+    "tittle": ["Сімейна", "Family"],
+    "price": [314, 334, 350],
+    "category": [0, 1, 5],
     "rating": 6,
-    "description": "Улюблена піца багатьох дітей та дорослих, адже що може бути краще ніж затишний вечір у компанії рідних людей. Соус, помідор, сир Моцарела, шинка, бекон, куряче філе, печериці",
+    "description": [
+      "Улюблена піца багатьох дітей та дорослих, адже що може бути краще ніж затишний вечір у компанії рідних людей. Соус, помідор, сир Моцарела, шинка, бекон, куряче філе, печериці",
+      "The favorite pizza of many children and adults, because what could be better than a cozy evening in the company of relatives. Sauce, tomato, Mozzarella cheese, ham, bacon, chicken fillet, mushrooms"
+    ],
     "images": "https://images.ntile.app/0203db42d70036f5d6958db2514110697195d1a72e5a6740dc8728ffaef36803?width=623&format=webp"
   },
   {
     "id": "2",
-    "tittle": "Барбекю",
-    "price": [
-      270,
-      290,
-      310
-    ],
-    "category": [
-      0,
-      1,
-      3,
-      5
-    ],
+    "tittle": ["Барбекю", "Barbecue"],
+    "price": [270, 290, 310],
+    "category": [0, 1, 3, 5],
     "rating": 2,
-    "description": "Важко собі уявити, якусь більш популярнішу страву, ніж піца. І все тому, що її можна готувати по-різному, а значить і зібрати той улюблений мікс інгредієнтів. Але залишається незмінними тільки тонке тісто, хрумка скоринка та смачна начинка. І особливо виділяється піца Барбекю, оскільки відрізняється ароматом диму та пікантним соусом. Історія появи піци Барбекю починається у США, де страва була вигадана в середині XX століття. На той час національна кухня США була дуже популярна, і багато людей почали експериментувати з її стравами, додаючи нові інгредієнти та соуси.",
+    "description": ["Важко собі уявити, якусь більш популярнішу страву, ніж піца. І все тому, що її можна готувати по-різному, а значить і зібрати той улюблений мікс інгредієнтів. Але залишається незмінними тільки тонке тісто, хрумка скоринка та смачна начинка. І особливо виділяється піца Барбекю, оскільки відрізняється ароматом диму та пікантним соусом. Історія появи піци Барбекю починається у США, де страва була вигадана в середині XX століття. На той час національна кухня США була дуже популярна, і багато людей почали експериментувати з її стравами, додаючи нові інгредієнти та соуси.", "It is hard to imagine a more popular dish than pizza. And all because it can be prepared in different ways, which means to collect that favorite mix of ingredients. But only the thin dough, crispy crust and delicious filling remain unchanged. And the barbecue pizza stands out because it has a smoky aroma and spicy sauce. The history of the appearance of barbecue pizza begins in the USA, where the dish was invented in the middle of the 20th century. At that time, the national cuisine of the United States was very popular, and many people began to experiment with its dishes, adding new ingredients and sauces."],
     "images": "https://images.ntile.app/98910ca7391f7dac35463c9eae615f58b0968a10e6756f78aa55d2b042830ccb?width=623&format=webp"
   },
   {
     "id": "3",
-    "tittle": "Ді карне",
-    "price": [
-      208,
-      228,
-      248
-    ],
-    "category": [
-      0,
-      1,
-      3,
-      4
-    ],
+    "tittle": ["Ді карне", "Di karne"],
+    "price": [208, 228, 248],
+    "category": [0, 1, 3, 4],
     "rating": 1,
-    "description": "Прошуто, салямі, шинка, ковбаски, моцарела, томатний соус, зауважте, cоус до бортиків у нас безкоштовна, ви можете обрати його з переліку за бажанням (без соусу, соус BBQ, соус Чеддер, соус Філадельфія)",
+    "description": ["Прошуто, салямі, шинка, ковбаски, моцарела, томатний соус, зауважте, cоус до бортиків у нас безкоштовна, ви можете обрати його з переліку за бажанням (без соусу, соус BBQ, соус Чеддер, соус Філадельфія)", "Prosciutto, salami, ham, sausages, mozzarella, tomato sauce, note that the sauce for the sides is free, you can choose it from the list as you wish (no sauce, BBQ sauce, Cheddar sauce, Philadelphia sauce)"],
     "images": "https://images.ntile.app/43392abfcc0f124ccb69260b3b265a71a6963db8dbfecd5dd707c1af4c01a0d8?width=623&format=webp"
   },
   {
     "id": "4",
-    "tittle": "Салямі",
-    "price": [
-      155,
-      175,
-      195
-    ],
-    "category": [
-      0,
-      1,
-      4
-    ],
+    "tittle": ["Салямі", "Salami"],
+    "price": [155, 175, 195],
+    "category": [0, 1, 4],
     "rating": 9,
-    "description": "Ця італійська страва швидко здобула популярність по всьому світі. Піца Салямі досить проста у приготуванні, але вимагає дотримання деяких тонкощів і правил. Випікання еластичного тіста, що можна скласти навпіл, відбувається у спеціальній печі. Випічка проходить на дровах при температурі 200 градусів за Цельсієм. Саме тісто рекомендовано замішувати на справжньому італійському борошні.",
+    "description": [ "This Italian dish quickly gained popularity all over the world. Salami pizza is quite simple to prepare, but requires compliance with some subtleties and rules. The elastic dough that can be folded in half is baked in a special oven. Baking takes place on firewood at a temperature of 200 degrees Celsius. The dough itself is recommended to be kneaded on real Italian flour."],
     "images": "https://images.ntile.app/cb4d4af077d4f9d6af61f1cec05372b17440cc2f42523250edafc600ba5f0f5c?width=623&format=webp"
   },
   {
     "id": "5",
-    "tittle": "Гавайська",
-    "category": [
-      0,
-      1,
-      5
-    ],
-    "price": [
-      157,
-      177,
-      197
-    ],
+    "tittle": ["Гавайська", "Hawaiian"],
+    "category": [0, 1, 5],
+    "price": [157, 177, 197],
     "rating": 7,
-    "description": "Гавайська піца з шинкою і ананасом. Надзвичайно смачне поєднання, улюблене багатьма. Соус з томатів відмінно підходять в гаму смаку начинки.",
+    "description": ["Гавайська піца з шинкою і ананасом. Надзвичайно смачне поєднання, улюблене багатьма. Соус з томатів відмінно підходять в гаму смаку начинки.", "Hawaiian pizza with ham and pineapple. An extremely tasty combination, loved by many. Tomato sauce is a perfect match for the taste of the filling."],
     "images": "https://images.ntile.app/8325fab62c68ff0659b7dd390432ca0396b3e4bd2841ab4e4596c9075c5e2350?width=623&format=webp"
   },
   {
     "id": "6",
-    "tittle": "Курка з ананасом",
-    "price": [
-      180,
-      200,
-      220
-    ],
-    "category": [
-      0,
-      1,
-      5
-    ],
+    "tittle": ["Курка з ананасом", "Chicken with pineapple"],
+    "price": [180, 200, 220],
+    "category": [0, 1, 5],
     "rating": 10,
-    "description": "В європейських країнах однією з найпопyлярніших піц є піца з кyркою та ананасом. Зазвичай якщо y складі піци є ананас, то виникає асоціація з Гавайською піцою, але не дивлячись на те, що і там, і там є ананас - ці два різновиди піци насправді дyже різняться між собою. Особливістю нашої піци з кyркою і ананасом  є наявність інших інгредієнтів, які максимально доповнюють і розкривають смак піци.",
+    "description": ["В європейських країнах однією з найпопyлярніших піц є піца з кyркою та ананасом. Зазвичай якщо y складі піци є ананас, то виникає асоціація з Гавайською піцою, але не дивлячись на те, що і там, і там є ананас - ці два різновиди піци насправді дyже різняться між собою. Особливістю нашої піци з кyркою і ананасом  є наявність інших інгредієнтів, які максимально доповнюють і розкривають смак піци.", "In European countries, one of the most popular pizzas is pizza with crust and pineapple. Usually, if there is pineapple in the composition of the pizza, then there is an association with Hawaiian pizza, but despite the fact that both there and there are pineapple - these two types of pizza are actually already different from each other. The specialty of our pizza with crust and pineapple is the presence of other ingredients that complement and reveal the taste of the pizza as much as possible."],
     "images": "https://images.ntile.app/18d4045a4dc8ffcf56cf265ea091e91624370567b42b3daea62836638c29087d?width=623&format=webp"
   },
   {
     "id": "7",
-    "tittle": "З куркою",
-    "price": [
-      190,
-      210,
-      230
-    ],
-    "category": [
-      0,
-      1,
-      5
-    ],
+    "tittle": ["З куркою", "With chicken"],
+    "price": [190, 210, 230],
+    "category": [0, 1, 5],
     "rating": 8,
-    "description": "Спробуйте нашу витончену піцу з курячим філе та солодким манго, приправлену ніжною моцарелою, ароматним пармезаном та свіжим базиліком.",
+    "description": ["Спробуйте нашу витончену піцу з курячим філе та солодким манго, приправлену ніжною моцарелою, ароматним пармезаном та свіжим базиліком.", "Try our sophisticated pizza with chicken fillet and sweet mango, seasoned with tender mozzarella, aromatic parmesan and fresh basil."],
     "images": "https://images.ntile.app/1753b924c859d95e4ab0bacac282eda7c7217202f7de47a66fe1ee35cd8744c7?width=623&format=webp"
   },
   {
     "id": "8",
-    "tittle": "Карбонара",
-    "price": [
-      167,
-      187,
-      207
-    ],
-    "category": [
-      0,
-      3,
-      5
-    ],
+    "tittle": ["Карбонара", "Carbonara"],
+    "price": [167, 187, 207],
+    "category": [0, 3, 5],
     "rating": 5,
-    "description": " Піца карбонара складається з основного тіста для піци, покритого томатним соусом і зверху скибочками бекону, соусу з яєць і сиру. Моцарелла і Грана Падано є традиційними сирами для цього сорту піци, хоча також часто використовуються сири Пармеджано або Пекоріно Романо. Склад: вершковий соус, моцарела, пармезан, томати, бекон, яйце, цибуля, базилік.",
+    "description": ["Піца карбонара складається з основного тіста для піци, покритого томатним соусом і зверху скибочками бекону, соусу з яєць і сиру. Моцарелла і Грана Падано є традиційними сирами для цього сорту піци, хоча також часто використовуються сири Пармеджано або Пекоріно Романо. Склад: вершковий соус, моцарела, пармезан, томати, бекон, яйце, цибуля, базилік.", "Pizza carbonara consists of a basic pizza dough covered with tomato sauce and topped with slices of bacon, egg sauce and cheese. Mozzarella and Grana Padano are the traditional cheeses for this type of pizza, although Parmesan or Pecorino Romano are also often used. Ingredients: cream sauce, mozzarella, parmesan, tomatoes, bacon, egg, onion, basil."],
     "images": "https://images.ntile.app/31c54f641f0f5d3e75bc81eae6961bba1d49b21858233640d8dcb0371ec448a16dde57184920ed4f51c785877febe46a?width=623&format=webp"
   },
   {
     "id": "9",
-    "tittle": "Капрічоза",
-    "price": [
-      169,
-      189,
-      209
-    ],
-    "category": [
-      0,
-      1,
-      3,
-      4,
-      5
-    ],
+    "tittle": ["Капрічоза", "Capricciosa"],
+    "price": [169, 189, 209],
+    "category": [0, 1, 3, 4, 5],
     "rating": 3,
-    "description": " Класична піца Капрічоза має такі додатки як оливки, шинку (варено-копчену або сиров'ялену), гриби та сир Моцарелла й артишоки, відварені або мариновані. Артишоки, продукт рідкий на нашому ринку, тому можете сміливо його пропустити. Без нього піца буде також дуже смачною.",
+    "description": ["Класична піца Капрічоза має такі додатки як оливки, шинку (варено-копчену або сиров'ялену), гриби та сир Моцарелла й артишоки, відварені або мариновані. Артишоки, продукт рідкий на нашому ринку, тому можете сміливо його пропустити. Без нього піца буде також дуже смачною.", "The classic Capricciosa pizza has such additions as olives, ham (cooked-smoked or raw-cured), mushrooms and Mozzarella cheese and artichokes, boiled or marinated. Artichokes, the product is rare in our market, so you can safely skip it. Pizza will also be very tasty without it."],
     "images": "https://images.ntile.app/4ca916deb441c7315a6ef47b8794a3f4d1a231984dda3363796f5d7fe0ae7c8ba0e7e95a13ce07c3e61f7a42a3d3f551?width=623&format=webp"
   },
   {
     "id": "10",
-    "tittle": "Морський коктейль",
-    "price": [
-      275,
-      295,
-      315
-    ],
-    "category": [
-      0,
-      2
-    ],
+    "tittle": ["Морський коктейль", "Sea cocktail"],
+    "price": [275, 295, 315],
+    "category": [0, 2],
     "rating": 4,
-    "description": "Піца морський коктейль з морепродуктами. Страва німецької кухні. Ідеальна закуска до пива. Піца з морепродуктами має характерний солонуватий смак. Коктейль з м'яса мідій, креветок, лосося, анчоуса і кальмарів на хрусткому бездріжджовому тісті з вершковим соусом з сиром моцарелла.",
+    "description": ["Піца морський коктейль з морепродуктами. Страва німецької кухні. Ідеальна закуска до пива. Піца з морепродуктами має характерний солонуватий смак. Коктейль з м'яса мідій, креветок, лосося, анчоуса і кальмарів на хрусткому бездріжджовому тісті з вершковим соусом з сиром моцарелла.", "Pizza sea cocktail with seafood. A dish of German cuisine. An ideal snack for beer. Pizza with seafood has a characteristic salty taste. Mussel, shrimp, salmon, anchovy and squid meat cocktail on a crispy yeast-free dough with a creamy sauce with mozzarella cheese."],
     "images": "https://images.ntile.app/f8bfb3e9c7d9faa03b10bcf098a28437bfda2a10825e91fdf90a6c78f0273cd14ede95d4db933ffcc98f302a5109176b?width=623&format=webp"
   },
   {
     "id": "11",
-    "tittle": "Кваттро формаджі",
-    "price": [
-      247,
-      267,
-      287
-    ],
-    "category": [
-      0,
-      2,
-      5
-    ],
+    "tittle": ["Кваттро формаджі", "Quattro formaggi"],
+    "price": [247, 267, 287],
+    "category": [0, 2, 5],
     "rating": 11,
-    "description": "Піца кватро формаджі (чотири сири) — різновид піци в італійській кухні, яка укомплектована комбінацією чотирьох видів сиру, зазвичай плавлених разом з томатним соусом. Він популярний у всьому світі, в тому числі в Італії і є одним із знакових пунктів з меню піцерій.",
+    "description": ["Піца кватро формаджі (чотири сири) — різновид піци в італійській кухні, яка укомплектована комбінацією чотирьох видів сиру, зазвичай плавлених разом з томатним соусом. Він популярний у всьому світі, в тому числі в Італії і є одним із знакових пунктів з меню піцерій.", "Quattro formaggi pizza (four cheeses) is a type of pizza in Italian cuisine, which is topped with a combination of four types of cheese, usually melted together with tomato sauce. It is popular all over the world, including in Italy, and is one of the iconic items on pizzeria menus."],
     "images": "https://images.ntile.app/d7ad6da9ff0ada17f577e5a96032c22c4b4ed253175f458f03b205e492844735?width=623&format=webp"
   },
   {
     "id": "12",
-    "tittle": "Дяволіно",
-    "price": [
-      235,
-      255,
-      275
-    ],
-    "category": [
-      0,
-      1,
-      4
-    ],
+    "tittle": ["Дяволіно", "Diavola"],
+    "price": [235, 255, 275],
+    "category": [0, 1, 4],
     "rating": 11,
-    "description": "Це традиційна італійська піца з гострими інгредієнтами, такими як пепероні або інші види салямі, часто з додаванням перцю чилі. Інші типові складники включають томатний соус, моцарелу або інші види сиру, та спеції, такі як орегано або базилік. Щоб приготувати «піцу диявола» вдома, знадобиться тісто для піци, томатний соус, моцарела або інший сир за смаком, пепероні або інший салямі, перець чилі та інші спеції за бажанням.",
+    "description": ["Це традиційна італійська піца з гострими інгредієнтами, такими як пепероні або інші види салямі, часто з додаванням перцю чилі. Інші типові складники включають томатний соус, моцарелу або інші види сиру, та спеції, такі як орегано або базилік. Щоб приготувати «піцу диявола» вдома, знадобиться тісто для піци, томатний соус, моцарела або інший сир за смаком, пепероні або інший салямі, перець чилі та інші спеції за бажанням.", "It is a traditional Italian pizza with spicy ingredients such as pepperoni or other types of salami, often with chili peppers added. Other typical ingredients include tomato sauce, mozzarella or other types of cheese, and spices such as oregano or basil. To prepare the devil's pizza at home, you will need pizza dough, tomato sauce, mozzarella or other cheese to taste, pepperoni or other salami, chili pepper and other spices as desired."],
     "images": "https://images.ntile.app/bd3daddb68df388e3a9160226366eae8c15b7d0536f79ec87562aa8fa51439b1b3f23b59d88c312d1f6cf0cc3fcbabe4?width=623&format=webp"
   }
 ]

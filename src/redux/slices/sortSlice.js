@@ -24,7 +24,7 @@ const sortSlice = createSlice({
     setActiveIndexLang(state, action) {
       state.activeIndexLang = Number(action.payload);
     },
-    setSelectLang(state, action) {
+    setSelectLang(state, action) {      
       state.selectLang = action.payload;
     },
   },

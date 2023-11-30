@@ -13,8 +13,7 @@ export default function Home() {
 
   React.useEffect(() => {
     setShowSearch(true);
-    setShowButtonCart(true);
-    
+    setShowButtonCart(true);    
   });
 
   return (

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -9,27 +10,19 @@ import {
 
 import Sort from "./Sort";
 
-// const categories = [
-//   { text: "Усі" },
-//   { text: "Мясні" },
-//   { text: "Вегатеріанські" },
-//   { text: "Гриль" },
-//   { text: "Гострі" },
-//   { text: "Акційні" },
-// ];
-
 const categories = [
-  { text: ["Усі", "all"] },
-  { text: ["Мясні", "meat"] },
-  { text: ["Вегатеріанські", "vegetarian"] },
-  { text: ["Гриль", "grill"] },
-  { text: ["Гострі", "hot"] },
-  { text: ["Акційні", "promotional"] },
+  { text: ["Усі", "All"] },
+  { text: ["Мясні", "Meat"] },
+  { text: ["Вегатеріанські", "Vegetarian"] },
+  { text: ["Гриль", "Grill"] },
+  { text: ["Гострі", "Hot"] },
+  { text: ["Акційні", "Promotional"] },
 ];
 
 export default function Filter() {
-  const dispatch = useDispatch();
   const { filterCategory, activeTypePizza, activeIndexLang } = useSelector(selectSort);
+  const dispatch = useDispatch();
+  const { t } = useTranslation();
   
 
   const onClickFilterButton = function (index, text) {
@@ -38,6 +31,7 @@ export default function Filter() {
   };
 
   const elements = categories.map(({ text }, index) => (
+
     <li
       onClick={() => onClickFilterButton(index, text)}
       key={index}
@@ -57,10 +51,11 @@ export default function Filter() {
       }      
       `}
     >
-      {text[activeIndexLang]}
+      {text[activeIndexLang]}     
     </li>
   ));
 
+  
   return (
     <>
       <nav
@@ -78,7 +73,7 @@ export default function Filter() {
         mb-2 sm:mb-4 lg:mb-6
         text-lime-700  bg-yellow-100"
       >
-        {activeTypePizza} піци
+        {activeTypePizza} {t("pizza")}
       </h1>
     </>
   );

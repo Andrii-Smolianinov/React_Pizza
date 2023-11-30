@@ -1,14 +1,17 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart, setTotalPrice } from "../../../redux/slices/cartSlice";
+import { selectSort } from "../../../redux/slices/sortSlice.js";
 
 const diameters = ["26", "30", "40"];
 
 export default function PizzaItem({ id, images, tittle, price }) {
   const [activeDiameter, setActiveDiameter] = React.useState(0);
+  const { activeIndexLang } = useSelector(selectSort);
+
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
@@ -42,7 +45,7 @@ export default function PizzaItem({ id, images, tittle, price }) {
           ></img>
         </div>
         <h2 className="text-center my-8 text-2xl font-bold text-red-600">
-          {tittle}
+          {tittle[activeIndexLang]}
         </h2>
       </Link>
 

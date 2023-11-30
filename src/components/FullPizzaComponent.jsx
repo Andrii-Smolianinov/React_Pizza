@@ -2,10 +2,15 @@ import React, { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
+
+import { useSelector } from "react-redux";
+import { selectSort } from "../redux/slices/sortSlice";
+
 import ButtonComeBack from "./ButtonComeBack";
 import ImagePizza from "../assets/img/id-not-found.png";
 
 const FullPizzaComponent = () => {
+  const { activeIndexLang } = useSelector(selectSort);
   const showDoubleRender = useRef(true);
   const [pizza, setPizza] = useState();
   const { id } = useParams();
@@ -50,13 +55,13 @@ const FullPizzaComponent = () => {
           />
           <div className="absolute w-[500px] h-1/5 bottom-0 bg-slate-800 opacity-80 ">
             <h2 className="text-center font-bold text-2xl uppercase pt-4 tracking-wider text-sky-400">
-              {pizza.tittle}
+              {pizza.tittle[activeIndexLang]}
             </h2>
           </div>
         </div>
         <div>
           <p className="max-w-[800px] font-mono font-semibold text-justify ml-14 mr-8">
-            {pizza.description}
+            {pizza.description[activeIndexLang]}
           </p>
         </div>
         <img
