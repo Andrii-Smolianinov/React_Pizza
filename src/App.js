@@ -15,7 +15,7 @@ import Header from "./components/Header";
 
 export const AppContext = React.createContext();
 
-function App() {
+function App() { 
   const [showSearch, setShowSearch] = React.useState(true);
   const [showButtonCart, setShowButtonCart] = React.useState(true);
   const [isEmptyCart] = React.useState(true);

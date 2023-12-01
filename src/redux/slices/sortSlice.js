@@ -4,8 +4,6 @@ export const initialState = {
   filterCategory: 0,
   sortCategory: "price",
   activeTypePizza: "Усі",
-  activeIndexLang: 0,
-  selectLang: "ua",
 };
 
 const sortSlice = createSlice({
@@ -21,22 +19,11 @@ const sortSlice = createSlice({
     setActiveTypePizza(state, action) {
       state.activeTypePizza = action.payload;
     },
-    setActiveIndexLang(state, action) {
-      state.activeIndexLang = Number(action.payload);
-    },
-    setSelectLang(state, action) {      
-      state.selectLang = action.payload;
-    },
   },
 });
 
-export const {
-  setSortCategory,
-  setFilterCategory,
-  setActiveTypePizza,
-  setActiveIndexLang,
-  setSelectLang,
-} = sortSlice.actions;
+export const { setSortCategory, setFilterCategory, setActiveTypePizza } =
+  sortSlice.actions;
 
 export const selectSort = (state) => state.sort;
 

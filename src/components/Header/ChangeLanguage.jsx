@@ -18,7 +18,7 @@ const ChangeLanguage = () => {
   };
 
   return (
-    <div>
+    <div className="mr-2 mt-2">
       <button onClick={() => onChangeLanguage("ua", 0)}><img src={UAflag} alt="Ukraine flag" className="w-9 h-8"></img></button>
       <button onClick={() => onChangeLanguage("en", 1)}><img src={GBflag} alt="Great Britan flag" className="w-9 h-8"></img></button>
     </div>

@@ -66,12 +66,12 @@ export default function CartItem() {
         <div className="invisible sm:visible w-0 sm:w-1/5 text-center">
           <p className="text-lime-600">1 {t("pc")}</p>
           <div className="flex items-center justify-center">
-            <span
+            <p
               className="font-bold 
               text-base sm:text-lg lg:text-xl"
             >
               {price}
-            </span>
+            </p>
             <span className="ml-px sm:ml-1 lg:ml-1.5 xl:ml-2">{t("uah")}</span>
           </div>
         </div>
@@ -85,13 +85,13 @@ export default function CartItem() {
               dispatch(setDecrementCount(index));
             }}
           />
-          <span
+          <p
             className="font-bold  
             m-2 sm:m-3 lg:m-4 xl:m-5
             text-base sm:text-lg lg:text-xl"
           >
             {count}
-          </span>
+          </p>
           <AiOutlinePlusCircle
             size={25}
             className="hover:fill-lime-700 cursor-pointer"
@@ -105,12 +105,12 @@ export default function CartItem() {
         <div className="w-1/4 text-center">
           <p className="text-lime-600">{t("total")}</p>
           <div className="flex items-center justify-center">
-            <span
+            <p
               className="font-bold 
               text-base sm:text-lg lg:text-xl"
             >
               {itemPrice}
-            </span>
+            </p>
             <span className="ml-px sm:ml-1 lg:ml-1.5 xl:ml-2">{t("uah")}</span>
           </div>
         </div>
