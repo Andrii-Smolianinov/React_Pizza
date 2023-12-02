@@ -5,13 +5,13 @@ import Promotion from "./Promotion";
 
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart, setTotalPrice } from "../../../redux/slices/cartSlice";
-import { selectSort } from "../../../redux/slices/sortSlice.js";
+import { selectChangeLang } from "../../../redux/slices/changeLangSlice";
 
 const diameters = ["26", "30", "40"];
 
-export default function PizzaItem({ id, images, tittle, price }) {
+export default function PizzaItem({ id, images, tittle, price, category }) {
   const [activeDiameter, setActiveDiameter] = React.useState(0);
-  const { activeIndexLang } = useSelector(selectSort);
+  const { activeIndexLang } = useSelector(selectChangeLang);
 
   const dispatch = useDispatch();
   const { t } = useTranslation();
@@ -44,7 +44,7 @@ export default function PizzaItem({ id, images, tittle, price }) {
             src={images}
             alt="element pizza"
           ></img>
-          <Promotion />
+          {category.find((element) => element === 5) && <Promotion />}
         </div>
         <h2 className="text-center my-8 text-2xl font-black text-red-600 h-[36px]">
           {tittle[activeIndexLang]}

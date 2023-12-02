@@ -4,13 +4,13 @@ import { useTranslation } from "react-i18next";
 import axios from "axios";
 
 import { useSelector } from "react-redux";
-import { selectSort } from "../redux/slices/sortSlice";
+import { selectChangeLang } from "../redux/slices/changeLangSlice";
 
-import ButtonComeBack from "./ButtonComeBack";
+import ButtonComeBack from "./Buttons/ButtonComeBack";
 import ImagePizza from "../assets/img/id-not-found.png";
 
 const FullPizzaComponent = () => {
-  const { activeIndexLang } = useSelector(selectSort);
+  const { activeIndexLang } = useSelector(selectChangeLang);
   const showDoubleRender = useRef(true);
   const [pizza, setPizza] = useState();
   const { id } = useParams();

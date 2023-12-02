@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { BsCart } from "react-icons/bs";
-import { selectCart } from "../redux/slices/cartSlice";
+import { selectCart } from "../../redux/slices/cartSlice";
 
 export default function ButtonCart() {
   const { totalPrice, itemsCart } = useSelector(selectCart);

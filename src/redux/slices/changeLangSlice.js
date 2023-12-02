@@ -20,6 +20,6 @@ const changeLangSlice = createSlice({
 
 export const { setActiveIndexLang, setSelectLang } = changeLangSlice.actions;
 
-export const changeLang = (state) => state.lang;
+export const selectChangeLang = (state) => state.lang;
 
 export default changeLangSlice.reducer;

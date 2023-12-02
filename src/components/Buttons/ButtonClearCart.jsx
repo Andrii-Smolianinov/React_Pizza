@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { useDispatch } from "react-redux";
-import { clearCart, clearTotalPrice } from "../redux/slices/cartSlice";
+import { clearCart, clearTotalPrice } from "../../redux/slices/cartSlice";
 
 import { RiDeleteBin6Line } from "react-icons/ri";
 

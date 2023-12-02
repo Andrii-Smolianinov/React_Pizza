@@ -7,6 +7,7 @@ import {
   setActiveTypePizza,
   selectSort,
 } from "../../redux/slices/sortSlice";
+import { selectChangeLang } from "../../redux/slices/changeLangSlice";
 
 import Sort from "./Sort";
 
@@ -20,18 +21,17 @@ const categories = [
 ];
 
 export default function Filter() {
-  const { filterCategory, activeTypePizza, activeIndexLang } = useSelector(selectSort);
+  const { filterCategory, activeTypePizza } = useSelector(selectSort);
+  const { activeIndexLang } = useSelector(selectChangeLang);
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  
 
   const onClickFilterButton = function (index, text) {
     dispatch(setFilterCategory(index));
-    dispatch(setActiveTypePizza(text[activeIndexLang]));
+    dispatch(setActiveTypePizza(text[activeIndexLang])); 
   };
-
+  
   const elements = categories.map(({ text }, index) => (
-
     <li
       onClick={() => onClickFilterButton(index, text)}
       key={index}
@@ -51,11 +51,10 @@ export default function Filter() {
       }      
       `}
     >
-      {text[activeIndexLang]}     
+      {text[activeIndexLang]}
     </li>
   ));
 
-  
   return (
     <>
       <nav

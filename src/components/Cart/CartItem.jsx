@@ -8,14 +8,14 @@ import {
   setDecrementCount,
   selectCart,
 } from "../../redux/slices/cartSlice";
-import { selectSort } from "../../redux/slices/sortSlice";
+import { selectChangeLang } from "../../redux/slices/changeLangSlice";
 
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 
 export default function CartItem() {
-  const { activeIndexLang } = useSelector(selectSort);
+  const { activeIndexLang } = useSelector(selectChangeLang);
   const { itemsCart } = useSelector(selectCart);
   const dispatch = useDispatch();
   const { t } = useTranslation();

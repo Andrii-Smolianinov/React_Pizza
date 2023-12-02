@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 import { selectCart } from "../../redux/slices/cartSlice";
 
 import CartItem from "./CartItem";
-import ButtonClearCart from "../ButtonClearCart";
-import ButtonComeBack from "../ButtonComeBack";
+import ButtonClearCart from "../Buttons/ButtonClearCart";
+import ButtonComeBack from "../Buttons/ButtonComeBack";
 import CartHeadSection from "./CartHeadSection";
 
 import { AppContext } from "../../App";

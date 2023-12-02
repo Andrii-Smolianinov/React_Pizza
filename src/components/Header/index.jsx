@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import SearchPizza from "./SearchPizza";
-import ButtonCart from "../ButtonCart";
+import ButtonCart from "../Buttons/ButtonCart";
 import ChangeLanguage from "./ChangeLanguage";
 
 import logoJPG from "../../assets/img/logo.jpg";
