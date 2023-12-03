@@ -6,13 +6,13 @@ import { initReactI18next } from 'react-i18next'
 i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
   fallbackLng: 'ua',
   debug: false,
-  detection: {
-    order: ['queryString', 'cookie'],
-    cache: ['cookie']
-  },
-  interpolation: {
-    escapeValue: false
-  }
+  // detection: {
+  //   order: ['queryString', 'cookie'],
+  //   cache: ['cookie']
+  // },
+  // interpolation: {
+  //   escapeValue: false
+  // }
 })
 
 export default i18n

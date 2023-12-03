@@ -28,7 +28,7 @@ export default function Filter() {
 
   const onClickFilterButton = function (index, text) {
     dispatch(setFilterCategory(index));
-    dispatch(setActiveTypePizza(text[activeIndexLang])); 
+    dispatch(setActiveTypePizza(text)); 
   };
   
   const elements = categories.map(({ text }, index) => (
@@ -72,7 +72,7 @@ export default function Filter() {
         mb-2 sm:mb-4 lg:mb-6
         text-lime-700  bg-yellow-100"
       >
-        {activeTypePizza} {t("pizza")}
+        {activeTypePizza[activeIndexLang]} {t("pizza")}
       </h1>
     </>
   );

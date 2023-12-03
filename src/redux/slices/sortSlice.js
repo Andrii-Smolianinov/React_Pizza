@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const initialState = {
   filterCategory: 0,
   sortCategory: "price",
-  activeTypePizza: "Усі",
+  activeTypePizza: [],
 };
 
 const sortSlice = createSlice({
