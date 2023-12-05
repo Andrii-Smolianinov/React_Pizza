@@ -16,7 +16,7 @@ const FullPizzaComponent = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { t } = useTranslation();
-
+  
   useEffect(() => {
     if (showDoubleRender.current) {
       showDoubleRender.current = false;
@@ -27,6 +27,7 @@ const FullPizzaComponent = () => {
             "https://64fad951cb9c00518f7a461b.mockapi.io/items/" + id
           );
           setPizza(data);
+          console.log(data);
         } catch (error) {
           alert("Ооу, не чуди! Такого id піци не існує");
           navigate("/");
@@ -36,7 +37,7 @@ const FullPizzaComponent = () => {
     }
     // eslint-disable-next-line
   }, []);
-
+  
   if (!pizza) {
     return "Loading...";
   }
