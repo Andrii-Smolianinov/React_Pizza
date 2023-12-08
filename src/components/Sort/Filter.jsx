@@ -10,6 +10,7 @@ import {
 import { selectChangeLang } from "../../redux/slices/changeLangSlice";
 
 import Sort from "./Sort";
+import { AppContext } from "../../App";
 
 const categories = [
   { text: ["Усі", "All"] },
@@ -21,6 +22,7 @@ const categories = [
 ];
 
 export default function Filter() {
+  const { setPaginationCurrentPage } = React.useContext(AppContext);
   const { filterCategory, activeTypePizza } = useSelector(selectSort);
   const { activeIndexLang } = useSelector(selectChangeLang);
   const dispatch = useDispatch();
@@ -28,9 +30,10 @@ export default function Filter() {
 
   const onClickFilterButton = function (index, text) {
     dispatch(setFilterCategory(index));
-    dispatch(setActiveTypePizza(text)); 
+    dispatch(setActiveTypePizza(text));
+    setPaginationCurrentPage(1)
   };
-  
+
   const elements = categories.map(({ text }, index) => (
     <li
       onClick={() => onClickFilterButton(index, text)}

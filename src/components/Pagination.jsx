@@ -1,18 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+import { AppContext } from "../App";
 
-import { useSelector } from "react-redux";
-import { selectPizzas } from "../redux/slices/pizzasSlice";
-
-const Pagination = () => {
-  const [currentPage, setCurrentPage] = useState([]);
-  const [pizzasPerPage] = useState(10);
-  const { items } = useSelector(selectPizzas);
-
-  const lastPizzaIndex = currentPage * pizzasPerPage;
-  const firstPizzaIndex = lastPizzaIndex - pizzasPerPage;
-  const currentPizza = items.slice(firstPizzaIndex, lastPizzaIndex);
+const Pagination = ({ totalPizzas, pizzasPerPage, paginate }) => {
+  const { paginationCurrentPage } = React.useContext(AppContext);
   const pageNumbers = [];
-  const totalPizzas = items.length
 
   for (let i = 1; i <= Math.ceil(totalPizzas / pizzasPerPage); i++) {
     pageNumbers.push(i);
@@ -20,10 +11,16 @@ const Pagination = () => {
 
   return (
     <div>
-      <ul>
+      <ul className="flex justify-center">
         {pageNumbers.map((number) => (
-          <li key={number}>
-            <a href="!#">{number}</a>
+          <li
+            key={number}
+            className="bg-emerald-400  m-1"
+          >
+            <a href={`#page/${paginationCurrentPage}`} className="inline-flex justify-center cursor-pointer w-10" 
+            onClick={() => paginate(number)}>
+              {number}
+            </a>
           </li>
         ))}
       </ul>
