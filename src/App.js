@@ -18,7 +18,6 @@ export const AppContext = React.createContext();
 function App() {
   const [showSearch, setShowSearch] = React.useState(true);
   const [showButtonCart, setShowButtonCart] = React.useState(true);
-  const [paginationCurrentPage, setPaginationCurrentPage] = React.useState(1);
   const [pizzasPerPage] = React.useState(10);
   const [isEmptyCart] = React.useState(true);
 
@@ -46,8 +45,6 @@ function App() {
           setShowButtonCart,
           isEmptyCart,
           pizzasPerPage,
-          paginationCurrentPage,
-          setPaginationCurrentPage,
         }}
       >
         <Header showSearch={showSearch} showButtonCart={showButtonCart} />

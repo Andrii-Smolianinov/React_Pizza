@@ -8,6 +8,7 @@ import Pagination from "../Pagination";
 import { selectSearch } from "../../redux/slices/searchSlice";
 import { selectPizzas } from "../../redux/slices/pizzasSlice";
 import { selectChangeLang } from "../../redux/slices/changeLangSlice";
+import { selectPagination } from "../../redux/slices/paginationSlice";
 
 import { AppContext } from "../../App";
 
@@ -15,16 +16,14 @@ export default function PizzaList() {
   const { searchPizza } = useSelector(selectSearch);
   const { items, status } = useSelector(selectPizzas);
   const { activeIndexLang } = useSelector(selectChangeLang);
+  const { currentPage } = useSelector(selectPagination);
 
-  const { pizzasPerPage, paginationCurrentPage, setPaginationCurrentPage } =
-    React.useContext(AppContext);
+  const { pizzasPerPage } = React.useContext(AppContext);
 
-  const lastPizzaIndex = paginationCurrentPage * pizzasPerPage;
+  const lastPizzaIndex = currentPage * pizzasPerPage;
   const firstPizzaIndex = lastPizzaIndex - pizzasPerPage;
   const currentPizza = items.slice(firstPizzaIndex, lastPizzaIndex);
   const totalPizzas = items.length;
-
-  const paginate = (pageNumber) => setPaginationCurrentPage(pageNumber);
 
   return (
     <>
@@ -33,9 +32,10 @@ export default function PizzaList() {
         p-2 sm:p-3 lg:p-8 
         gap-3 sm:gap-6 lg:gap-8"
       >
-        {status === "loading"
-          ? [...new Array(5)].map((_, index) => <Skeleton key={index} />)
-          : currentPizza
+        {status === "loading" &&
+          [...new Array(5)].map((_, index) => <Skeleton key={index} />)}
+        {searchPizza
+          ? items
               .filter((item) => {
                 if (
                   item.tittle[activeIndexLang]
@@ -55,13 +55,21 @@ export default function PizzaList() {
                   price={price}
                   category={category}
                 />
-              ))}
+              ))
+          : currentPizza.map(({ id, images, tittle, price, category }) => (
+              <PizzaItem
+                key={id}
+                id={id}
+                images={images}
+                tittle={tittle}
+                price={price}
+                category={category}
+              />
+            ))}
       </ul>
-      <Pagination
-        totalPizzas={totalPizzas}
-        pizzasPerPage={pizzasPerPage}
-        paginate={paginate}
-      />
+      {!searchPizza && (
+        <Pagination totalPizzas={totalPizzas} pizzasPerPage={pizzasPerPage} />
+      )}
     </>
   );
 }

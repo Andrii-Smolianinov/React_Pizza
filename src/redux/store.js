@@ -16,8 +16,9 @@ import search from "./slices/searchSlice";
 import cart from "./slices/cartSlice"
 import pizzas from "./slices/pizzasSlice"
 import lang from "./slices/changeLangSlice"
+import pagination from "./slices/paginationSlice"
 
-const rootReducer = combineReducers({ sort, search, cart, pizzas, lang });
+const rootReducer = combineReducers({ sort, search, cart, pizzas, lang, pagination });
 
 const persistConfig = {
   key: "root",
