@@ -7,26 +7,30 @@ import {
 } from "../redux/slices/paginationSlice";
 
 const Pagination = ({ totalPizzas, pizzasPerPage }) => {
-  const pageNumbers = [];
-
   const { activeIndexPage, currentPage } = useSelector(selectPagination);
   const dispatch = useDispatch();
+  const pageNumbers = [];
 
   const paginate = (pageNumber, index) => {
     dispatch(setCurrentPage(pageNumber));
-    dispatch(setActiveIndexPage(index));    
+    dispatch(setActiveIndexPage(index));
   };
-  
+
   for (let i = 1; i <= Math.ceil(totalPizzas / pizzasPerPage); i++) {
     pageNumbers.push(i);
   }
 
   return (
-    <ul className="flex justify-center">
+    <ul className="flex justify-center p-8">
       {pageNumbers.map((number, index) => (
-        <li key={number} className={`m-1 ${activeIndexPage === index
-          ? "bg-lime-700 text-green-200 hover:bg-lime-700"
-          : "bg-lime-200 text-green-600 hover:bg-teal-500 hover:text-green-100"}`}>
+        <li
+          key={number}
+          className={`m-1 rounded-md ${
+            activeIndexPage === index
+              ? "bg-lime-700 text-green-200 hover:bg-lime-700"
+              : "bg-lime-200 text-green-600 hover:bg-teal-500 hover:text-green-100"
+          }`}
+        >
           <a
             href={`#page/${currentPage}`}
             className="inline-flex justify-center cursor-pointer w-10"

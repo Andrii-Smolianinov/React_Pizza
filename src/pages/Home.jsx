@@ -17,7 +17,7 @@ export default function Home() {
   });
 
   return (
-    <main className="bg-yellow-100">
+    <main className="bg-yellow-100 min-h-[83vh]">
       <Filter />
       {status === "error" ? <ErrorServer /> : <PizzaList />}
     </main>

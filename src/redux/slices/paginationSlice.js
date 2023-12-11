@@ -13,16 +13,13 @@ export const paginationSlice = createSlice({
       state.activeIndexPage = action.payload;
     },
     setCurrentPage(state, action) {
-        state.currentPage = action.payload
+      state.currentPage = action.payload;
     },
-    setClearСurrentPage(state) {
-        state.currentPage = 1
-    }
   },
 });
 
-export const { setActiveIndexPage, setCurrentPage, setClearСurrentPage } = paginationSlice.actions;
+export const { setActiveIndexPage, setCurrentPage } = paginationSlice.actions;
 
-export const selectPagination = state => state.pagination;
+export const selectPagination = (state) => state.pagination;
 
 export default paginationSlice.reducer;

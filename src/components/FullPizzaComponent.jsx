@@ -42,32 +42,32 @@ const FullPizzaComponent = () => {
   }
 
   return (
-    <div>
+    <div className="h-[81vh]">
       <div className="my-4">
         <ButtonComeBack tittle={t("backMain")} />
       </div>
-      <div className="flex justify-start mt-4">
+      <div className="flex flex-col sm:flex-row justify-start mt-4">
         <div className="relative h-[335px]">
           <img
             src={pizza.images}
             alt="PizzaImage"
-            className="block w-[500px] max-h-[335px]"
+            className="block w-[full] max-h-[335px]"
           />
-          <div className="absolute w-[500px] h-1/5 bottom-0 bg-slate-800 opacity-80 ">
+          <div className="absolute w-full h-1/5 bottom-0 bg-slate-800 opacity-80 ">
             <h2 className="text-center font-bold text-2xl uppercase pt-4 tracking-wider text-sky-400">
               {pizza.tittle[activeIndexLang]}
             </h2>
           </div>
         </div>
-        <div>
-          <p className="max-w-[800px] font-semibold text-justify ml-14 mr-8">
+        <div className="">
+          <p className="w-[90vw] sm:w-[80vw] lg:w-1/2 font-semibold text-justify">
             {pizza.description[activeIndexLang]}
           </p>
         </div>
         <img
           src={ImagePizza}
           alt="PizzaImage"
-          className="block w-[300px] max-h-[335px]"
+          className="block invisible lg:visible lg:w-[300px] lg:max-h-[335px]"
         />
       </div>
     </div>

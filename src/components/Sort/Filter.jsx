@@ -8,7 +8,7 @@ import {
   selectSort,
 } from "../../redux/slices/sortSlice";
 import { selectChangeLang } from "../../redux/slices/changeLangSlice";
-import { setCurrentPage, setClearСurrentPage } from "../../redux/slices/paginationSlice";
+import { setCurrentPage, setActiveIndexPage } from "../../redux/slices/paginationSlice";
 
 import Sort from "./Sort";
 
@@ -23,15 +23,15 @@ const categories = [
 
 export default function Filter() {
   const { filterCategory, activeTypePizza } = useSelector(selectSort);
-  const { activeIndexLang } = useSelector(selectChangeLang);  
+  const { activeIndexLang } = useSelector(selectChangeLang);
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
   const onClickFilterButton = function (index, text) {
-    dispatch(setClearСurrentPage())
+    dispatch(setCurrentPage(1));
+    dispatch(setActiveIndexPage(0));
     dispatch(setFilterCategory(index));
     dispatch(setActiveTypePizza(text));
-    dispatch(setCurrentPage(1));   
   };
 
   const elements = categories.map(({ text }, index) => (
@@ -40,7 +40,7 @@ export default function Filter() {
       key={index}
       className={`      
       inline-block
-      m-2 sm:m-3 
+      m-1 sm:m-2 lg:m-3
       px-2 sm:px-3 lg:px-4
       py-px 
       text-base sm:text-lg lg:text-xl 

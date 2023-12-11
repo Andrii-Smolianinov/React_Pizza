@@ -32,7 +32,7 @@ export default function CartList() {
           className="flex flex-col items-center      
           gap-3 sm:gap-4 lg:gap-6
           px-0 
-          pt-4 lg:pt-10"
+          py-10"
         >
           {isLoading ? <h1>Loading...</h1> : <CartItem />}
         </ul>

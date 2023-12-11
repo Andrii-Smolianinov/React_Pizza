@@ -28,7 +28,7 @@ export default function PizzaList() {
   return (
     <>
       <ul
-        className="flex flex-wrap justify-center min-h-[65vh]
+        className="flex flex-wrap justify-center 
         p-2 sm:p-3 lg:p-8 
         gap-3 sm:gap-6 lg:gap-8"
       >
@@ -67,7 +67,7 @@ export default function PizzaList() {
               />
             ))}
       </ul>
-      {!searchPizza && (
+      {!searchPizza && items.length > 10 && (
         <Pagination totalPizzas={totalPizzas} pizzasPerPage={pizzasPerPage} />
       )}
     </>
