@@ -27,7 +27,11 @@ export default function Header({ showSearch, showButtonCart }) {
         </span>
       </Link>
       {showSearch && <SearchPizza />}
-      <div className="flex items-center">
+
+      <div
+        className="flex items-center justify-between 
+        w-full md:w-64 lg:w-72"
+      >
         <ChangeLanguage />
         {showButtonCart && <ButtonCart />}
       </div>

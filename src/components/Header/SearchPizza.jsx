@@ -30,8 +30,8 @@ export default function SearchPizza() {
         onChange={(e) => dispatch(setSearchPizza(e.target.value))}
         type="text"
         placeholder={t("search")}
-        className="px-7 py-1 border-solid border-2 border-red-600 rounded
-          text-base font-normal"
+        className="px-7 border-solid border-2 border-red-600 rounded text-base font-normal w-64
+        py-0 sm:py-1"
       ></input>
       {searchPizza && (
         <AiOutlineClose

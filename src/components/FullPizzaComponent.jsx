@@ -13,9 +13,9 @@ const FullPizzaComponent = () => {
   const { activeIndexLang } = useSelector(selectChangeLang);
   const showDoubleRender = useRef(true);
   const [pizza, setPizza] = useState();
-  const { id } = useParams();
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { id } = useParams();
 
   useEffect(() => {
     if (showDoubleRender.current) {
@@ -46,28 +46,43 @@ const FullPizzaComponent = () => {
       <div className="my-4">
         <ButtonComeBack tittle={t("backMain")} />
       </div>
-      <div className="flex flex-col sm:flex-row justify-start mt-4">
-        <div className="relative h-[335px]">
+      <div className="flex flex-col sm:flex-row  justify-start mt-4">
+        <div
+          className="relative h-[335px] 
+          w-full sm:w-1/2 lg:w-1/4"
+        >
           <img
             src={pizza.images}
             alt="PizzaImage"
-            className="block w-[full] max-h-[335px]"
+            className="block               
+              h-full
+              w-full 
+              "
           />
-          <div className="absolute w-full h-1/5 bottom-0 bg-slate-800 opacity-80 ">
-            <h2 className="text-center font-bold text-2xl uppercase pt-4 tracking-wider text-sky-400">
+          <div
+            className="absolute bottom-0 bg-slate-800 opacity-80 
+          w-full"
+          >
+            <h2 className="text-center font-bold text-2xl uppercase tracking-wider text-sky-400
+            py-3">
               {pizza.tittle[activeIndexLang]}
             </h2>
           </div>
         </div>
-        <div className="">
-          <p className="w-[90vw] sm:w-[80vw] lg:w-1/2 font-semibold text-justify">
+        <div className="w-full sm:w-1/2 lg:w-2/6">
+          <p
+            className="font-semibold text-justify          
+          mt-4 sm:mt-0         
+          pl-0 sm:pl-4 md:pl-8 lg:pl-14 
+          pr-0 sm:pr-4 md:pr-8 lg:pr-14"
+          >
             {pizza.description[activeIndexLang]}
           </p>
         </div>
         <img
           src={ImagePizza}
           alt="PizzaImage"
-          className="block invisible lg:visible lg:w-[300px] lg:max-h-[335px]"
+          className="w-0 lg:w-56 h-72 invisible lg:visible"
         />
       </div>
     </div>

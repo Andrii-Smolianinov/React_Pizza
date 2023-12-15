@@ -31,11 +31,11 @@ export default function CartItem() {
     ) => (
       <li
         key={index}
-        className=" flex items-center content-between border-solid border-2 rounded-md border-lime-600 overflow-hidden
-        w-[315px] sm:w-[550px] lg:w-[595px] xl:w-[750px]
-        h-[55px] sm:h-[66px]         
-        pr-1 sm:pr-4 lg:pr-6 xl:pr-8
-        gap-1 sm:gap-3 lg:gap-4"
+        className=" flex items-center content-between border-solid border-2 rounded-md border-lime-600 overflow-hidden 
+        pr-2 sm:pr-3 lg:pr-4
+        w-[355px] sm:w-[550px] lg:w-[665px] 
+        h-[55px] sm:h-[66px]
+        gap-1 sm:gap-2 lg:gap-3"
       >
         {/* images */}
         <div className="overflow-hidden contents">
@@ -49,13 +49,16 @@ export default function CartItem() {
         </div>
 
         {/* tittle */}
-        <h2 className="text-center text-base sm:text-lg lg:text-xl font-extrabold text-red-600 w-1/2">
+        <h2 className="text-center font-extrabold text-red-600 
+        text-base/[17px] sm:text-lg/[17px] lg:text-xl/[17px]
+        w-20 sm:w-32">
           {tittle[activeIndexLang]}
         </h2>
 
         {/* diameter */}
-        <p className="text-center text-lime-600">
-          <span className="block invisible sm:visible w-0 sm:w-1/4 h-0 sm:h-4">
+        <p className="text-center text-lime-600 text-sm/[17px] ">
+          <span className="block invisible sm:visible 
+          w-0 sm:w-10 h-0 sm:h-4">
             {t("diametrCart")}:
           </span>{" "}
           {selectDiameter}
@@ -63,7 +66,7 @@ export default function CartItem() {
         </p>
 
         {/* price for 1 */}
-        <div className="invisible sm:visible w-0 sm:w-1/5 text-center">
+        <div className="invisible sm:visible w-0 sm:w-32 text-center">
           <p className="text-lime-600">1 {t("pc")}</p>
           <div className="flex items-center justify-center">
             <p
@@ -77,7 +80,7 @@ export default function CartItem() {
         </div>
 
         {/* buttons -1+ */}
-        <div className="flex items-center">
+        <div className="flex items-center w-24">
           <AiOutlineMinusCircle
             size={25}
             className="hover:fill-lime-700 cursor-pointer"
@@ -86,9 +89,9 @@ export default function CartItem() {
             }}
           />
           <p
-            className="font-bold  
-            m-2 sm:m-3 lg:m-4 xl:m-5
-            text-base sm:text-lg lg:text-xl"
+            className="font-bold text-center           
+            text-base sm:text-lg lg:text-xl
+            w-10"
           >
             {count}
           </p>
@@ -101,8 +104,8 @@ export default function CartItem() {
           />
         </div>
 
-        {/* price all */}
-        <div className="w-1/4 text-center">
+        {/* total price */}
+        <div className="text-center w-28">
           <p className="text-lime-600">{t("total")}</p>
           <div className="flex items-center justify-center">
             <p

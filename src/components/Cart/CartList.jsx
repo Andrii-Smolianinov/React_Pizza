@@ -40,9 +40,8 @@ export default function CartList() {
         <img
           alt="cart-images"
           src="images/cart-img.jpg"
-          className="invisible lg:visible transition-all duration-350
-          w-0 lg:w-[354px] xl:w-[450px]
-          h-0 lg:h-[374px] xl:h-[480px]
+          className="invisible lg:visible 
+          w-0 lg:w-72 h-80
           "
         ></img>
       </div>

@@ -13,9 +13,8 @@ export default function ButtonCart() {
   return (
     <Link
       to="/cart"
-      className="block rounded-xl min-w-[178px]
-      px-2 lg:px-3
-      py-px lg:py-1
+      className="block rounded-xl      
+      px-2 lg:px-3     
       text-lg sm:text-xl lg:text-2xl
       bg-lime-700 text-green-200 
       hover:bg-lime-200 hover:text-green-700 transition-all duration-350"

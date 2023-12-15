@@ -18,7 +18,7 @@ export const AppContext = React.createContext();
 function App() {
   const [showSearch, setShowSearch] = React.useState(true);
   const [showButtonCart, setShowButtonCart] = React.useState(true);
-  const [pizzasPerPage] = React.useState(10);
+  const [pizzasPerPage] = React.useState(5);
   const [isEmptyCart] = React.useState(true);
 
   const { sortCategory, filterCategory } = useSelector(selectSort);
