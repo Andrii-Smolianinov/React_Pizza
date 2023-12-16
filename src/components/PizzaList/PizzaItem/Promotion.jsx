@@ -10,20 +10,11 @@ const Promotion = () => {
   const { activeIndexLang } = useSelector(selectChangeLang);
   return (
     <div className="absolute w-[276px] h-1/5 top-0">
-      {activeIndexLang === 0 && (
-        <img
-          src={ukrIMG}
-          alt="akcia"
-          className="absolute w-1/2 left-1/4 opacity-80"
-        />
-      )}
-      {activeIndexLang === 1 && (
-        <img
-          src={engIMG}
-          alt="akcia"
-          className="absolute w-1/2 h-[78px] left-1/4 opacity-80"
-        />
-      )}
+      <img
+        src={activeIndexLang === 0 ? ukrIMG : engIMG}
+        alt="logo promotion"               
+        className="absolute w-1/2 h-[75px] left-1/4 opacity-80"
+      />
     </div>
   );
 };

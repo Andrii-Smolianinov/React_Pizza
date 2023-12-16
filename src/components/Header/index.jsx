@@ -15,7 +15,7 @@ export default function Header({ showSearch, showButtonCart }) {
       <Link to="/" className="cursor-pointer flex items-center">
         <img
           src={logoJPG}
-          alt="logo"
+          alt="Logo company"
           className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 m-1"
         />
         <span className="uppercase font-black sm:text-xl lg:text-3xl drop-shadow-lg ml-2">

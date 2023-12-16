@@ -9,7 +9,6 @@ import Home from "./pages/Home";
 import FullPizza from "./pages/FullPizza";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
-
 import Container from "./Container";
 import Header from "./components/Header";
 

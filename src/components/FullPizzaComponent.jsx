@@ -81,7 +81,7 @@ const FullPizzaComponent = () => {
         </div>
         <img
           src={ImagePizza}
-          alt="PizzaImage"
+          alt="Pizza Images"
           className="w-0 lg:w-56 h-72 invisible lg:visible"
         />
       </div>

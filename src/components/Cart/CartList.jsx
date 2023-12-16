@@ -38,7 +38,7 @@ export default function CartList() {
         </ul>
 
         <img
-          alt="cart-images"
+          alt="Pizza images"
           src="images/cart-img.jpg"
           className="invisible lg:visible 
           w-0 lg:w-72 h-80

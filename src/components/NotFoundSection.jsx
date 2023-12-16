@@ -8,7 +8,7 @@ export default function NotFoundSection() {
       </h1>
       <img
         src="images/not-found.jpg"
-        alt="not found"
+        alt="Page not found"
         className="my-0 mx-auto 
         w-2/3 sm:w-1/2 lg:w-1/3 xl:w-1/4
         h-1/3 sm:h-1/2 lg:h-1/2 xl:h-1/2"

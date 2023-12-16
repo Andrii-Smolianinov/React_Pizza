@@ -26,7 +26,7 @@ export default function CartItem() {
 
   return itemsCart.map(
     (
-      { id, images, tittle, price, count, itemPrice, selectDiameter },
+      { images, tittle, price, count, itemPrice, selectDiameter },
       index
     ) => (
       <li
@@ -44,7 +44,7 @@ export default function CartItem() {
             h-0 sm:h-16  
             w-0 sm:w-20"
             src={images}
-            alt="element pizza"
+            alt="Pizza images"
           ></img>
         </div>
 
@@ -66,7 +66,7 @@ export default function CartItem() {
         </p>
 
         {/* price for 1 */}
-        <div className="invisible sm:visible w-0 sm:w-32 text-center">
+        <div className="invisible sm:visible w-0 sm:w-28 text-center">
           <p className="text-lime-600">1 {t("pc")}</p>
           <div className="flex items-center justify-center">
             <p

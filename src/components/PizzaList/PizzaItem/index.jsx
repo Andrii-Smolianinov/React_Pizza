@@ -40,8 +40,9 @@ export default function PizzaItem({ id, images, tittle, price, category }) {
       <Link to={`/pizza/${id}`}>
         <div className="relative overflow-hidden">
           <img
-            className="w-full h-[184px] group-hover:scale-110 transition-all duration-350"
+            className="w-full group-hover:scale-110 transition-all duration-350"
             src={images}
+            height={184}
             alt="element pizza"
           ></img>
           {category.find((element) => element === 5) && <Promotion />}

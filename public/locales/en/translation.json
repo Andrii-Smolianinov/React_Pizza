@@ -19,5 +19,6 @@
   "costOrder": "of the order",
   "empty": "shopping cart is empty",
   "makeOrder": "Make an order",
-  "pizza": "pizzas"
+  "pizza": "pizzas",
+  "databaseError": "No database connection... Please try again later"
 }

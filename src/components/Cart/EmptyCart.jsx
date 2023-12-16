@@ -17,7 +17,7 @@ export default function EmptyCart() {
 
       <div className="flex flex-col items-center px-10">
         <img
-          alt="cart-empty"
+          alt="empty cart"
           src="images/not-found.jpg"
           className="mx-auto my-5"
         ></img>

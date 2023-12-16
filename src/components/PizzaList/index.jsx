@@ -67,7 +67,7 @@ export default function PizzaList() {
               />
             ))}
       </ul>
-      {!searchPizza && items.length > 10 && (
+      {!searchPizza && items.length > 5 && (
         <Pagination totalPizzas={totalPizzas} pizzasPerPage={pizzasPerPage} />
       )}
     </>
