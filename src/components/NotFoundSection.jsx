@@ -1,4 +1,5 @@
 import React from "react";
+import notFoundIMG from "../assets/img/not-found.jpg"
 
 export default function NotFoundSection() {
   return (
@@ -7,7 +8,7 @@ export default function NotFoundSection() {
         Page not found
       </h1>
       <img
-        src="images/not-found.jpg"
+        src={notFoundIMG}
         alt="Page not found"
         className="my-0 mx-auto 
         w-2/3 sm:w-1/2 lg:w-1/3 xl:w-1/4

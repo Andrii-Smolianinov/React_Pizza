@@ -4,6 +4,8 @@ import { useTranslation } from "react-i18next";
 import ButtonComeBack from "../Buttons/ButtonComeBack";
 import CartHeadSection from "./CartHeadSection";
 
+import notFoundIMG from "../../assets/img/not-found.jpg"
+
 export default function EmptyCart() {
   const { t } = useTranslation();
 
@@ -18,7 +20,7 @@ export default function EmptyCart() {
       <div className="flex flex-col items-center px-10">
         <img
           alt="empty cart"
-          src="images/not-found.jpg"
+          src={notFoundIMG}
           className="mx-auto my-5"
         ></img>
         <p className="font-bold text-2xl text-lime-700">{t("makeOrder")}</p>

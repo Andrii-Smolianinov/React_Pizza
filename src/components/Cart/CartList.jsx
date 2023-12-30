@@ -10,6 +10,7 @@ import ButtonComeBack from "../Buttons/ButtonComeBack";
 import CartHeadSection from "./CartHeadSection";
 
 import { AppContext } from "../../App";
+import cartIMG from "../../assets/img/cart-img.jpg"
 
 export default function CartList() {
   const { isLoading } = React.useContext(AppContext);
@@ -39,7 +40,7 @@ export default function CartList() {
 
         <img
           alt="Pizza images"
-          src="images/cart-img.jpg"
+          src={cartIMG}
           className="invisible lg:visible 
           w-0 lg:w-72 h-80
           "
