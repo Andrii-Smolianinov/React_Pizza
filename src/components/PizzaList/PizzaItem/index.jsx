@@ -34,35 +34,36 @@ export default function PizzaItem({ id, images, tittle, price, category }) {
   return (
     <li
       key={id}
-      className="flex-col w-[280px] h-[450px] border-solid border-2 rounded-md border-rose-600 bg-amber-50 
-      overflow-hidden group hover:shadow-lg hover:shadow-indigo-500/90 transition-all duration-300"
+      className="flex-col w-[280px] h-[450px] border-solid border-2 rounded-md border-cyan-800 bg-amber-50 
+      overflow-hidden group hover:shadow-lg hover:shadow-cyan-600/90 transition-all duration-300"
     >
       <Link to={`/pizza/${id}`}>
         <div className="relative overflow-hidden">
           <img
-            className="w-full group-hover:scale-110 transition-all duration-350"
+            className="group-hover:scale-110 transition-all duration-350"
             src={images}
             height={184}
+            width={276}
             alt="element pizza"
           ></img>
           {category.find((element) => element === 5) && <Promotion />}
         </div>
-        <h2 className="text-center my-8 text-2xl font-black text-red-600 h-[36px]">
+        <h2 className="text-center my-8 text-2xl font-black text-cyan-800 h-[36px]">
           {tittle[activeIndexLang]}
         </h2>
       </Link>
 
-      <div className="border-solid border-2 border-rose-300">
-        <p className="flex justify-center border-solid border-2 border-rose-300 bg-rose-300 text-red-600">
+      <div className="border-solid border-2 border-teal-500">
+        <p className="flex justify-center border-solid border-2 border-teal-500 bg-teal-500 text-cyan-100">
           {t("diametr")}
         </p>
-        <ul className="flex justify-center border-solid border-2 border-rose-300 bg-rose-300">
+        <ul className="flex justify-center border-solid border-2 border-teal-500 bg-teal-500">
           {diameters.map((diameter, index) => (
             <li
               key={index}
               onClick={() => setActiveDiameter(index)}
               className={`p-1 mx-1 font-bold rounded ${
-                activeDiameter === index ? "bg-amber-50" : "hover:bg-rose-200"
+                activeDiameter === index ? "bg-cyan-200" : "hover:bg-cyan-300 transition-all"
               }`}
             >
               <button>
@@ -74,11 +75,11 @@ export default function PizzaItem({ id, images, tittle, price, category }) {
         </ul>
       </div>
       <div className="flex justify-around items-center my-5">
-        <p className="ml-5 text-2xl font-black">
+        <p className="ml-5 text-2xl font-black text-cyan-800">
           {price[activeDiameter]} {t("uah")}
         </p>
         <button
-          className="p-3 font-bold border-2 rounded-md border-rose-300 hover:bg-rose-300 hover:text-amber-50 transition-all duration-350"
+          className="p-3 font-bold border-2 rounded-md border-cyan-800 hover:bg-teal-500 hover:text-amber-50 hover:border-teal-500 transition-all"
           type="button"
           onClick={onClickAddToCart}
         >

@@ -8,9 +8,10 @@ import CartItem from "./CartItem";
 import ButtonClearCart from "../Buttons/ButtonClearCart";
 import ButtonComeBack from "../Buttons/ButtonComeBack";
 import CartHeadSection from "./CartHeadSection";
+import Loader from "../Loader";
 
 import { AppContext } from "../../App";
-import cartIMG from "../../assets/img/cart-img.jpg"
+import cartIMG from "../../assets/img/cart-img.png";
 
 export default function CartList() {
   const { isLoading } = React.useContext(AppContext);
@@ -35,15 +36,14 @@ export default function CartList() {
           px-0 
           py-10"
         >
-          {isLoading ? <h1>Loading...</h1> : <CartItem />}
+          {isLoading ? <Loader /> : <CartItem />}
         </ul>
 
         <img
           alt="Pizza images"
           src={cartIMG}
           className="invisible lg:visible 
-          w-0 lg:w-72 h-80
-          "
+          w-0 lg:w-72 h-80"
         ></img>
       </div>
 

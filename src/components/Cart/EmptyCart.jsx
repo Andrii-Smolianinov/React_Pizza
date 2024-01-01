@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import ButtonComeBack from "../Buttons/ButtonComeBack";
 import CartHeadSection from "./CartHeadSection";
 
-import notFoundIMG from "../../assets/img/not-found.jpg"
+import notFoundIMG from "../../assets/img/not-found.png"
 
 export default function EmptyCart() {
   const { t } = useTranslation();

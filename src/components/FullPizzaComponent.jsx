@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { selectChangeLang } from "../redux/slices/changeLangSlice";
 
 import ButtonComeBack from "./Buttons/ButtonComeBack";
+import Loader from "./Loader";
 import ImagePizza from "../assets/img/id-not-found.png";
 
 const FullPizzaComponent = () => {
@@ -38,7 +39,7 @@ const FullPizzaComponent = () => {
   }, []);
 
   if (!pizza) {
-    return "Loading...";
+    return <Loader />;
   }
 
   return (
@@ -46,7 +47,8 @@ const FullPizzaComponent = () => {
       <div className="my-4">
         <ButtonComeBack tittle={t("backMain")} />
       </div>
-      <div className="flex flex-col sm:flex-row  justify-start mt-4">
+      <div className="flex flex-col sm:flex-row justify-center 
+      mt-8 sm:mt-16">
         <div
           className="relative h-[335px] 
           w-full sm:w-1/2 lg:w-1/4"
@@ -54,17 +56,16 @@ const FullPizzaComponent = () => {
           <img
             src={pizza.images}
             alt="PizzaImage"
-            className="block               
-              h-full
-              w-full 
-              "
+            className="block h-full w-full"
           />
           <div
             className="absolute bottom-0 bg-slate-800 opacity-80 
           w-full"
           >
-            <h2 className="text-center font-bold text-2xl uppercase tracking-wider text-sky-400
-            py-3">
+            <h2
+              className="text-center font-bold text-2xl uppercase tracking-wider text-sky-400
+            py-3"
+            >
               {pizza.tittle[activeIndexLang]}
             </h2>
           </div>
@@ -72,9 +73,9 @@ const FullPizzaComponent = () => {
         <div className="w-full sm:w-1/2 lg:w-2/6">
           <p
             className="font-semibold text-justify          
-          mt-4 sm:mt-0         
-          pl-0 sm:pl-4 md:pl-8 lg:pl-14 
-          pr-0 sm:pr-4 md:pr-8 lg:pr-14"
+          mt-8 sm:mt-0         
+          pl-2 sm:pl-4 md:pl-8 lg:pl-14 
+          pr-2 sm:pr-4 md:pr-8 lg:pr-14"
           >
             {pizza.description[activeIndexLang]}
           </p>

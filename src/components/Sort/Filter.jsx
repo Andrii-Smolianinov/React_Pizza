@@ -18,7 +18,7 @@ const categories = [
   { text: ["Вегатеріанські", "Vegetarian"] },
   { text: ["Гриль", "Grill"] },
   { text: ["Гострі", "Hot"] },
-  { text: ["Акційні", "Promotional"] },
+  { text: ["Акційні", "SALE"] },
 ];
 
 export default function Filter() {
@@ -61,7 +61,7 @@ export default function Filter() {
   return (
     <>
       <nav
-        className="flex flex-wrap items-center justify-between  bg-yellow-100 
+        className="flex flex-wrap items-center justify-between 
         p-2 sm:p-3 lg:p-6"
       >
         <ul className="flex flex-wrap justify-start">{elements}</ul>
@@ -73,7 +73,7 @@ export default function Filter() {
         font-semibold sm:font-bold lg:font-extrabold
         pl-4 sm:pl-6 lg:pl-10
         mb-2 sm:mb-4 lg:mb-6
-        text-lime-700  bg-yellow-100"
+        text-lime-700"
       >
         {activeTypePizza[activeIndexLang]} {t("pizza")}
       </h1>
