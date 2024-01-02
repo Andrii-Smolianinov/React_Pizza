@@ -43,7 +43,7 @@ const FullPizzaComponent = () => {
   }
 
   return (
-    <div className="h-[81vh]">
+    <div className="">
       <div className="my-4">
         <ButtonComeBack tittle={t("backMain")} />
       </div>

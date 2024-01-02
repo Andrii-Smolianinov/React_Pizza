@@ -25,13 +25,10 @@ export default function CartItem() {
   };
 
   return itemsCart.map(
-    (
-      { images, tittle, price, count, itemPrice, selectDiameter },
-      index
-    ) => (
+    ({ images, tittle, price, count, itemPrice, selectDiameter }, index) => (
       <li
         key={index}
-        className=" flex items-center content-between border-solid border-2 rounded-md border-lime-600 overflow-hidden 
+        className="flex items-center content-between border-solid border-2 rounded-md border-lime-600 overflow-hidden 
         pr-2 sm:pr-3 lg:pr-4
         w-[355px] sm:w-[550px] lg:w-[665px] 
         h-[55px] sm:h-[66px]
@@ -49,16 +46,21 @@ export default function CartItem() {
         </div>
 
         {/* tittle */}
-        <h2 className="text-center font-extrabold text-red-600 
-        text-base/[17px] sm:text-lg/[17px] lg:text-xl/[17px]
-        w-20 sm:w-32">
-          {tittle[activeIndexLang]}
-        </h2>
+        <div className="block w-24 sm:w-40">
+          <h2
+            className="text-center font-extrabold text-red-600 
+            text-base/[17px] sm:text-lg/[17px] lg:text-xl/[17px]"
+          >
+            {tittle[activeIndexLang]}
+          </h2>
+        </div>
 
         {/* diameter */}
         <p className="text-center text-lime-600 text-sm/[17px] ">
-          <span className="block invisible sm:visible 
-          w-0 sm:w-10 h-0 sm:h-4">
+          <span
+            className="block invisible sm:visible 
+          w-0 sm:w-10 h-0 sm:h-4"
+          >
             {t("diametrCart")}:
           </span>{" "}
           {selectDiameter}
@@ -105,7 +107,7 @@ export default function CartItem() {
         </div>
 
         {/* total price */}
-        <div className="text-center w-28">
+        <div className="text-center w-20">
           <p className="text-lime-600">{t("total")}</p>
           <div className="flex items-center justify-center">
             <p

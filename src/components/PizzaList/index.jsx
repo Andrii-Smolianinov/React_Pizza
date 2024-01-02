@@ -46,7 +46,7 @@ export default function PizzaList() {
                 }
                 return false;
               })
-              .map(({ id, images, tittle, price, category }) => (
+              .map(({ id, images, tittle, price, category, likes, isClickLike, isClickOrder }) => (
                 <PizzaItem
                   key={id}
                   id={id}
@@ -54,16 +54,22 @@ export default function PizzaList() {
                   tittle={tittle}
                   price={price}
                   category={category}
+                  likes={likes}                  
+                  isClickLike={isClickLike}
+                  isClickOrder={isClickOrder}
                 />
               ))
-          : currentPizza.map(({ id, images, tittle, price, category }) => (
+          : currentPizza.map(({ id, images, tittle, price, category, likes, isClickLike, isClickOrder }) => (
               <PizzaItem
                 key={id}
                 id={id}
                 images={images}
                 tittle={tittle}
                 price={price}
-                category={category}
+                category={category}                
+                likes={likes}
+                isClickLike={isClickLike}
+                isClickOrder={isClickOrder}
               />
             ))}
       </ul>

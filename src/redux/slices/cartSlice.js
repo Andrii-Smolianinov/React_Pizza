@@ -9,7 +9,7 @@ export const cartSlise = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addItemToCart(state, action) {
+    addItemToCart(state, action) {      
       const findItem = state.itemsCart.find(
         (item) => item.price === action.payload.price
       );
@@ -60,7 +60,7 @@ export const cartSlise = createSlice({
     },
     clearTotalPrice(state) {
       state.totalPrice = Number(0);
-    },
+    },    
   },
 });
 

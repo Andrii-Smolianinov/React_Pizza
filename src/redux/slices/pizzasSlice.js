@@ -20,7 +20,26 @@ export const initialState = {
 const pizzasSlice = createSlice({
   name: "pizzas",
   initialState,
-  reducers: {},
+  reducers: {
+    setIncrementLikes(state, action) {
+      const findItem = state.items.find((item) => item.id === action.payload);
+
+      if (!findItem.isClickLike) {
+        findItem.isClickLike = true;
+        findItem.likes++;
+      } else {
+        findItem.isClickLike = false;
+        findItem.likes--;
+      }
+    },
+    setIsClickOrder(state, action) {
+      const findItem = state.items.find((item) => item.id === action.payload);
+
+      if (!findItem.isClickOrder) {
+        findItem.isClickOrder = true;
+      }
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchPizzasSlice.pending, (state) => {
@@ -30,6 +49,8 @@ const pizzasSlice = createSlice({
 
       .addCase(fetchPizzasSlice.fulfilled, (state, action) => {
         state.items = action.payload;
+        state.items.map((item) => item.isClickLike === false);
+        state.items.map((item) => item.isClickOrder === false);
         state.status = "success";
       })
 
@@ -41,5 +62,7 @@ const pizzasSlice = createSlice({
 });
 
 export const selectPizzas = (state) => state.pizzas;
+
+export const { setIncrementLikes, setIsClickOrder } = pizzasSlice.actions;
 
 export default pizzasSlice.reducer;

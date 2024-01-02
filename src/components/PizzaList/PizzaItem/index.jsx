@@ -2,14 +2,25 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Promotion from "./Promotion";
+import Likes from "./Likes";
 
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart, setTotalPrice } from "../../../redux/slices/cartSlice";
 import { selectChangeLang } from "../../../redux/slices/changeLangSlice";
+import { setIsClickOrder } from "../../../redux/slices/pizzasSlice";
 
 const diameters = ["26", "30", "40"];
 
-export default function PizzaItem({ id, images, tittle, price, category }) {
+export default function PizzaItem({
+  id,
+  images,
+  tittle,
+  price,
+  category,
+  likes,
+  isClickLike,
+  isClickOrder,
+}) {
   const [activeDiameter, setActiveDiameter] = React.useState(0);
   const { activeIndexLang } = useSelector(selectChangeLang);
 
@@ -28,6 +39,7 @@ export default function PizzaItem({ id, images, tittle, price, category }) {
     };
 
     dispatch(addItemToCart(item));
+    dispatch(setIsClickOrder(id));
     dispatch(setTotalPrice(price[activeDiameter]));
   };
 
@@ -37,17 +49,19 @@ export default function PizzaItem({ id, images, tittle, price, category }) {
       className="flex-col w-[280px] h-[450px] border-solid border-2 rounded-md border-cyan-800 bg-amber-50 
       overflow-hidden group hover:shadow-lg hover:shadow-cyan-600/90 transition-all duration-300"
     >
+      <div className="relative overflow-hidden">
+        <img
+          className="group-hover:scale-110 transition-all duration-350"
+          src={images}
+          height={184}
+          width={276}
+          alt="element pizza"
+        ></img>
+        <Likes id={id} isClickLike={isClickLike} likes={likes} />
+
+        {category.find((element) => element === 5) && <Promotion />}
+      </div>
       <Link to={`/pizza/${id}`}>
-        <div className="relative overflow-hidden">
-          <img
-            className="group-hover:scale-110 transition-all duration-350"
-            src={images}
-            height={184}
-            width={276}
-            alt="element pizza"
-          ></img>
-          {category.find((element) => element === 5) && <Promotion />}
-        </div>
         <h2 className="text-center my-8 text-2xl font-black text-cyan-800 h-[36px]">
           {tittle[activeIndexLang]}
         </h2>
@@ -63,7 +77,9 @@ export default function PizzaItem({ id, images, tittle, price, category }) {
               key={index}
               onClick={() => setActiveDiameter(index)}
               className={`p-1 mx-1 font-bold rounded ${
-                activeDiameter === index ? "bg-cyan-200" : "hover:bg-cyan-300 transition-all"
+                activeDiameter === index
+                  ? "bg-cyan-200"
+                  : "hover:bg-cyan-300 transition-all"
               }`}
             >
               <button>
@@ -79,7 +95,8 @@ export default function PizzaItem({ id, images, tittle, price, category }) {
           {price[activeDiameter]} {t("uah")}
         </p>
         <button
-          className="p-3 font-bold border-2 rounded-md border-cyan-800 hover:bg-teal-500 hover:text-amber-50 hover:border-teal-500 transition-all"
+          className={`p-3 font-bold border-2 rounded-md border-cyan-800 hover:bg-teal-500 hover:text-amber-50 hover:border-teal-500 transition-all 
+          ${isClickOrder ? "bg-cyan-200" : "bg-amber-50"} `}
           type="button"
           onClick={onClickAddToCart}
         >
