@@ -22,8 +22,10 @@ export default function EmptyCart() {
           alt="empty cart"
           src={notFoundIMG}
           className="mx-auto my-5"
+          width={276}
+          height={208}
         ></img>
-        <p className="font-bold text-2xl text-lime-700">{t("makeOrder")}</p>
+        <p className="font-bold text-2xl text-center text-lime-700">{t("makeOrder")}</p>
       </div>
     </div>
   );

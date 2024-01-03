@@ -17,7 +17,8 @@
     "price": [270, 290, 310],
     "category": [0, 1, 3, 5],
     "rating": 2,
-    "description": ["Важко собі уявити, якусь більш популярнішу страву, ніж піца. І все тому, що її можна готувати по-різному, а значить і зібрати той улюблений мікс інгредієнтів. Але залишається незмінними тільки тонке тісто, хрумка скоринка та смачна начинка. І особливо виділяється піца Барбекю, оскільки відрізняється ароматом диму та пікантним соусом. Історія появи піци Барбекю починається у США, де страва була вигадана в середині XX століття. На той час національна кухня США була дуже популярна, і багато людей почали експериментувати з її стравами, додаючи нові інгредієнти та соуси.", "It is hard to imagine a more popular dish than pizza. And all because it can be prepared in different ways, which means to collect that favorite mix of ingredients. But only the thin dough, crispy crust and delicious filling remain unchanged. And the barbecue pizza stands out because it has a smoky aroma and spicy sauce. The history of the appearance of barbecue pizza begins in the USA, where the dish was invented in the middle of the 20th century. At that time, the national cuisine of the United States was very popular, and many people began to experiment with its dishes, adding new ingredients and sauces."],
+    "description": ["Важко собі уявити, якусь більш популярнішу страву, ніж піца. І все тому, що її можна готувати по-різному, а значить і зібрати той улюблений мікс інгредієнтів. Але залишається незмінними тільки тонке тісто, хрумка скоринка та смачна начинка. І особливо виділяється піца Барбекю, оскільки відрізняється ароматом диму та пікантним соусом. Історія появи піци Барбекю починається у США, де страва була вигадана в середині XX століття. На той час національна кухня США була дуже популярна, і багато людей почали експериментувати з її стравами, додаючи нові інгредієнти та соуси.", 
+    "It is hard to imagine a more popular dish than pizza. And all because it can be prepared in different ways, which means to collect that favorite mix of ingredients. But only the thin dough, crispy crust and delicious filling remain unchanged. And the barbecue pizza stands out because it has a smoky aroma and spicy sauce. The history of the appearance of barbecue pizza begins in the USA, where the dish was invented in the middle of the 20th century. At that time, the national cuisine of the United States was very popular, and many people began to experiment with its dishes, adding new ingredients and sauces."],
     "images": "https://images.ntile.app/98910ca7391f7dac35463c9eae615f58b0968a10e6756f78aa55d2b042830ccb?width=623&format=webp"
   },
   {
@@ -26,7 +27,8 @@
     "price": [208, 228, 248],
     "category": [0, 1, 3, 4],
     "rating": 1,
-    "description": ["Прошуто, салямі, шинка, ковбаски, моцарела, томатний соус, зауважте, cоус до бортиків у нас безкоштовна, ви можете обрати його з переліку за бажанням (без соусу, соус BBQ, соус Чеддер, соус Філадельфія)", "Prosciutto, salami, ham, sausages, mozzarella, tomato sauce, note that the sauce for the sides is free, you can choose it from the list as you wish (no sauce, BBQ sauce, Cheddar sauce, Philadelphia sauce)"],
+    "description": ["Прошуто, салямі, шинка, ковбаски, моцарела, томатний соус, зауважте, cоус до бортиків у нас безкоштовна, ви можете обрати його з переліку за бажанням (без соусу, соус BBQ, соус Чеддер, соус Філадельфія)", 
+    "Prosciutto, salami, ham, sausages, mozzarella, tomato sauce, note that the sauce for the sides is free, you can choose it from the list as you wish (no sauce, BBQ sauce, Cheddar sauce, Philadelphia sauce)"],
     "images": "https://images.ntile.app/43392abfcc0f124ccb69260b3b265a71a6963db8dbfecd5dd707c1af4c01a0d8?width=623&format=webp"
   },
   {
@@ -35,7 +37,8 @@
     "price": [155, 175, 195],
     "category": [0, 1, 4],
     "rating": 9,
-    "description": [ "This Italian dish quickly gained popularity all over the world. Salami pizza is quite simple to prepare, but requires compliance with some subtleties and rules. The elastic dough that can be folded in half is baked in a special oven. Baking takes place on firewood at a temperature of 200 degrees Celsius. The dough itself is recommended to be kneaded on real Italian flour."],
+    "description": [ "Ця італійська страва швидко завоювала популярність у всьому світі. Піца салямі готується досить просто, але вимагає дотримання деяких тонкощів та правил. Еластичне тісто, яке можна скласти навпіл, випікають у спеціальній духовці. Випікання відбувається на дровах. при температурі 200 градусів Цельсія. Саме тісто рекомендується замішувати на справжньому італійському борошні.", 
+    "This Italian dish quickly gained popularity all over the world. Salami pizza is quite simple to prepare, but requires compliance with some subtleties and rules. The elastic dough that can be folded in half is baked in a special oven. Baking takes place on firewood at a temperature of 200 degrees Celsius. The dough itself is recommended to be kneaded on real Italian flour."],
     "images": "https://images.ntile.app/cb4d4af077d4f9d6af61f1cec05372b17440cc2f42523250edafc600ba5f0f5c?width=623&format=webp"
   },
   {

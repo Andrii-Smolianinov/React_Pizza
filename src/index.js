@@ -9,6 +9,7 @@ import "./global.css";
 import App from "./App";
 import { store, persistor } from "./redux/store";
 
+import Loader from "./components/Loader";
 import "./18n";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -18,7 +19,7 @@ root.render(
     <PersistGate persistor={persistor} loading={null}>
       <BrowserRouter>
         <React.StrictMode>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<Loader />}>
             <App />
           </Suspense>
         </React.StrictMode>

@@ -93,7 +93,7 @@ export default function CartItem() {
           <p
             className="font-bold text-center           
             text-base sm:text-lg lg:text-xl
-            w-10"
+            w-8"
           >
             {count}
           </p>
@@ -107,7 +107,7 @@ export default function CartItem() {
         </div>
 
         {/* total price */}
-        <div className="text-center w-20">
+        <div className="text-center w-24">
           <p className="text-lime-600">{t("total")}</p>
           <div className="flex items-center justify-center">
             <p
