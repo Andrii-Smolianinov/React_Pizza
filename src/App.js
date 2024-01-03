@@ -21,7 +21,7 @@ function App() {
   const [isEmptyCart] = React.useState(true);
 
   const { sortCategory, filterCategory } = useSelector(selectSort);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch();  
 
   const fetchPizzas = async () => {
     const category = filterCategory > 0 ? `category=${filterCategory}` : "";
@@ -32,7 +32,7 @@ function App() {
 
   React.useEffect(() => {
     fetchPizzas();
-
+    
     // eslint-disable-next-line
   }, [sortCategory, filterCategory]);
 

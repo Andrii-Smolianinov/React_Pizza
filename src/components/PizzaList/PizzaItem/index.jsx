@@ -14,8 +14,7 @@ export default function PizzaItem({
   images,
   tittle,
   price,
-  category,
-  isClickOrder,
+  category 
 }) {
   const [activeDiameter, setActiveDiameter] = React.useState(0);
   const { activeIndexLang } = useSelector(selectChangeLang);
@@ -90,8 +89,8 @@ export default function PizzaItem({
           {price[activeDiameter]} {t("uah")}
         </p>
         <button
-          className={`p-3 font-bold border-2 rounded-md border-cyan-800 hover:bg-teal-500 hover:text-amber-50 hover:border-teal-500 transition-all 
-          ${isClickOrder ? "bg-cyan-200" : "bg-amber-50"} `}
+          className="p-3 font-bold border-2 rounded-md bg-amber-50 border-cyan-800 
+          hover:bg-teal-500 hover:text-amber-50 hover:border-teal-500 transition-all"          
           type="button"
           onClick={onClickAddToCart}
         >

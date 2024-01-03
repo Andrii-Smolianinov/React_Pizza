@@ -26,7 +26,7 @@ export default function Header({ showSearch, showButtonCart }) {
           <span className="text-red-700">zza</span>
         </span>
       </Link>
-      {showSearch && <SearchPizza />}
+      {showSearch && <SearchPizza />}      
 
       <div
         className="flex items-center justify-between 
