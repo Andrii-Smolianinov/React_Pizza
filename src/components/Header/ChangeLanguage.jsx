@@ -23,10 +23,10 @@ const ChangeLanguage = () => {
   return (
     <div className="mt-2">
       <button onClick={() => onChangeLanguage("ua", 0)}>
-        <img src={UAflag} alt="Ukraine flag" width={36} height={32}></img>
+        <img src={UAflag} alt="Ukraine flag" width={36} height={32} className="hover:scale-y-110 lg:hover:scale-y-125 hover:scale-x-105 transition-all duration-300"></img>
       </button>
       <button onClick={() => onChangeLanguage("en", 1)}>
-        <img src={GBflag} alt="Great Britan flag" width={36} height={32} className="ml-px"></img>
+        <img src={GBflag} alt="Great Britan flag" width={36} height={32} className="ml-px hover:scale-y-110 lg:hover:scale-y-125 hover:scale-x-105 transition-all duration-300"></img>
       </button>
     </div>
   );

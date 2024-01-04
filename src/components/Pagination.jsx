@@ -25,7 +25,7 @@ const Pagination = ({ totalPizzas, pizzasPerPage }) => {
       {pageNumbers.map((number, index) => (
         <li
           key={number}
-          className={`m-1 rounded-md ${
+          className={`m-1 rounded-md transition duration-300 ${
             activeIndexPage === index
               ? "bg-lime-700 text-green-200 hover:bg-lime-700"
               : "bg-lime-200 text-green-600 hover:bg-teal-500 hover:text-green-100"

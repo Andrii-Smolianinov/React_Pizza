@@ -66,7 +66,7 @@ export default function CartList() {
           px-2 lg:px-3
           py-px lg:py-1
           text-lg sm:text-xl lg:text-2xl
-          transition-all duration-350"
+          transition duration-300"
         >
           {t("order")}
         </button>

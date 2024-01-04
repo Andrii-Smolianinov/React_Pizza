@@ -85,7 +85,7 @@ export default function CartItem() {
         <div className="flex items-center w-24">
           <AiOutlineMinusCircle
             size={25}
-            className="hover:fill-lime-700 cursor-pointer"
+            className="hover:fill-lime-700 cursor-pointer transition duration-300"
             onClick={() => {
               dispatch(setDecrementCount(index));
             }}
@@ -99,7 +99,7 @@ export default function CartItem() {
           </p>
           <AiOutlinePlusCircle
             size={25}
-            className="hover:fill-lime-700 cursor-pointer"
+            className="hover:fill-lime-700 cursor-pointer transition duration-300"
             onClick={() => {
               dispatch(setIncrementCount(index));
             }}
@@ -125,7 +125,7 @@ export default function CartItem() {
           <RiDeleteBin6Line
             onClick={() => onRemoveItem(index, price)}
             size={20}
-            className="hover:fill-lime-700 cursor-pointer"
+            className="hover:fill-lime-700 cursor-pointer transition duration-300"
           />
         </div>
       </li>

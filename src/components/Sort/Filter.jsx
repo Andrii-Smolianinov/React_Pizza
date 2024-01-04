@@ -41,28 +41,21 @@ export default function Filter() {
     <li
       onClick={() => onClickFilterButton(index, text)}
       key={index}
-      className="
-      relative inline-block py-px rounded-xl cursor-pointer transition transform duration-200      
+      className={`
+      inline-block py-px rounded-xl cursor-pointer       
       m-1 sm:m-2 lg:m-3
+      px-2 sm:px-3 lg:px-4
       text-base sm:text-lg lg:text-xl 
-      font-medium sm:font-semibold lg:font-bold"
+      font-medium sm:font-semibold lg:font-bold
+      transition duration-300
+      ${
+        filterCategory === index
+          ? "bg-lime-700 text-green-200 hover:bg-lime-700"
+          : "bg-lime-200 text-green-600 hover:bg-teal-500 hover:text-green-100"
+      }      
+      `}
     >
-      <div
-        className={`absolute inset-x-0 h-[90%] -bottom-1  rounded-xl 
-        ${filterCategory === index ? "bg-teal-500" : "bg-lime-700"}`}
-      ></div>
-      <div
-        className={`relative rounded-lg transition transform duration-200 hover:translate-y-1.5 py-px 
-        border border-lime-700 hover:border-teal-500
-        px-2 sm:px-3 lg:px-4      
-        ${
-          filterCategory === index
-            ? "bg-lime-700 text-green-200 hover:bg-lime-700"
-            : "bg-lime-200 text-green-600 hover:bg-teal-500 hover:text-green-100"
-        }`}
-      >
-        {text[activeIndexLang]}
-      </div>
+      {text[activeIndexLang]}
     </li>
   ));
 

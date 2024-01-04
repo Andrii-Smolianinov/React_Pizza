@@ -17,7 +17,7 @@ export default function ButtonCart() {
       px-2 lg:px-3     
       text-lg sm:text-xl lg:text-2xl
       bg-lime-700 text-green-200 
-      hover:bg-lime-200 hover:text-green-700 transition-all duration-350"
+      hover:bg-lime-200 hover:text-green-700 transition duration-300"
     >
       <span className="flex items-center justify-center">
         <span className="pr-2 lg:pr-3 border-r border-green-200 group-hover:border-lime-700">
