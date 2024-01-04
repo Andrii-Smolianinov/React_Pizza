@@ -8,7 +8,10 @@ import {
   selectSort,
 } from "../../redux/slices/sortSlice";
 import { selectChangeLang } from "../../redux/slices/changeLangSlice";
-import { setCurrentPage, setActiveIndexPage } from "../../redux/slices/paginationSlice";
+import {
+  setCurrentPage,
+  setActiveIndexPage,
+} from "../../redux/slices/paginationSlice";
 
 import Sort from "./Sort";
 
@@ -38,23 +41,28 @@ export default function Filter() {
     <li
       onClick={() => onClickFilterButton(index, text)}
       key={index}
-      className={`      
-      inline-block
+      className="
+      relative inline-block py-px rounded-xl cursor-pointer transition transform duration-200      
       m-1 sm:m-2 lg:m-3
-      px-2 sm:px-3 lg:px-4
-      py-px 
       text-base sm:text-lg lg:text-xl 
-      font-medium sm:font-semibold lg:font-bold
-      rounded-xl cursor-pointer
-      transition-all duration-350
-      ${
-        filterCategory === index
-          ? "bg-lime-700 text-green-200 hover:bg-lime-700"
-          : "bg-lime-200 text-green-600 hover:bg-teal-500 hover:text-green-100"
-      }      
-      `}
+      font-medium sm:font-semibold lg:font-bold"
     >
-      {text[activeIndexLang]}
+      <div
+        className={`absolute inset-x-0 h-[90%] -bottom-1  rounded-xl 
+        ${filterCategory === index ? "bg-teal-500" : "bg-lime-700"}`}
+      ></div>
+      <div
+        className={`relative rounded-lg transition transform duration-200 hover:translate-y-1.5 py-px 
+        border border-lime-700 hover:border-teal-500
+        px-2 sm:px-3 lg:px-4      
+        ${
+          filterCategory === index
+            ? "bg-lime-700 text-green-200 hover:bg-lime-700"
+            : "bg-lime-200 text-green-600 hover:bg-teal-500 hover:text-green-100"
+        }`}
+      >
+        {text[activeIndexLang]}
+      </div>
     </li>
   ));
 
@@ -67,6 +75,7 @@ export default function Filter() {
         <ul className="flex flex-wrap justify-start">{elements}</ul>
         <Sort />
       </nav>
+
       <h1
         className="        
         text-xl sm:text-2xl lg:text-3xl

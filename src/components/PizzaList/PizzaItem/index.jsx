@@ -9,13 +9,7 @@ import { selectChangeLang } from "../../../redux/slices/changeLangSlice";
 
 const diameters = ["26", "30", "40"];
 
-export default function PizzaItem({
-  id,
-  images,
-  tittle,
-  price,
-  category 
-}) {
+export default function PizzaItem({ id, images, tittle, price, category }) {
   const [activeDiameter, setActiveDiameter] = React.useState(0);
   const { activeIndexLang } = useSelector(selectChangeLang);
 
