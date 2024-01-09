@@ -2,16 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Sale from "./Sale";
+import ButtonOrder from "../../Buttons/ButtonOrder";
 
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart, setTotalPrice } from "../../../redux/slices/cartSlice";
 import { selectChangeLang } from "../../../redux/slices/changeLangSlice";
+import { selectCart } from "../../../redux/slices/cartSlice";
 
 const diameters = ["26", "30", "40"];
 
 export default function PizzaItem({ id, images, tittle, price, category }) {
   const [activeDiameter, setActiveDiameter] = React.useState(0);
   const { activeIndexLang } = useSelector(selectChangeLang);
+  const { itemsCart } = useSelector(selectCart);
 
   const dispatch = useDispatch();
   const { t } = useTranslation();
@@ -30,6 +33,11 @@ export default function PizzaItem({ id, images, tittle, price, category }) {
     dispatch(addItemToCart(item));
     dispatch(setTotalPrice(price[activeDiameter]));
   };
+
+  const findItem = itemsCart.find(
+    (item) => item.price === price[activeDiameter]
+  );
+  const itemCount = findItem ? findItem.count : 0;
 
   return (
     <li
@@ -82,14 +90,15 @@ export default function PizzaItem({ id, images, tittle, price, category }) {
         <p className="ml-5 text-2xl font-black text-cyan-800">
           {price[activeDiameter]} {t("uah")}
         </p>
-        <button
-          className="p-3 font-bold border-2 rounded-md bg-amber-50 border-cyan-800 
-          hover:bg-teal-500 hover:text-amber-50 hover:border-teal-500 transition-all"          
-          type="button"
-          onClick={onClickAddToCart}
-        >
-          {t("order")}
-        </button>
+        {findItem ? (
+          <ButtonOrder
+            onClickAddToCart={onClickAddToCart}
+            isOrder={true}
+            itemCount={itemCount}
+          />
+        ) : (
+          <ButtonOrder onClickAddToCart={onClickAddToCart} />
+        )}
       </div>
     </li>
   );
