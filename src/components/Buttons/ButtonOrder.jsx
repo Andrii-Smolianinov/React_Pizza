@@ -6,8 +6,8 @@ const ButtonOrder = ({ onClickAddToCart, isOrder, itemCount }) => {
 
   return (
     <button
-      className={`p-3 font-bold border-2 rounded-md  border-cyan-800 hover:bg-teal-500 hover:text-amber-50 hover:border-teal-500 transition-all 
-      ${isOrder ? "bg-lime-300" : "bg-amber-50"}`}
+      className={`p-3 font-bold rounded-md  hover:bg-cyan-500 hover:text-cyan-100 transition-all duration-300
+      ${isOrder ? "bg-cyan-600 text-cyan-50" : "bg-teal-200"}`}
       type="button"
       onClick={onClickAddToCart}
     >
