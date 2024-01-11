@@ -8,7 +8,6 @@ import { selectChangeLang } from "../redux/slices/changeLangSlice";
 
 import ButtonComeBack from "./Buttons/ButtonComeBack";
 import Loader from "./Loader";
-import ImagePizza from "../assets/img/id-not-found.png";
 
 const FullPizzaComponent = () => {
   const { activeIndexLang } = useSelector(selectChangeLang);
@@ -47,8 +46,10 @@ const FullPizzaComponent = () => {
       <div className="my-4">
         <ButtonComeBack tittle={t("backMain")} />
       </div>
-      <div className="flex flex-col sm:flex-row justify-center 
-      mt-8 sm:mt-16">
+      <div
+        className="flex flex-col sm:flex-row justify-center 
+        mt-8 sm:mt-16"
+      >
         <div
           className="relative h-[335px] 
           w-full sm:w-1/2 lg:w-1/4"
@@ -60,11 +61,11 @@ const FullPizzaComponent = () => {
           />
           <div
             className="absolute bottom-0 bg-slate-800 opacity-80 
-          w-full"
+            w-full"
           >
             <h2
               className="text-center font-bold text-2xl uppercase tracking-wider text-sky-400
-            py-3"
+              py-3"
             >
               {pizza.tittle[activeIndexLang]}
             </h2>
@@ -73,18 +74,18 @@ const FullPizzaComponent = () => {
         <div className="w-full sm:w-1/2 lg:w-2/6">
           <p
             className="font-semibold text-justify          
-          mt-8 sm:mt-0         
-          pl-2 sm:pl-4 md:pl-8 lg:pl-14 
-          pr-2 sm:pr-4 md:pr-8 lg:pr-14"
+            mt-8 sm:mt-0         
+            pl-2 sm:pl-4 md:pl-8 lg:pl-14 
+            pr-2 sm:pr-4 md:pr-8 lg:pr-14"
           >
             {pizza.description[activeIndexLang]}
           </p>
         </div>
-        <img
-          src={ImagePizza}
-          alt="Pizza Images"
-          className="w-0 lg:w-56 h-72 invisible lg:visible"
-        />
+        <div
+          className="bg-[url('/src/assets/img/id-not-found.png')] bg-cover
+          w-0 lg:w-64 h-72
+          invisible lg:visible"
+        ></div>
       </div>
     </div>
   );

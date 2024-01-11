@@ -11,7 +11,6 @@ import CartHeadSection from "./CartHeadSection";
 import Loader from "../Loader";
 
 import { AppContext } from "../../App";
-import cartIMG from "../../assets/img/cart-img.png";
 
 export default function CartList() {
   const { isLoading } = React.useContext(AppContext);
@@ -39,12 +38,11 @@ export default function CartList() {
           {isLoading ? <Loader /> : <CartItem />}
         </ul>
 
-        <img
-          alt="Pizza images"
-          src={cartIMG}
-          className="invisible lg:visible 
-          w-0 lg:w-72 h-80"
-        ></img>
+        <div
+          className="bg-[url('/src/assets/img/cart-img.png')] bg-cover
+          w-0 lg:w-72 h-80
+          invisible lg:visible"
+        ></div>
       </div>
 
       <div className="flex flex-wrap justify-between content-between py-4">

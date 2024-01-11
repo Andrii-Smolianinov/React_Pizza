@@ -37,7 +37,7 @@ export default function PizzaItem({ id, images, tittle, price, category }) {
   const findItem = itemsCart.find(
     (item) => item.price === price[activeDiameter]
   );
-  const itemCount = findItem ? findItem.count : 0;
+  const orderCount = findItem ? findItem.count : 0;
 
   return (
     <li
@@ -92,9 +92,8 @@ export default function PizzaItem({ id, images, tittle, price, category }) {
         </p>
         {findItem ? (
           <ButtonOrder
-            onClickAddToCart={onClickAddToCart}
-            isOrder={true}
-            itemCount={itemCount}
+            onClickAddToCart={onClickAddToCart}            
+            orderCount={orderCount}
           />
         ) : (
           <ButtonOrder onClickAddToCart={onClickAddToCart} />
