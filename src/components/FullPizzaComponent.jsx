@@ -8,6 +8,7 @@ import { selectChangeLang } from "../redux/slices/changeLangSlice";
 
 import ButtonComeBack from "./Buttons/ButtonComeBack";
 import Loader from "./Loader";
+import ImagePizza from "../assets/img/id-not-found.png";
 
 const FullPizzaComponent = () => {
   const { activeIndexLang } = useSelector(selectChangeLang);
@@ -81,11 +82,12 @@ const FullPizzaComponent = () => {
             {pizza.description[activeIndexLang]}
           </p>
         </div>
-        <div
-          className="bg-[url('/src/assets/img/id-not-found.png')] bg-cover
-          w-0 lg:w-64 h-72
-          invisible lg:visible"
-        ></div>
+        <img
+          src={ImagePizza}
+          alt="Pizza Images"
+          className="invisible lg:visible
+          w-0 lg:w-64 h-72 "
+        />
       </div>
     </div>
   );

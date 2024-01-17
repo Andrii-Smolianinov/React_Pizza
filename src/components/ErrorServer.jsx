@@ -1,6 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+import serverErrorIMG from "../assets/img/error-server.jpg";
+
 const ErrorServer = () => {
   const { t } = useTranslation();
 
@@ -10,11 +12,13 @@ const ErrorServer = () => {
         {t("databaseError")}
       </h1>
 
-      <div
-        className="mx-auto bg-[url('/src/assets/img/error-server.jpg')] bg-cover bg-center
-        w-11/12 lg:w-2/4 xl:w-2/5
-        h-[90%]"
-      ></div>
+      <img
+        src={serverErrorIMG}
+        alt="No database connection"
+        className="my-0 mx-auto 
+        h-[70%] sm:h-[90%]
+        w-11/12 lg:w-2/4 xl:w-2/5"
+      />
     </div>
   );
 };
