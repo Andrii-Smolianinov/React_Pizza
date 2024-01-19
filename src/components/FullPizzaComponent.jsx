@@ -44,7 +44,7 @@ const FullPizzaComponent = () => {
 
   return (
     <div className="">
-      <div className="my-4">
+      <div className="my-4 ml-5">
         <ButtonComeBack tittle={t("backMain")} />
       </div>
       <div

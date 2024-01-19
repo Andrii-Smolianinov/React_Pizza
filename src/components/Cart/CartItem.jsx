@@ -69,8 +69,8 @@ export default function CartItem() {
 
         {/* price for 1 */}
         <div className="invisible sm:visible w-0 sm:w-28 text-center">
-          <p className="text-lime-600">1 {t("pc")}</p>
-          <div className="flex items-center justify-center">
+          <p className="text-lime-600 text-sm/[17px]">1 {t("pc")}</p>
+          <div className="flex items-center justify-center pb-3">
             <p
               className="font-bold 
               text-base sm:text-lg lg:text-xl"
@@ -108,8 +108,8 @@ export default function CartItem() {
 
         {/* total price */}
         <div className="text-center w-24">
-          <p className="text-lime-600">{t("total")}</p>
-          <div className="flex items-center justify-center">
+          <p className="text-lime-600 text-sm/[17px]">{t("total")}</p>
+          <div className="flex items-center justify-center pb-3">
             <p
               className="font-bold 
               text-base sm:text-lg lg:text-xl"
