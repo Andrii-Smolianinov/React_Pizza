@@ -52,7 +52,7 @@
   },
   {
     "id": "6",
-    "tittle": ["Курка з ананасом", "Chicken with pineapple"],
+    "tittle": ["Курка з ананасом", "Pineapple Chicken"],
     "price": [180, 200, 220],
     "category": [0, 1, 5],
     "rating": 10,
