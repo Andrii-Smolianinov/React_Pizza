@@ -10,6 +10,10 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.17",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
     "axios": "^1.5.1",
     "i18next": "^23.7.7",
     "i18next-browser-languagedetector": "^7.2.0",
@@ -25,6 +29,7 @@
     "react-spinners": "^0.13.8",
     "redux-persist": "^6.0.0",
     "svgo": "^3.0.2",
+    "typescript": "^5.3.3",
     "web-vitals": "^2.1.4",
     "workbox-background-sync": "^6.6.0",
     "workbox-cacheable-response": "^6.6.0"
