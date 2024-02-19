@@ -10,10 +10,15 @@ import ButtonComeBack from "./Buttons/ButtonComeBack";
 import Loader from "./Loader";
 import ImagePizza from "../assets/img/id-not-found.png";
 
-const FullPizzaComponent = () => {
+const FullPizzaComponent: React.FC = () => {
+  interface stateProps {
+    images: string;
+    tittle: string;
+    description: string;
+  }
+  const [pizza, setPizza] = useState<stateProps>();
   const { activeIndexLang } = useSelector(selectChangeLang);
   const showDoubleRender = useRef(true);
-  const [pizza, setPizza] = useState();
   const navigate = useNavigate();
   const { t } = useTranslation();
   const { id } = useParams();
