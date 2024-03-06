@@ -21,8 +21,8 @@ export default function ButtonCart() {
     >
       <span className="flex items-center justify-center">
         <span className="pr-2 lg:pr-3 border-r border-green-200 group-hover:border-lime-700">
-          <span className="font-bold">{totalPrice}</span>
-          <span className="text-xl">{t("uah")}</span>{" "}
+          <span className="font-bold">{totalPrice}</span>{" "}
+          <span className="text-xl">{t("uah")}</span>
         </span>
         <BsCart className="m-2" />
         <span className="font-bold">{itemsCart.length}</span>

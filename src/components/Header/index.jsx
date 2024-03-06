@@ -7,6 +7,7 @@ import ChangeLanguage from "./ChangeLanguage";
 import logoJPG from "../../assets/img/newlogo.png";
 
 export default function Header({ showSearch, showButtonCart }) {
+ 
   return (
     <header
       className="flex flex-wrap items-center justify-between
