@@ -11,12 +11,12 @@ import Loader from "./Loader";
 import ImagePizza from "../assets/img/id-not-found.png";
 
 const FullPizzaComponent: React.FC = () => {
-  interface stateProps {
+  interface useStatePizzaProps {
     images: string;
     tittle: string;
     description: string;
   }
-  const [pizza, setPizza] = useState<stateProps>();
+  const [pizza, setPizza] = useState<useStatePizzaProps>();
   const { activeIndexLang } = useSelector(selectChangeLang);
   const showDoubleRender = useRef(true);
   const navigate = useNavigate();
