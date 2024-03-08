@@ -6,7 +6,7 @@ import CartHeadSection from "./CartHeadSection";
 
 import notFoundIMG from "../../assets/img/not-found.png";
 
-export default function EmptyCart() {
+const EmptyCart: React.FC = () => {
   const { t } = useTranslation();
 
   return (
@@ -31,4 +31,6 @@ export default function EmptyCart() {
       </div>
     </div>
   );
-}
+};
+
+export default EmptyCart;

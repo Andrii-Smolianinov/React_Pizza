@@ -1,7 +1,7 @@
 import React from "react";
-import notFoundIMG from "../assets/img/not-found.png"
+import notFoundIMG from "../assets/img/not-found.png";
 
-export default function NotFoundSection() {
+const NotFoundSection: React.FC = () => {
   return (
     <div className="block bg-yellow-100 p-5 h-[84vh]">
       <h1 className="text-center leading-10 mb-5 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-lime-600 to-red-600">
@@ -16,4 +16,6 @@ export default function NotFoundSection() {
       />
     </div>
   );
-}
+};
+
+export default NotFoundSection;

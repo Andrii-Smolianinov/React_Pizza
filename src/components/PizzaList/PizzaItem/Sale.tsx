@@ -6,7 +6,7 @@ import { selectChangeLang } from "../../../redux/slices/changeLangSlice";
 import ukrIMG from "../../../assets/img/promotion-ukr.png";
 import engIMG from "../../../assets/img/promotion-eng.png";
 
-const Sale = () => {
+const Sale: React.FC = () => {
   const { activeIndexLang } = useSelector(selectChangeLang);
   return (
     <div className="absolute w-[276px] h-1/5 top-0">

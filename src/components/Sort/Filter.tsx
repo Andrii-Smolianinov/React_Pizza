@@ -24,7 +24,7 @@ const categories = [
   { text: ["Акційні", "SALE"] },
 ];
 
-export default function Filter() {
+const Filter: React.FC = () => {
   const { filterCategory, activeTypePizza } = useSelector(selectSort);
   const { activeIndexLang } = useSelector(selectChangeLang);
   const dispatch = useDispatch();
@@ -81,4 +81,6 @@ export default function Filter() {
       </h1>
     </>
   );
-}
+};
+
+export default Filter;

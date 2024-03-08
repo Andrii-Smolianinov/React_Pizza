@@ -35,7 +35,7 @@
     "workbox-cacheable-response": "^6.6.0"
   },
   "scripts": {
-    "start": "rsbuild dev",
+    "start": "rsbuild dev --port 3000",
     "build": "rsbuild build",
     "preview": "rsbuild preview"
   },

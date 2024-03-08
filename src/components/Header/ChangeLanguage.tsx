@@ -10,7 +10,7 @@ import {
 import UAflag from "../../assets/img/ua-flag.png";
 import GBflag from "../../assets/img/gb-flag.png";
 
-const ChangeLanguage = () => {
+const ChangeLanguage: React.FC = () => {
   const { i18n } = useTranslation();
   const dispatch = useDispatch();
 

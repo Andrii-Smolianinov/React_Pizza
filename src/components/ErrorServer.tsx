@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import serverErrorIMG from "../assets/img/error-server.jpg";
 
-const ErrorServer = () => {
+const ErrorServer: React.FC = () => {
   const { t } = useTranslation();
 
   return (

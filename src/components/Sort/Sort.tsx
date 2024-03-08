@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { setSortCategory } from "../../redux/slices/sortSlice";
 
-export default function Sort() {
+const Sort: React.FC = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
@@ -14,9 +14,7 @@ export default function Sort() {
 
   return (
     <div className="flex p-2 items-center">
-      <p className="text-base sm:text-lg lg:text-xl">
-        {t("sort")}:
-      </p>
+      <p className="text-base sm:text-lg lg:text-xl">{t("sort")}:</p>
       <select
         className="bg-transparent ml-2 font-normal cursor-pointer w-[153px]
         text-base sm:text-lg lg:text-xl"
@@ -29,4 +27,6 @@ export default function Sort() {
       </select>
     </div>
   );
-}
+};
+
+export default Sort;
