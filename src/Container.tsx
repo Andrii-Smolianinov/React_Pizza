@@ -1,4 +1,10 @@
-export default function Container({ children }) {
+import React, { ReactElement } from 'react';
+
+interface LayoutProps {
+  children: ReactElement;
+}
+
+const Container: React.FC<LayoutProps> = ({ children }) => {
   return (
     <section
       className="w-screen min-h-screen bg-gradient-to-r from-green-500 via-orange-50 to-red-500 
@@ -9,3 +15,5 @@ export default function Container({ children }) {
     </section>
   );
 }
+
+export default Container

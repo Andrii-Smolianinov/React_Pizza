@@ -12,7 +12,14 @@ import NotFound from "./pages/NotFound";
 import Container from "./Container";
 import Header from "./components/Header";
 
-export const AppContext = React.createContext();
+type AppContextProps = {
+  setShowSearch: object;
+  setShowButtonCart: object;
+  isEmptyCart: boolean;
+  pizzasPerPage: number;
+};
+
+export const AppContext = React.createContext<AppContextProps | null>(null);
 
 function App() {
   const [showSearch, setShowSearch] = React.useState(true);
@@ -24,8 +31,9 @@ function App() {
   const dispatch = useDispatch();
 
   const fetchPizzas = async () => {
-    const category = filterCategory > 0 ? `category=${filterCategory}` : "";
-    const sortBy = sortCategory ? `sortBy=${sortCategory}` : "";
+    const category: string =
+      filterCategory > 0 ? `category=${filterCategory}` : "";
+    const sortBy: string = sortCategory ? `sortBy=${sortCategory}` : "";
 
     dispatch(fetchPizzasSlice({ category, sortBy }));
   };

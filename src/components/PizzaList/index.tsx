@@ -12,7 +12,7 @@ import { selectPagination } from "../../redux/slices/paginationSlice";
 
 import { AppContext } from "../../App";
 
-export default function PizzaList() {
+const PizzaList = () => {
   const { searchPizza } = useSelector(selectSearch);
   const { items, status } = useSelector(selectPizzas);
   const { activeIndexLang } = useSelector(selectChangeLang);
@@ -72,4 +72,6 @@ export default function PizzaList() {
       )}
     </>
   );
-}
+};
+
+export default PizzaList;
