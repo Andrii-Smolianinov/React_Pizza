@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 import SearchPizza from "./SearchPizza";
@@ -6,8 +7,12 @@ import ChangeLanguage from "./ChangeLanguage";
 
 import logoJPG from "../../assets/img/newlogo.png";
 
-export default function Header({ showSearch, showButtonCart }) {
- 
+type Props = {
+  showSearch: boolean;
+  showButtonCart: boolean;
+};
+
+const Header: React.FC<Props> = ({ showSearch, showButtonCart }) => {
   return (
     <header
       className="flex flex-wrap items-center justify-between
@@ -39,4 +44,6 @@ export default function Header({ showSearch, showButtonCart }) {
       </div>
     </header>
   );
-}
+};
+
+export default Header;

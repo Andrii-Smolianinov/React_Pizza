@@ -13,7 +13,7 @@ import Loader from "../Loader";
 import { AppContext } from "../../App";
 import cartIMG from "../../assets/img/cart-img.png";
 
-export default function CartList() {
+const CartList: React.FC = () => {
   const { isLoading } = React.useContext(AppContext);
   const { totalPrice } = useSelector(selectCart);
   const { t } = useTranslation();
@@ -73,4 +73,6 @@ export default function CartList() {
       </div>
     </div>
   );
-}
+};
+
+export default CartList;

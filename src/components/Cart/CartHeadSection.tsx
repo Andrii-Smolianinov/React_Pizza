@@ -1,7 +1,11 @@
 import React from "react";
 import { BsCart } from "react-icons/bs";
 
-const CartHeadSection = ({ tittle }) => {
+type Props = {
+  tittle: string;
+};
+
+const CartHeadSection: React.FC<Props> = ({ tittle }) => {
   return (
     <>
       <BsCart size="30" className="fill-lime-700" />

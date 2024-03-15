@@ -14,7 +14,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 
-export default function CartItem() {
+const CartItem: React.FC = () => {
   const { activeIndexLang } = useSelector(selectChangeLang);
   const { itemsCart } = useSelector(selectCart);
   const dispatch = useDispatch();
@@ -131,4 +131,6 @@ export default function CartItem() {
       </li>
     )
   );
-}
+};
+
+export default CartItem;

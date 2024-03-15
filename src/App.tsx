@@ -31,8 +31,7 @@ function App() {
   const dispatch = useDispatch();
 
   const fetchPizzas = async () => {
-    const category: string =
-      filterCategory > 0 ? `category=${filterCategory}` : "";
+    const category: string = filterCategory > 0 ? `category=${filterCategory}` : "";
     const sortBy: string = sortCategory ? `sortBy=${sortCategory}` : "";
 
     dispatch(fetchPizzasSlice({ category, sortBy }));
