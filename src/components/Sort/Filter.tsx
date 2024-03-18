@@ -30,7 +30,7 @@ const Filter: React.FC = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
-  const onClickFilterButton = function (index, text) {
+  const onClickFilterButton = function (index: number, text: string[]) {
     dispatch(setCurrentPage(1));
     dispatch(setActiveIndexPage(0));
     dispatch(setFilterCategory(index));

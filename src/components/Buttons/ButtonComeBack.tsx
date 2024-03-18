@@ -2,7 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { IoReturnUpBackSharp } from "react-icons/io5";
 
-const ButtonComeBack = ({ tittle }) => {
+type Props = {
+  tittle: string;
+};
+
+const ButtonComeBack: React.FC<Props> = ({ tittle }) => {
   return (
     <Link
       to="/"

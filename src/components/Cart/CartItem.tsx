@@ -20,12 +20,12 @@ const CartItem: React.FC = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
-  const onRemoveItem = (index) => {
+  const onRemoveItem = (index:number) => {
     dispatch(removeItemFromCart(index));
   };
 
   return itemsCart.map(
-    ({ images, tittle, price, count, itemPrice, selectDiameter }, index) => (
+    ({ images, tittle, price, count, itemPrice, selectDiameter }, index:number) => (
       <li
         key={index}
         className="flex items-center content-between border-solid border-2 rounded-md border-lime-600 overflow-hidden 
@@ -123,7 +123,7 @@ const CartItem: React.FC = () => {
         {/* icon delete */}
         <div className="">
           <RiDeleteBin6Line
-            onClick={() => onRemoveItem(index, price)}
+            onClick={() => onRemoveItem(index)}
             size={20}
             className="hover:fill-lime-700 cursor-pointer transition duration-300"
           />

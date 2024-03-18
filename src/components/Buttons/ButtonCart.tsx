@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { BsCart } from "react-icons/bs";
 import { selectCart } from "../../redux/slices/cartSlice";
 
-export default function ButtonCart() {
+const ButtonCart: React.FC = () => {
   const { totalPrice, itemsCart } = useSelector(selectCart);
   const { t } = useTranslation();
 
@@ -29,4 +29,6 @@ export default function ButtonCart() {
       </span>
     </Link>
   );
-}
+};
+
+export default ButtonCart;

@@ -6,7 +6,7 @@ import { clearCart, clearTotalPrice } from "../../redux/slices/cartSlice";
 
 import { RiDeleteBin6Line } from "react-icons/ri";
 
-export default function ButtonClearCart() {
+const ButtonClearCart: React.FC = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
@@ -28,4 +28,6 @@ export default function ButtonClearCart() {
       </span>
     </button>
   );
-}
+};
+
+export default ButtonClearCart;

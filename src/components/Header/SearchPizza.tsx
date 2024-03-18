@@ -7,15 +7,15 @@ import { selectSearch, setSearchPizza } from "../../redux/slices/searchSlice";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 
-export default function SearchPizza() {
+const SearchPizza: React.FC = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { searchPizza } = useSelector(selectSearch);
-  const inputRef = React.useRef();
-  const { t } = useTranslation();
+  const inputRef = React.useRef<HTMLInputElement>(null);  
 
   const onClear = function () {
     dispatch(setSearchPizza(""));
-    inputRef.current.focus();
+    inputRef.current?.focus();
   };
 
   return (
@@ -43,4 +43,6 @@ export default function SearchPizza() {
       )}
     </div>
   );
-}
+};
+
+export default SearchPizza;
