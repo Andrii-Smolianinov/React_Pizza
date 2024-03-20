@@ -7,7 +7,8 @@ import ErrorServer from "../components/ErrorServer";
 import { AppContext } from "../App";
 import { selectPizzas } from "../redux/slices/pizzasSlice";
 
-export default function Home() {
+const Home: React.FC = () => {
+  //@ts-ignore
   const { setShowSearch, setShowButtonCart } = React.useContext(AppContext);
   const { status } = useSelector(selectPizzas);
 
@@ -22,4 +23,6 @@ export default function Home() {
       {status === "error" ? <ErrorServer /> : <PizzaList />}
     </main>
   );
-}
+};
+
+export default Home;

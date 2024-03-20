@@ -6,7 +6,8 @@ import EmptyCart from "../components/Cart/EmptyCart";
 import { AppContext } from "../App";
 import { selectCart } from "../redux/slices/cartSlice";
 
-export default function Cart() {
+const Cart: React.FC = () => {
+  //@ts-ignore
   const { setShowSearch, setShowButtonCart } = React.useContext(AppContext);
   const { itemsCart } = useSelector(selectCart);
 
@@ -23,4 +24,6 @@ export default function Cart() {
       {itemsCart.length > 0 ? <CartList /> : <EmptyCart />}
     </section>
   );
-}
+};
+
+export default Cart;

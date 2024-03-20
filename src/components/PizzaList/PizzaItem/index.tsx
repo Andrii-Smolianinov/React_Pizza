@@ -12,7 +12,7 @@ import { selectCart } from "../../../redux/slices/cartSlice";
 const diameters = ["26", "30", "40"];
 
 type Props = {
-  id: number;
+  id: string;
   images: string;
   tittle: string;
   price: number;

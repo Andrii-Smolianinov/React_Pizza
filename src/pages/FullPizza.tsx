@@ -3,7 +3,8 @@ import FullPizzaComponent from "../components/FullPizzaComponent";
 
 import { AppContext } from "../App";
 
-const FullPizza = () => {
+const FullPizza: React.FC = () => {
+  //@ts-ignore
   const { setShowSearch } = React.useContext(AppContext);
 
   React.useEffect(() => {
