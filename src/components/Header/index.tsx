@@ -7,12 +7,12 @@ import ChangeLanguage from "./ChangeLanguage";
 
 import logoJPG from "../../assets/img/newlogo.png";
 
-type Props = {
+type HeaderProps = {
   showSearch: boolean;
   showButtonCart: boolean;
 };
 
-const Header: React.FC<Props> = ({ showSearch, showButtonCart }) => {
+const Header: React.FC<HeaderProps> = ({ showSearch, showButtonCart }) => {
   return (
     <header
       className="flex flex-wrap items-center justify-between

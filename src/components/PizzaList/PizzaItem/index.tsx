@@ -11,7 +11,7 @@ import { selectCart } from "../../../redux/slices/cartSlice";
 
 const diameters = ["26", "30", "40"];
 
-type Props = {
+type PizzaItemProps = {
   id: string;
   images: string;
   tittle: string;
@@ -19,7 +19,13 @@ type Props = {
   category: number[];
 };
 
-const PizzaItem: React.FC<Props> = ({ id, images, tittle, price, category }) => {
+const PizzaItem: React.FC<PizzaItemProps> = ({
+  id,
+  images,
+  tittle,
+  price,
+  category,
+}) => {
   const [activeDiameter, setActiveDiameter] = React.useState(0);
   const { activeIndexLang } = useSelector(selectChangeLang);
   const { itemsCart } = useSelector(selectCart);
@@ -28,7 +34,17 @@ const PizzaItem: React.FC<Props> = ({ id, images, tittle, price, category }) => 
   const { t } = useTranslation();
 
   const onClickAddToCart = () => {
-    const item = {
+    type ItemAddToCart = {
+      id: string;
+      images: string;
+      tittle: string;
+      count: number;
+      price: number;
+      itemPrice: number;
+      selectDiameter: string;
+    };
+
+    const item: ItemAddToCart = {
       id,
       images,
       tittle,
@@ -100,7 +116,7 @@ const PizzaItem: React.FC<Props> = ({ id, images, tittle, price, category }) => 
         </p>
         {findItem ? (
           <ButtonOrder
-            onClickAddToCart ={onClickAddToCart}
+            onClickAddToCart={onClickAddToCart}
             orderCount={orderCount}
           />
         ) : (

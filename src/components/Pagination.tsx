@@ -6,17 +6,20 @@ import {
   setCurrentPage,
 } from "../redux/slices/paginationSlice";
 
-interface Props {
+type PaginationProps = {
   totalPizzas: number;
   pizzasPerPage: number;
-}
+};
 
-const Pagination: React.FC<Props> = ({ totalPizzas, pizzasPerPage }) => {
+const Pagination: React.FC<PaginationProps> = ({
+  totalPizzas,
+  pizzasPerPage,
+}) => {
   const { activeIndexPage, currentPage } = useSelector(selectPagination);
   const dispatch = useDispatch();
-  const pageNumbers:number[] = [];
+  const pageNumbers: number[] = [];
 
-  const paginate = (pageNumber:number, index:number) => {
+  const paginate = (pageNumber: number, index: number) => {
     dispatch(setCurrentPage(pageNumber));
     dispatch(setActiveIndexPage(index));
   };
