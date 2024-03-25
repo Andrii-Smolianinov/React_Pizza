@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import CartList from "../components/Cart/CartList";
 import EmptyCart from "../components/Cart/EmptyCart";
 
-import { useAppState } from "../App";
+import { useAppState } from "../hooks/useAppState";
 
 import { selectCart } from "../redux/slices/cartSlice";
 

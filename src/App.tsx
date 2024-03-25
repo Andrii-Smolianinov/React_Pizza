@@ -1,9 +1,11 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
 import { fetchPizzasSlice } from "./redux/slices/pizzasSlice";
 import { selectSort } from "./redux/slices/sortSlice";
+
+import { AppContext } from "./hooks/useAppState";
 
 import Home from "./pages/Home";
 import FullPizza from "./pages/FullPizza";
@@ -11,15 +13,6 @@ import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 import Container from "./Container";
 import Header from "./components/Header";
-
-export type AppContextProps = {
-  setShowSearch: React.Dispatch<React.SetStateAction<boolean | null>>;
-  setShowButtonCart: React.Dispatch<React.SetStateAction<boolean | null>>;
-  isEmptyCart: boolean;
-  pizzasPerPage: number;
-};
-
-export const AppContext = createContext<AppContextProps | undefined>(undefined);
 
 function App() {
   const [showSearch, setShowSearch] = useState<boolean | null>(true);
@@ -68,11 +61,3 @@ function App() {
 }
 
 export default App;
-
-export function useAppState() {
-  const context = useContext(AppContext);
-  if (context === undefined) {
-    throw new Error("useApp must be used within a AppProvider");
-  }
-  return context;
-}

@@ -1,6 +1,6 @@
 import React from "react";
 import FullPizzaComponent from "../components/FullPizzaComponent";
-import { useAppState } from "../App";
+import { useAppState } from "../hooks/useAppState";
 
 const FullPizza: React.FC = () => {
   const { setShowSearch } = useAppState();

@@ -10,7 +10,7 @@ import { selectPizzas } from "../../redux/slices/pizzasSlice";
 import { selectChangeLang } from "../../redux/slices/changeLangSlice";
 import { selectPagination } from "../../redux/slices/paginationSlice";
 
-import { useAppState } from "../../App";
+import { useAppState } from "../../hooks/useAppState";
 
 const PizzaList = () => {
   const { searchPizza } = useSelector(selectSearch);

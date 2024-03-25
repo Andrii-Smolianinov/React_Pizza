@@ -5,7 +5,7 @@ import PizzaList from "../components/PizzaList";
 import Filter from "../components/Sort/Filter";
 import ErrorServer from "../components/ErrorServer";
 
-import { useAppState } from "../App";
+import { useAppState } from "../hooks/useAppState";
 
 import { selectPizzas } from "../redux/slices/pizzasSlice";
 
