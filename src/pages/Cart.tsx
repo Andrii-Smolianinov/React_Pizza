@@ -3,12 +3,13 @@ import { useSelector } from "react-redux";
 
 import CartList from "../components/Cart/CartList";
 import EmptyCart from "../components/Cart/EmptyCart";
-import { AppContext } from "../App";
+
+import { useAppState } from "../App";
+
 import { selectCart } from "../redux/slices/cartSlice";
 
 const Cart: React.FC = () => {
-  //@ts-ignore
-  const { setShowSearch, setShowButtonCart } = React.useContext(AppContext);
+  const { setShowSearch, setShowButtonCart } = useAppState();
   const { itemsCart } = useSelector(selectCart);
 
   React.useEffect(() => {

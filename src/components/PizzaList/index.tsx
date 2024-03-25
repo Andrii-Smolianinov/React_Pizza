@@ -10,7 +10,7 @@ import { selectPizzas } from "../../redux/slices/pizzasSlice";
 import { selectChangeLang } from "../../redux/slices/changeLangSlice";
 import { selectPagination } from "../../redux/slices/paginationSlice";
 
-import { AppContext } from "../../App";
+import { useAppState } from "../../App";
 
 const PizzaList = () => {
   const { searchPizza } = useSelector(selectSearch);
@@ -18,12 +18,12 @@ const PizzaList = () => {
   const { activeIndexLang } = useSelector(selectChangeLang);
   const { currentPage } = useSelector(selectPagination);
 
-  const { pizzasPerPage } = React.useContext(AppContext);
+  const { pizzasPerPage } = useAppState();
 
   const lastPizzaIndex = currentPage * pizzasPerPage;
   const firstPizzaIndex = lastPizzaIndex - pizzasPerPage;
   const currentPizza = items.slice(firstPizzaIndex, lastPizzaIndex);
-  const totalPizzas = items.length;
+  const totalPizzas: number = items.length;
 
   return (
     <>

@@ -1,11 +1,10 @@
 import React from "react";
 
 import NotFoundSection from "../components/NotFoundSection";
-import { AppContext } from "../App";
+import { useAppState } from "../App";
 
 const NotFound: React.FC = () => {
-  //@ts-ignore
-  const { setShowSearch, setShowButtonCart } = React.useContext(AppContext);
+  const { setShowSearch, setShowButtonCart } = useAppState();
 
   React.useEffect(() => {
     setShowSearch(false);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useContext, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -12,28 +12,30 @@ import NotFound from "./pages/NotFound";
 import Container from "./Container";
 import Header from "./components/Header";
 
-type AppContextProps = {
-  setShowSearch: object;
-  setShowButtonCart: object;
+export type AppContextProps = {
+  setShowSearch: React.Dispatch<React.SetStateAction<boolean | null>>;
+  setShowButtonCart: React.Dispatch<React.SetStateAction<boolean | null>>;
   isEmptyCart: boolean;
   pizzasPerPage: number;
 };
 
-export const AppContext = React.createContext<AppContextProps | null>(null);
+export const AppContext = createContext<AppContextProps | undefined>(undefined);
 
 function App() {
-  const [showSearch, setShowSearch] = React.useState(true);
-  const [showButtonCart, setShowButtonCart] = React.useState(true);
-  const [pizzasPerPage] = React.useState(10);
-  const [isEmptyCart] = React.useState(true);
+  const [showSearch, setShowSearch] = useState<boolean | null>(true);
+  const [showButtonCart, setShowButtonCart] = useState<boolean | null>(true);
+  const [pizzasPerPage] = useState(10);
+  const [isEmptyCart] = useState(true);
 
   const { sortCategory, filterCategory } = useSelector(selectSort);
   const dispatch = useDispatch();
 
   const fetchPizzas = async () => {
-    const category: string = filterCategory > 0 ? `category=${filterCategory}` : "";
+    const category: string =
+      filterCategory > 0 ? `category=${filterCategory}` : "";
     const sortBy: string = sortCategory ? `sortBy=${sortCategory}` : "";
 
+    //@ts-ignore
     dispatch(fetchPizzasSlice({ category, sortBy }));
   };
 
@@ -66,3 +68,11 @@ function App() {
 }
 
 export default App;
+
+export function useAppState() {
+  const context = useContext(AppContext);
+  if (context === undefined) {
+    throw new Error("useApp must be used within a AppProvider");
+  }
+  return context;
+}

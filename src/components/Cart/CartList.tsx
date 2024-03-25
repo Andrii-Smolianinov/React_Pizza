@@ -8,13 +8,10 @@ import CartItem from "./CartItem";
 import ButtonClearCart from "../Buttons/ButtonClearCart";
 import ButtonComeBack from "../Buttons/ButtonComeBack";
 import CartHeadSection from "./CartHeadSection";
-import Loader from "../Loader";
 
-import { AppContext } from "../../App";
 import cartIMG from "../../assets/img/cart-img.png";
 
 const CartList: React.FC = () => {
-  const { isLoading } = React.useContext(AppContext);
   const { totalPrice } = useSelector(selectCart);
   const { t } = useTranslation();
 
@@ -36,7 +33,7 @@ const CartList: React.FC = () => {
           px-0 
           py-10"
         >
-          {isLoading ? <Loader /> : <CartItem />}
+          {<CartItem />}
         </ul>
 
         <img

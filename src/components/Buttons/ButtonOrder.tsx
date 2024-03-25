@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 
 type Props = {
   onClickAddToCart: () => void;
-  orderCount?: number
-}
+  orderCount?: number;
+};
 
 const ButtonOrder: React.FC<Props> = ({ onClickAddToCart, orderCount }) => {
   const { t } = useTranslation();

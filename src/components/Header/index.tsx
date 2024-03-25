@@ -8,8 +8,8 @@ import ChangeLanguage from "./ChangeLanguage";
 import logoJPG from "../../assets/img/newlogo.png";
 
 type HeaderProps = {
-  showSearch: boolean;
-  showButtonCart: boolean;
+  showSearch: boolean | null;
+  showButtonCart: boolean | null;
 };
 
 const Header: React.FC<HeaderProps> = ({ showSearch, showButtonCart }) => {

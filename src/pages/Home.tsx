@@ -4,12 +4,13 @@ import { useSelector } from "react-redux";
 import PizzaList from "../components/PizzaList";
 import Filter from "../components/Sort/Filter";
 import ErrorServer from "../components/ErrorServer";
-import { AppContext } from "../App";
+
+import { useAppState } from "../App";
+
 import { selectPizzas } from "../redux/slices/pizzasSlice";
 
 const Home: React.FC = () => {
-  //@ts-ignore
-  const { setShowSearch, setShowButtonCart } = React.useContext(AppContext);
+  const { setShowSearch, setShowButtonCart } = useAppState();
   const { status } = useSelector(selectPizzas);
 
   React.useEffect(() => {
