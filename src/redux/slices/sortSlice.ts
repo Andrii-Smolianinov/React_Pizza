@@ -1,6 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const initialState = {
+interface SortSliceState {
+  filterCategory: number;
+  sortCategory: string;
+  activeTypePizza: string[];
+}
+
+export const initialState: SortSliceState = {
   filterCategory: 0,
   sortCategory: "price",
   activeTypePizza: [],

@@ -20,6 +20,8 @@ import pagination from "./slices/paginationSlice"
 
 const rootReducer = combineReducers({ sort, search, cart, pizzas, lang, pagination });
 
+export type RootState = ReturnType<typeof store.getState>
+
 const persistConfig = {
   key: "root",
   storage,
