@@ -14,7 +14,7 @@ const ChangeLanguage: React.FC = () => {
   const { i18n } = useTranslation();
   const dispatch = useDispatch();
 
-  const onChangeLanguage = (language: string, index: number) => {
+  const onChangeLanguage = (language: 'ua' | 'en', index: number) => {
     i18n.changeLanguage(language);
     dispatch(setSelectLang(language));
     dispatch(setActiveIndexLang(index));

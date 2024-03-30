@@ -1,6 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
-const initialState = {
+interface PaginationSliceState {
+  activeIndexPage: number;
+  currentPage: number;
+}
+
+const initialState: PaginationSliceState = {
   activeIndexPage: 0,
   currentPage: 1,
 };
@@ -9,10 +15,10 @@ export const paginationSlice = createSlice({
   name: "pagination",
   initialState,
   reducers: {
-    setActiveIndexPage(state, action) {
+    setActiveIndexPage(state, action: PayloadAction<number>) {
       state.activeIndexPage = action.payload;
     },
-    setCurrentPage(state, action) {
+    setCurrentPage(state, action: PayloadAction<number>) {
       state.currentPage = action.payload;
     },
   },
@@ -20,6 +26,6 @@ export const paginationSlice = createSlice({
 
 export const { setActiveIndexPage, setCurrentPage } = paginationSlice.actions;
 
-export const selectPagination = (state) => state.pagination;
+export const selectPagination = (state: RootState) => state.pagination;
 
 export default paginationSlice.reducer;

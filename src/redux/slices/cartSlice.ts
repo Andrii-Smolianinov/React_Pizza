@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
 type ItemsCart = {
   id: string;
@@ -24,7 +25,7 @@ export const cartSlise = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addItemToCart(state, action) {
+    addItemToCart(state, action: PayloadAction<ItemsCart>) {
       const findItem = state.itemsCart.find(
         (item) => item.price === action.payload.price
       );
@@ -35,7 +36,7 @@ export const cartSlise = createSlice({
         state.itemsCart.push({ ...action.payload, count: 1 });
       }
     },
-    setIncrementCount(state, action) {
+    setIncrementCount(state, action: PayloadAction<number>) {
       const findItem = state.itemsCart.find((_, i) => i === action.payload);
       if (findItem) {
         findItem.count++;
@@ -46,7 +47,7 @@ export const cartSlise = createSlice({
         }, 0);
       }
     },
-    setDecrementCount(state, action) {
+    setDecrementCount(state, action: PayloadAction<number>) {
       const findItem = state.itemsCart.find((_, i) => i === action.payload);
       if (findItem) {
         if (findItem.count > 1) {
@@ -61,10 +62,10 @@ export const cartSlise = createSlice({
         }, 0);
       }
     },
-    setTotalPrice(state, action) {
+    setTotalPrice(state, action: PayloadAction<number>) {
       state.totalPrice += Number(action.payload);
     },
-    removeItemFromCart(state, action) {
+    removeItemFromCart(state, action: PayloadAction<number>) {
       state.itemsCart = state.itemsCart.filter((_, i) => i !== action.payload);
       state.totalPrice = state.itemsCart.reduce((sum, item) => {
         return item.itemPrice + sum;
@@ -89,6 +90,6 @@ export const {
   setDecrementCount,
 } = cartSlise.actions;
 
-export const selectCart = (state) => state.cart;
+export const selectCart = (state: RootState) => state.cart;
 
 export default cartSlise.reducer;

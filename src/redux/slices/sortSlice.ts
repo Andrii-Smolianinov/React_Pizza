@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
 interface SortSliceState {
   filterCategory: number;
@@ -16,13 +17,13 @@ const sortSlice = createSlice({
   name: "sort",
   initialState,
   reducers: {
-    setFilterCategory(state, action) {
+    setFilterCategory(state, action: PayloadAction<number>) {
       state.filterCategory = action.payload;
     },
-    setSortCategory(state, action) {
+    setSortCategory(state, action: PayloadAction<string>) {
       state.sortCategory = action.payload;
     },
-    setActiveTypePizza(state, action) {
+    setActiveTypePizza(state, action: PayloadAction<string[]>) {
       state.activeTypePizza = action.payload;
     },
   },
@@ -31,6 +32,6 @@ const sortSlice = createSlice({
 export const { setSortCategory, setFilterCategory, setActiveTypePizza } =
   sortSlice.actions;
 
-export const selectSort = (state) => state.sort;
+export const selectSort = (state: RootState) => state.sort;
 
 export default sortSlice.reducer;

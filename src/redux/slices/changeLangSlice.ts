@@ -1,6 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
-export const initialState = {
+interface ChangeLangSliceState {
+  activeIndexLang: number;
+  selectLang: "ua" | "en";
+}
+
+export const initialState: ChangeLangSliceState = {
   activeIndexLang: 0,
   selectLang: "ua",
 };
@@ -9,10 +15,10 @@ const changeLangSlice = createSlice({
   name: "lang",
   initialState,
   reducers: {
-    setActiveIndexLang(state, action) {
+    setActiveIndexLang(state, action: PayloadAction<number>) {
       state.activeIndexLang = Number(action.payload);
     },
-    setSelectLang(state, action) {
+    setSelectLang(state, action: PayloadAction<"ua" | "en">) {
       state.selectLang = action.payload;
     },
   },
@@ -20,6 +26,6 @@ const changeLangSlice = createSlice({
 
 export const { setActiveIndexLang, setSelectLang } = changeLangSlice.actions;
 
-export const selectChangeLang = (state) => state.lang;
+export const selectChangeLang = (state: RootState) => state.lang;
 
 export default changeLangSlice.reducer;

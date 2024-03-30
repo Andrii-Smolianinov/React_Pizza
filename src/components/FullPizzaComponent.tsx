@@ -30,7 +30,7 @@ const FullPizzaComponent: React.FC = () => {
       async function fetchPizza() {
         try {
           const { data } = await axios.get(
-            "https://64fad951cb9c00518f7a461b.mockapi.io/items/" + id
+            `https://${process.env.PUBLIC_API_KEY}.mockapi.io/items/` + id
           );
           setPizza(data);
         } catch (error) {

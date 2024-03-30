@@ -1,9 +1,10 @@
 import axios from "axios";
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
 export const fetchPizzasSlice = createAsyncThunk(
   "pizzas/fetchPizzasStatus",
-  async (params) => {
+  async (params: Record<string, string>) => {
     const { category, sortBy } = params;
     const { data } = await axios.get(
       `https://${process.env.PUBLIC_API_KEY}.mockapi.io/items?${category}&${sortBy}`
@@ -22,12 +23,12 @@ type Items = {
 
 interface PizzasSliceState {
   items: Items[];
-  status: string;
+  status: "loading" | "success" | "error";
 }
 
 export const initialState: PizzasSliceState = {
   items: [],
-  status: "loading", // loading | success | error
+  status: "loading",
 };
 
 const pizzasSlice = createSlice({
@@ -53,6 +54,6 @@ const pizzasSlice = createSlice({
   },
 });
 
-export const selectPizzas = (state) => state.pizzas;
+export const selectPizzas = (state: RootState) => state.pizzas;
 
 export default pizzasSlice.reducer;
