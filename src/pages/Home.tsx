@@ -7,11 +7,11 @@ import ErrorServer from "../components/ErrorServer";
 
 import { useAppState } from "../hooks/useAppState";
 
-import { selectPizzas } from "../redux/slices/pizzasSlice";
+import { selectPizzas, Status } from "../redux/slices/pizzasSlice";
 
 const Home: React.FC = () => {
   const { setShowSearch, setShowButtonCart } = useAppState();
-  const { status } = useSelector(selectPizzas);
+  const { status } = useSelector(selectPizzas);  
 
   React.useEffect(() => {
     setShowSearch(true);
@@ -21,7 +21,7 @@ const Home: React.FC = () => {
   return (
     <main className="min-h-[83vh]">
       <Filter />
-      {status === "error" ? <ErrorServer /> : <PizzaList />}
+      {status === Status.ERROR ? <ErrorServer /> : <PizzaList />}
     </main>
   );
 };

@@ -1,7 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-const initialState = {
+interface SearchSliceState {
+  searchPizza: string;
+}
+
+const initialState: SearchSliceState = {
   searchPizza: "",
 };
 

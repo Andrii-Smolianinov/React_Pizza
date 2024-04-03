@@ -16,6 +16,7 @@ const FullPizzaComponent: React.FC = () => {
     tittle: string;
     description: string;
   }
+  
   const [pizza, setPizza] = useState<useStatePizzaProps>();
   const { activeIndexLang } = useSelector(selectChangeLang);
   const showDoubleRender = useRef(true);

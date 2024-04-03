@@ -6,7 +6,7 @@ import Skeleton from "./PizzaItem/Skeleton";
 import Pagination from "../Pagination";
 
 import { selectSearch } from "../../redux/slices/searchSlice";
-import { selectPizzas } from "../../redux/slices/pizzasSlice";
+import { selectPizzas, Status } from "../../redux/slices/pizzasSlice";
 import { selectChangeLang } from "../../redux/slices/changeLangSlice";
 import { selectPagination } from "../../redux/slices/paginationSlice";
 
@@ -17,7 +17,6 @@ const PizzaList = () => {
   const { items, status } = useSelector(selectPizzas);
   const { activeIndexLang } = useSelector(selectChangeLang);
   const { currentPage } = useSelector(selectPagination);
-
   const { pizzasPerPage } = useAppState();
 
   const lastPizzaIndex = currentPage * pizzasPerPage;
@@ -32,7 +31,7 @@ const PizzaList = () => {
         p-2 sm:p-3 lg:p-8 
         gap-3 sm:gap-6 lg:gap-8"
       >
-        {status === "loading" &&
+        {status === Status.LOADING &&
           [...new Array(5)].map((_, index) => <Skeleton key={index} />)}
         {searchPizza
           ? items

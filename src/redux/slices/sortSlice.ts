@@ -7,13 +7,13 @@ interface SortSliceState {
   activeTypePizza: string[];
 }
 
-export const initialState: SortSliceState = {
+const initialState: SortSliceState = {
   filterCategory: 0,
   sortCategory: "price",
   activeTypePizza: [],
 };
 
-const sortSlice = createSlice({
+export const sortSlice = createSlice({
   name: "sort",
   initialState,
   reducers: {

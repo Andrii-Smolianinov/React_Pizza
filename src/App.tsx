@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { useAppDispatch } from "./redux/store";
 import { fetchPizzasSlice } from "./redux/slices/pizzasSlice";
 import { selectSort } from "./redux/slices/sortSlice";
 
@@ -20,15 +21,13 @@ function App() {
   const [pizzasPerPage] = useState(10);
   const [isEmptyCart] = useState(true);
 
-  const { sortCategory, filterCategory } = useSelector(selectSort);
-  const dispatch = useDispatch();
+  const { sortCategory, filterCategory } = useSelector(selectSort);  
+  const dispatch = useAppDispatch();
 
   const fetchPizzas = async () => {
-    const category: string =
-      filterCategory > 0 ? `category=${filterCategory}` : "";
+    const category: string = filterCategory > 0 ? `category=${filterCategory}` : "";
     const sortBy: string = sortCategory ? `sortBy=${sortCategory}` : "";
 
-    //@ts-ignore
     dispatch(fetchPizzasSlice({ category, sortBy }));
   };
 

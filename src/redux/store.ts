@@ -1,4 +1,5 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import { useDispatch } from "react-redux";
 import {
   persistStore,
   persistReducer,
@@ -13,14 +14,22 @@ import storage from "redux-persist/lib/storage";
 
 import sort from "./slices/sortSlice";
 import search from "./slices/searchSlice";
-import cart from "./slices/cartSlice"
-import pizzas from "./slices/pizzasSlice"
-import lang from "./slices/changeLangSlice"
-import pagination from "./slices/paginationSlice"
+import cart from "./slices/cartSlice";
+import pizzas from "./slices/pizzasSlice";
+import lang from "./slices/changeLangSlice";
+import pagination from "./slices/paginationSlice";
+import { type } from "os";
 
-const rootReducer = combineReducers({ sort, search, cart, pizzas, lang, pagination });
+const rootReducer = combineReducers({
+  sort,
+  search,
+  cart,
+  pizzas,
+  lang,
+  pagination,
+});
 
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;
 
 const persistConfig = {
   key: "root",
@@ -40,3 +49,6 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
+
+type AppDispatch = typeof store.dispatch;
+export const useAppDispatch = () => useDispatch<AppDispatch>();

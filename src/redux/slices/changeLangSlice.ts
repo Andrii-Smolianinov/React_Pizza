@@ -6,12 +6,12 @@ interface ChangeLangSliceState {
   selectLang: "ua" | "en";
 }
 
-export const initialState: ChangeLangSliceState = {
+const initialState: ChangeLangSliceState = {
   activeIndexLang: 0,
   selectLang: "ua",
 };
 
-const changeLangSlice = createSlice({
+export const changeLangSlice = createSlice({
   name: "lang",
   initialState,
   reducers: {
