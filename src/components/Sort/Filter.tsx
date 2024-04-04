@@ -6,12 +6,12 @@ import {
   setFilterCategory,
   setActiveTypePizza,
   selectSort,
-} from "../../redux/slices/sortSlice";
-import { selectChangeLang } from "../../redux/slices/changeLangSlice";
+} from "../../redux/slices/sort/sortSlice";
+import { selectChangeLang } from "../../redux/slices/changeLang/changeLangSlice";
 import {
   setCurrentPage,
   setActiveIndexPage,
-} from "../../redux/slices/paginationSlice";
+} from "../../redux/slices/pagination/paginationSlice";
 
 import Sort from "./Sort";
 
@@ -24,7 +24,7 @@ const categories = [
   { text: ["Акційні", "SALE"] },
 ];
 
-const Filter: React.FC = () => {
+const Filter: React.FC = React.memo(() => { 
   const { filterCategory, activeTypePizza } = useSelector(selectSort);
   const { activeIndexLang } = useSelector(selectChangeLang);
   const dispatch = useDispatch();
@@ -81,6 +81,6 @@ const Filter: React.FC = () => {
       </h1>
     </>
   );
-};
+});
 
 export default Filter;

@@ -4,7 +4,7 @@ import {
   selectPagination,
   setActiveIndexPage,
   setCurrentPage,
-} from "../redux/slices/paginationSlice";
+} from "../redux/slices/pagination/paginationSlice";
 
 type PaginationProps = {
   totalPizzas: number;

@@ -5,10 +5,11 @@ import PizzaItem from "./PizzaItem";
 import Skeleton from "./PizzaItem/Skeleton";
 import Pagination from "../Pagination";
 
-import { selectSearch } from "../../redux/slices/searchSlice";
-import { selectPizzas, Status } from "../../redux/slices/pizzasSlice";
-import { selectChangeLang } from "../../redux/slices/changeLangSlice";
-import { selectPagination } from "../../redux/slices/paginationSlice";
+import { selectSearch } from "../../redux/slices/search/searchSlice";
+import { selectPizzas } from "../../redux/slices/fetchPizzas/pizzasSlice";
+import { Status } from "../../redux/slices/fetchPizzas/pizzasTypes";
+import { selectChangeLang } from "../../redux/slices/changeLang/changeLangSlice";
+import { selectPagination } from "../../redux/slices/pagination/paginationSlice";
 
 import { useAppState } from "../../hooks/useAppState";
 

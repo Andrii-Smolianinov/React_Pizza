@@ -12,12 +12,12 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import sort from "./slices/sortSlice";
-import search from "./slices/searchSlice";
-import cart from "./slices/cartSlice";
-import pizzas from "./slices/pizzasSlice";
-import lang from "./slices/changeLangSlice";
-import pagination from "./slices/paginationSlice";
+import sort from "./slices/sort/sortSlice";
+import search from "./slices/search/searchSlice";
+import cart from "./slices/cart/cartSlice";
+import pizzas from "./slices/fetchPizzas/pizzasSlice";
+import lang from "./slices/changeLang/changeLangSlice";
+import pagination from "./slices/pagination/paginationSlice";
 import { type } from "os";
 
 const rootReducer = combineReducers({

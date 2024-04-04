@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { useDispatch, useSelector } from "react-redux";
-import { selectSearch, setSearchPizza } from "../../redux/slices/searchSlice";
+import { selectSearch, setSearchPizza } from "../../redux/slices/search/searchSlice";
 
 import { AiOutlineClose } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";

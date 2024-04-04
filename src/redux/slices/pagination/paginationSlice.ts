@@ -1,10 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../store";
-
-interface PaginationSliceState {
-  activeIndexPage: number;
-  currentPage: number;
-}
+import { RootState } from "../../store";
+import { PaginationSliceState } from "./paginationTypes";
 
 const initialState: PaginationSliceState = {
   activeIndexPage: 0,

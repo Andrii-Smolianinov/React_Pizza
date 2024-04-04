@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import axios from "axios";
 
 import { useSelector } from "react-redux";
-import { selectChangeLang } from "../redux/slices/changeLangSlice";
+import { selectChangeLang } from "../redux/slices/changeLang/changeLangSlice";
 
 import ButtonComeBack from "./Buttons/ButtonComeBack";
 import Loader from "./Loader";

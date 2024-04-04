@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { useSelector } from "react-redux";
-import { selectCart } from "../../redux/slices/cartSlice";
+import { selectCart } from "../../redux/slices/cart/cartSlice";
 
 import CartItem from "./CartItem";
 import ButtonClearCart from "../Buttons/ButtonClearCart";

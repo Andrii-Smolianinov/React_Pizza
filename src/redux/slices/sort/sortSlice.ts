@@ -1,11 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../store";
-
-interface SortSliceState {
-  filterCategory: number;
-  sortCategory: string;
-  activeTypePizza: string[];
-}
+import { RootState } from "../../store";
+import { SortSliceState } from "./sortTypes";
 
 const initialState: SortSliceState = {
   filterCategory: 0,

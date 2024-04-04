@@ -7,8 +7,8 @@ import {
   setIncrementCount,
   setDecrementCount,
   selectCart,
-} from "../../redux/slices/cartSlice";
-import { selectChangeLang } from "../../redux/slices/changeLangSlice";
+} from "../../redux/slices/cart/cartSlice";
+import { selectChangeLang } from "../../redux/slices/changeLang/changeLangSlice";
 
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { AiOutlineMinusCircle } from "react-icons/ai";

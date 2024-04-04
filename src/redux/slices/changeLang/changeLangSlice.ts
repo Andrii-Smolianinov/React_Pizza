@@ -1,10 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../store";
-
-interface ChangeLangSliceState {
-  activeIndexLang: number;
-  selectLang: "ua" | "en";
-}
+import { RootState } from "../../store";
+import { ChangeLangSliceState } from "./changeLangTypes";
 
 const initialState: ChangeLangSliceState = {
   activeIndexLang: 0,

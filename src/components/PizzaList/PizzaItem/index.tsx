@@ -5,9 +5,8 @@ import Sale from "./Sale";
 import ButtonOrder from "../../Buttons/ButtonOrder";
 
 import { useDispatch, useSelector } from "react-redux";
-import { addItemToCart, setTotalPrice } from "../../../redux/slices/cartSlice";
-import { selectChangeLang } from "../../../redux/slices/changeLangSlice";
-import { selectCart } from "../../../redux/slices/cartSlice";
+import { addItemToCart, setTotalPrice, selectCart } from "../../../redux/slices/cart/cartSlice";
+import { selectChangeLang } from "../../../redux/slices/changeLang/changeLangSlice";
 
 const diameters = ["26", "30", "40"];
 

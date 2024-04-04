@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useSelector } from "react-redux";
-import { selectChangeLang } from "../../../redux/slices/changeLangSlice";
+import { selectChangeLang } from "../../../redux/slices/changeLang/changeLangSlice";
 
 import ukrIMG from "../../../assets/img/promotion-ukr.png";
 import engIMG from "../../../assets/img/promotion-eng.png";

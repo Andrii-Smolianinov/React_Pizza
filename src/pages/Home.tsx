@@ -7,11 +7,12 @@ import ErrorServer from "../components/ErrorServer";
 
 import { useAppState } from "../hooks/useAppState";
 
-import { selectPizzas, Status } from "../redux/slices/pizzasSlice";
+import { selectPizzas } from "../redux/slices/fetchPizzas/pizzasSlice";
+import { Status } from "../redux/slices/fetchPizzas/pizzasTypes";
 
 const Home: React.FC = () => {
   const { setShowSearch, setShowButtonCart } = useAppState();
-  const { status } = useSelector(selectPizzas);  
+  const { status } = useSelector(selectPizzas);
 
   React.useEffect(() => {
     setShowSearch(true);

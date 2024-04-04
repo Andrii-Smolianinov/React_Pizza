@@ -6,7 +6,7 @@ import EmptyCart from "../components/Cart/EmptyCart";
 
 import { useAppState } from "../hooks/useAppState";
 
-import { selectCart } from "../redux/slices/cartSlice";
+import { selectCart } from "../redux/slices/cart/cartSlice";
 
 const Cart: React.FC = () => {
   const { setShowSearch, setShowButtonCart } = useAppState();
