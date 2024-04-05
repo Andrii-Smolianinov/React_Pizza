@@ -9,6 +9,7 @@ import { useAppState } from "../hooks/useAppState";
 import { selectCart } from "../redux/slices/cart/cartSlice";
 
 const Cart: React.FC = () => {
+  console.log('this Cart');
   const { setShowSearch, setShowButtonCart } = useAppState();
   const { itemsCart } = useSelector(selectCart);
 

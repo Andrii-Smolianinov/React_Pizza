@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { useSelector } from "react-redux";
@@ -9,11 +9,18 @@ import { selectSort } from "./redux/slices/sort/sortSlice";
 import { AppContext } from "./hooks/useAppState";
 
 import Home from "./pages/Home";
-import FullPizza from "./pages/FullPizza";
-import Cart from "./pages/Cart";
-import NotFound from "./pages/NotFound";
+// import Cart from "./pages/Cart";
+// import FullPizza from "./pages/FullPizza";
+// import NotFound from "./pages/NotFound";
+
+
+
 import Container from "./Container";
 import Header from "./components/Header";
+
+const Cart = lazy(() => import("./pages/Cart"));
+const FullPizza = lazy(() => import("./pages/FullPizza"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 function App() {
   const [showSearch, setShowSearch] = useState<boolean | null>(true);
@@ -25,7 +32,8 @@ function App() {
   const dispatch = useAppDispatch();
 
   const fetchPizzas = async () => {
-    const category: string = filterCategory > 0 ? `category=${filterCategory}` : "";
+    const category: string =
+      filterCategory > 0 ? `category=${filterCategory}` : "";
     const sortBy: string = sortCategory ? `sortBy=${sortCategory}` : "";
 
     dispatch(fetchPizzasSlice({ category, sortBy }));

@@ -3,6 +3,7 @@ import FullPizzaComponent from "../components/FullPizzaComponent";
 import { useAppState } from "../hooks/useAppState";
 
 const FullPizza: React.FC = () => {
+  console.log('this FullPizza');
   const { setShowSearch } = useAppState();
 
   React.useEffect(() => {
