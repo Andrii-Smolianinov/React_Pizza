@@ -2,14 +2,14 @@ import React, { ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useDispatch } from "react-redux";
-import { setSortCategory } from "../../redux/slices/sort/sortSlice";
+import { setSortCategories } from "../../redux/slices/sort/sortSlice";
 
 const Sort: React.FC = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation(); 
 
   const handleSelect = function (e: ChangeEvent<HTMLSelectElement>) {
-    dispatch(setSortCategory(e.target.value));
+    dispatch(setSortCategories(e.target.value));
   };
 
   return (

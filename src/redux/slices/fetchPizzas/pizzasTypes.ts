@@ -3,7 +3,7 @@ export type Data = {
   images: string;
   tittle: string;
   price: number;
-  category: number[];
+  categories: number[];
   rating: number;
   description: string;
 };
@@ -13,7 +13,7 @@ type Items = {
   images: string;
   tittle: string;
   price: number;
-  category: number[];
+  categories: number[];
 };
 
 export interface PizzasSliceState {

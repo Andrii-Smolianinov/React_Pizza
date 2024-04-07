@@ -46,24 +46,24 @@ const PizzaList = () => {
                 }
                 return false;
               })
-              .map(({ id, images, tittle, price, category }) => (
+              .map(({ id, images, tittle, price, categories }) => (
                 <PizzaItem
                   key={id}
                   id={id}
                   images={images}
                   tittle={tittle}
                   price={price}
-                  category={category}
+                  categories={categories}
                 />
               ))
-          : currentPizza.map(({ id, images, tittle, price, category }) => (
+          : currentPizza.map(({ id, images, tittle, price, categories }) => (
               <PizzaItem
                 key={id}
                 id={id}
                 images={images}
                 tittle={tittle}
                 price={price}
-                category={category}
+                categories={categories}
               />
             ))}
       </ul>

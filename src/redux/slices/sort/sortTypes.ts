@@ -1,5 +1,5 @@
 export interface SortSliceState {
-  filterCategory: number;
-  sortCategory: string;
+  filterCategories: number;
+  sortCategories: string;
   activeTypePizza: string[];
 }

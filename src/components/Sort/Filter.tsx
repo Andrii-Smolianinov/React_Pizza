@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
-  setFilterCategory,
+  setFilterCategories,
   setActiveTypePizza,
   selectSort,
 } from "../../redux/slices/sort/sortSlice";
@@ -25,7 +25,7 @@ const categories = [
 ];
 
 const Filter: React.FC = React.memo(() => { 
-  const { filterCategory, activeTypePizza } = useSelector(selectSort);
+  const { filterCategories, activeTypePizza } = useSelector(selectSort);
   const { activeIndexLang } = useSelector(selectChangeLang);
   const dispatch = useDispatch();
   const { t } = useTranslation();
@@ -33,7 +33,7 @@ const Filter: React.FC = React.memo(() => {
   const onClickFilterButton = function (index: number, text: string[]) {
     dispatch(setCurrentPage(1));
     dispatch(setActiveIndexPage(0));
-    dispatch(setFilterCategory(index));
+    dispatch(setFilterCategories(index));
     dispatch(setActiveTypePizza(text));
   };
 
@@ -49,7 +49,7 @@ const Filter: React.FC = React.memo(() => {
       font-medium sm:font-semibold lg:font-bold
       transition duration-300
       ${
-        filterCategory === index
+        filterCategories === index
           ? "bg-lime-700 text-green-200 hover:bg-lime-700"
           : "bg-lime-200 text-green-600 hover:bg-teal-500 hover:text-green-100"
       }      

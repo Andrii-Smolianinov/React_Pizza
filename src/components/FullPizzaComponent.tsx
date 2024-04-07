@@ -10,7 +10,7 @@ import ButtonComeBack from "./Buttons/ButtonComeBack";
 import Loader from "./Loader";
 import ImagePizza from "../assets/img/id-not-found.png";
 
-const FullPizzaComponent: React.FC = () => {
+const FullPizzaComponent: React.FC = () => {  
   interface useStatePizzaProps {
     images: string;
     tittle: string;
@@ -28,7 +28,7 @@ const FullPizzaComponent: React.FC = () => {
     if (showDoubleRender.current) {
       showDoubleRender.current = false;
 
-      async function fetchPizza() {
+      async function fetchFullPizza() {
         try {
           const { data } = await axios.get(
             `https://${process.env.PUBLIC_API_KEY}.mockapi.io/items/` + id
@@ -39,7 +39,7 @@ const FullPizzaComponent: React.FC = () => {
           navigate("/");
         }
       }
-      fetchPizza();
+      fetchFullPizza();
     }
     // eslint-disable-next-line
   }, []);

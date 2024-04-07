@@ -3,18 +3,12 @@ import { Route, Routes } from "react-router-dom";
 
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "./redux/store";
-import { fetchPizzasSlice } from "./redux/slices/fetchPizzas/asyncActions";
+import { fetchPizzasActions } from "./redux/slices/fetchPizzas/asyncActions";
 import { selectSort } from "./redux/slices/sort/sortSlice";
 
 import { AppContext } from "./hooks/useAppState";
 
 import Home from "./pages/Home";
-// import Cart from "./pages/Cart";
-// import FullPizza from "./pages/FullPizza";
-// import NotFound from "./pages/NotFound";
-
-
-
 import Container from "./Container";
 import Header from "./components/Header";
 
@@ -28,22 +22,18 @@ function App() {
   const [pizzasPerPage] = useState(10);
   const [isEmptyCart] = useState(true);
 
-  const { sortCategory, filterCategory } = useSelector(selectSort);
+  const { sortCategories, filterCategories } = useSelector(selectSort);
   const dispatch = useAppDispatch();
 
   const fetchPizzas = async () => {
-    const category: string =
-      filterCategory > 0 ? `category=${filterCategory}` : "";
-    const sortBy: string = sortCategory ? `sortBy=${sortCategory}` : "";
-
-    dispatch(fetchPizzasSlice({ category, sortBy }));
+    dispatch(fetchPizzasActions());
   };
 
   React.useEffect(() => {
     fetchPizzas();
 
     // eslint-disable-next-line
-  }, [sortCategory, filterCategory]);
+  }, [sortCategories, filterCategories]);
 
   return (
     <Container>

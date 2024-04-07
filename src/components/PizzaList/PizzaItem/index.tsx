@@ -5,7 +5,11 @@ import Sale from "./Sale";
 import ButtonOrder from "../../Buttons/ButtonOrder";
 
 import { useDispatch, useSelector } from "react-redux";
-import { addItemToCart, setTotalPrice, selectCart } from "../../../redux/slices/cart/cartSlice";
+import {
+  addItemToCart,
+  setTotalPrice,
+  selectCart,
+} from "../../../redux/slices/cart/cartSlice";
 import { selectChangeLang } from "../../../redux/slices/changeLang/changeLangSlice";
 
 const diameters = ["26", "30", "40"];
@@ -15,7 +19,7 @@ type PizzaItemProps = {
   images: string;
   tittle: string;
   price: number;
-  category: number[];
+  categories: number[];
 };
 
 const PizzaItem: React.FC<PizzaItemProps> = ({
@@ -23,7 +27,7 @@ const PizzaItem: React.FC<PizzaItemProps> = ({
   images,
   tittle,
   price,
-  category,
+  categories,
 }) => {
   const [activeDiameter, setActiveDiameter] = React.useState(0);
   const { activeIndexLang } = useSelector(selectChangeLang);
@@ -71,14 +75,14 @@ const PizzaItem: React.FC<PizzaItemProps> = ({
       <Link to={`/pizza/${id}`}>
         <div className="relative overflow-hidden">
           <img
-            className="group-hover:scale-110 transition-all duration-350"
+            className="group-hover:scale-110 max-h-[184px] bg-cover bg-center transition-all duration-300"
             src={images}
             height={184}
             width={276}
             alt="element pizza"
           ></img>
 
-          {category?.find((element) => element === 5) && <Sale />}
+          {categories?.find((element) => element === 5) && <Sale />}
         </div>
 
         <h2 className="text-center my-8 text-2xl font-black text-cyan-800 h-[36px]">

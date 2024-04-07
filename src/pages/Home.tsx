@@ -10,8 +10,7 @@ import { useAppState } from "../hooks/useAppState";
 import { selectPizzas } from "../redux/slices/fetchPizzas/pizzasSlice";
 import { Status } from "../redux/slices/fetchPizzas/pizzasTypes";
 
-const Home: React.FC = () => {
-  console.log('this Home');
+const Home: React.FC = () => {  
   const { setShowSearch, setShowButtonCart } = useAppState();
   const { status } = useSelector(selectPizzas);
 
