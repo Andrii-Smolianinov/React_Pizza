@@ -75,7 +75,7 @@ const PizzaItem: React.FC<PizzaItemProps> = ({
       <Link to={`/pizza/${id}`}>
         <div className="relative overflow-hidden">
           <img
-            className="group-hover:scale-110 max-h-[184px] bg-cover bg-center transition-all duration-300"
+            className="max-h-[184px] bg-cover bg-center transition-all duration-300 group-hover:scale-110"
             src={images}
             height={184}
             width={276}
