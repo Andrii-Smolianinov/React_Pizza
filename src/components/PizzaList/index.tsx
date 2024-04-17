@@ -1,9 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import PizzaItem from "./PizzaItem";
-import Skeleton from "./PizzaItem/Skeleton";
-import Pagination from "../Pagination";
+import { PizzaItem, Skeleton, Pagination } from "../index";
 
 import { selectSearch } from "../../redux/slices/search/searchSlice";
 import { selectPizzas } from "../../redux/slices/fetchPizzas/pizzasSlice";
@@ -13,7 +11,7 @@ import { selectPagination } from "../../redux/slices/pagination/paginationSlice"
 
 import { useAppState } from "../../hooks/useAppState";
 
-const PizzaList = () => {
+const PizzaList: React.FC = () => {
   const { searchPizza } = useSelector(selectSearch);
   const { items, status } = useSelector(selectPizzas);
   const { activeIndexLang } = useSelector(selectChangeLang);

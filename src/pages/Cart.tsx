@@ -1,14 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import CartList from "../components/Cart/CartList";
-import EmptyCart from "../components/Cart/EmptyCart";
+import { CartList, EmptyCart } from "../components";
 
 import { useAppState } from "../hooks/useAppState";
 
 import { selectCart } from "../redux/slices/cart/cartSlice";
 
-const Cart: React.FC = () => {  
+const Cart: React.FC = () => {
   const { setShowSearch, setShowButtonCart } = useAppState();
   const { itemsCart } = useSelector(selectCart);
 

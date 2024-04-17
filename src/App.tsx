@@ -9,8 +9,7 @@ import { selectSort } from "./redux/slices/sort/sortSlice";
 import { AppContext } from "./hooks/useAppState";
 
 import Home from "./pages/Home";
-import Container from "./Container";
-import Header from "./components/Header";
+import { Header, Container } from './components'
 
 const Cart = lazy(() => import("./pages/Cart"));
 const FullPizza = lazy(() => import("./pages/FullPizza"));

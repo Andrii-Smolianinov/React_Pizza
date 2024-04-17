@@ -2,17 +2,11 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { useSelector, useDispatch } from "react-redux";
-import {
-  removeItemFromCart,
-  setIncrementCount,
-  setDecrementCount,
-  selectCart,
-} from "../../redux/slices/cart/cartSlice";
+import { removeItemFromCart, setIncrementCount, setDecrementCount, selectCart } from "../../redux/slices/cart/cartSlice";
 import { selectChangeLang } from "../../redux/slices/changeLang/changeLangSlice";
 
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { AiOutlineMinusCircle } from "react-icons/ai";
-import { AiOutlinePlusCircle } from "react-icons/ai";
+import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 
 const CartItem: React.FC = () => {
   const { activeIndexLang } = useSelector(selectChangeLang);

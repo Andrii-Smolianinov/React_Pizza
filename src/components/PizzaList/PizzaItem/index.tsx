@@ -1,15 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import Sale from "./Sale";
-import ButtonOrder from "../../Buttons/ButtonOrder";
+
+import { Sale, ButtonOrder } from "../../index";
 
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addItemToCart,
-  setTotalPrice,
-  selectCart,
-} from "../../../redux/slices/cart/cartSlice";
+import { addItemToCart, setTotalPrice, selectCart } from "../../../redux/slices/cart/cartSlice";
 import { selectChangeLang } from "../../../redux/slices/changeLang/changeLangSlice";
 
 const diameters = ["26", "30", "40"];

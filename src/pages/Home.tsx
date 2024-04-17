@@ -1,16 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import PizzaList from "../components/PizzaList";
-import Filter from "../components/Sort/Filter";
-import ErrorServer from "../components/ErrorServer";
+import { PizzaList, Filter, ErrorServer } from "../components";
 
 import { useAppState } from "../hooks/useAppState";
 
 import { selectPizzas } from "../redux/slices/fetchPizzas/pizzasSlice";
 import { Status } from "../redux/slices/fetchPizzas/pizzasTypes";
 
-const Home: React.FC = () => {  
+const Home: React.FC = () => {
   const { setShowSearch, setShowButtonCart } = useAppState();
   const { status } = useSelector(selectPizzas);
 

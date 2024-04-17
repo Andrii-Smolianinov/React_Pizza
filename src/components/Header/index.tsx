@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import SearchPizza from "./SearchPizza";
-import ButtonCart from "../Buttons/ButtonCart";
+import { SearchPizza, ButtonCart, ChangeLanguage } from "../index";
 
-import ChangeLanguage from "./ChangeLanguage";
 import logoJPG from "../../assets/img/newlogo.png";
 
 type HeaderProps = {

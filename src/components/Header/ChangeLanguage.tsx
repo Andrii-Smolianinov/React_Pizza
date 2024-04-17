@@ -2,10 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { useDispatch } from "react-redux";
-import {
-  setSelectLang,
-  setActiveIndexLang,
-} from "../../redux/slices/changeLang/changeLangSlice";
+import { setSelectLang, setActiveIndexLang } from "../../redux/slices/changeLang/changeLangSlice";
 
 import UAflag from "../../assets/img/ua-flag.png";
 import GBflag from "../../assets/img/gb-flag.png";

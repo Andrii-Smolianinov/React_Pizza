@@ -1,10 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  selectPagination,
-  setActiveIndexPage,
-  setCurrentPage,
-} from "../redux/slices/pagination/paginationSlice";
+import { selectPagination, setActiveIndexPage, setCurrentPage } from "../redux/slices/pagination/paginationSlice";
 
 type PaginationProps = {
   totalPizzas: number;

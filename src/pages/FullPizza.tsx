@@ -1,8 +1,10 @@
 import React from "react";
-import FullPizzaComponent from "../components/FullPizzaComponent";
+
+import { FullPizzaComponent } from "../components";
+
 import { useAppState } from "../hooks/useAppState";
 
-const FullPizza: React.FC = () => {  
+const FullPizza: React.FC = () => {
   const { setShowSearch } = useAppState();
 
   React.useEffect(() => {

@@ -4,10 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { selectCart } from "../../redux/slices/cart/cartSlice";
 
-import CartItem from "./CartItem";
-import ButtonClearCart from "../Buttons/ButtonClearCart";
-import ButtonComeBack from "../Buttons/ButtonComeBack";
-import CartHeadSection from "./CartHeadSection";
+import { CartItem, ButtonClearCart, ButtonComeBack, CartHeadSection } from "../index";
 
 import cartIMG from "../../assets/img/cart-img.png";
 

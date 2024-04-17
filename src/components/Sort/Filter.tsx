@@ -2,16 +2,9 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { useDispatch, useSelector } from "react-redux";
-import {
-  setFilterCategories,
-  setActiveTypePizza,
-  selectSort,
-} from "../../redux/slices/sort/sortSlice";
+import { setFilterCategories, setActiveTypePizza, selectSort } from "../../redux/slices/sort/sortSlice";
 import { selectChangeLang } from "../../redux/slices/changeLang/changeLangSlice";
-import {
-  setCurrentPage,
-  setActiveIndexPage,
-} from "../../redux/slices/pagination/paginationSlice";
+import { setCurrentPage, setActiveIndexPage } from "../../redux/slices/pagination/paginationSlice";
 
 import Sort from "./Sort";
 

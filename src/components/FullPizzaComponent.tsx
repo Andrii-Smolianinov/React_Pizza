@@ -6,17 +6,17 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import { selectChangeLang } from "../redux/slices/changeLang/changeLangSlice";
 
-import ButtonComeBack from "./Buttons/ButtonComeBack";
-import Loader from "./Loader";
+import { ButtonComeBack, Loader } from "./index";
+
 import ImagePizza from "../assets/img/id-not-found.png";
 
-const FullPizzaComponent: React.FC = () => {  
+const FullPizzaComponent: React.FC = () => {
   interface useStatePizzaProps {
     images: string;
     tittle: string;
     description: string;
   }
-  
+
   const [pizza, setPizza] = useState<useStatePizzaProps>();
   const { activeIndexLang } = useSelector(selectChangeLang);
   const showDoubleRender = useRef(true);
