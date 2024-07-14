@@ -16,13 +16,13 @@ type Items = {
   categories: number[];
 };
 
-export interface PizzasSliceState {
-  items: Items[];
-  status: "loading" | "success" | "error";
-}
-
 export enum Status {
   LOADING = "loading",
   SUCCESS = "success",
   ERROR = "error",
+}
+
+export interface PizzasSliceState {
+  items: Items[];
+  status: Status;
 }

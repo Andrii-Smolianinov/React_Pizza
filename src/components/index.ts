@@ -16,6 +16,7 @@ export { default as ButtonClearCart } from "./Buttons/ButtonClearCart";
 export { default as ButtonComeBack } from "./Buttons/ButtonComeBack";
 export { default as ButtonCart } from "./Buttons/ButtonCart";
 export { default as ButtonOrder } from "./Buttons/ButtonOrder";
+export { default as ButtonCartOrder } from "./Buttons/ButtonCartOrder";
 
 export { default as Container } from "../Container";
 export { default as Filter } from "./Sort/Filter";

@@ -1,4 +1,4 @@
-import React, { useState, lazy } from "react";
+import React, { useState, useEffect, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { useSelector } from "react-redux";
@@ -9,7 +9,7 @@ import { selectSort } from "./redux/slices/sort/sortSlice";
 import { AppContext } from "./hooks/useAppState";
 
 import Home from "./pages/Home";
-import { Header, Container } from './components'
+import { Header, Container } from "./components";
 
 const Cart = lazy(() => import("./pages/Cart"));
 const FullPizza = lazy(() => import("./pages/FullPizza"));
@@ -17,7 +17,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 
 function App() {
   const [showSearch, setShowSearch] = useState<boolean | null>(true);
-  const [showButtonCart, setShowButtonCart] = useState<boolean | null>(true);
+  const [showButtonCart, setShowButtonCart] = useState<boolean | null>(true);  
   const [pizzasPerPage] = useState(10);
   const [isEmptyCart] = useState(true);
 
@@ -28,7 +28,7 @@ function App() {
     dispatch(fetchPizzasActions());
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchPizzas();
 
     // eslint-disable-next-line
@@ -41,7 +41,7 @@ function App() {
           setShowSearch,
           setShowButtonCart,
           isEmptyCart,
-          pizzasPerPage,
+          pizzasPerPage
         }}
       >
         <Header showSearch={showSearch} showButtonCart={showButtonCart} />

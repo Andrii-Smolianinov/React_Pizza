@@ -5,7 +5,11 @@ import { useTranslation } from "react-i18next";
 import { Sale, ButtonOrder } from "../../index";
 
 import { useDispatch, useSelector } from "react-redux";
-import { addItemToCart, setTotalPrice, selectCart } from "../../../redux/slices/cart/cartSlice";
+import {
+  addItemToCart,
+  setTotalPrice,
+  selectCart,
+} from "../../../redux/slices/cart/cartSlice";
 import { selectChangeLang } from "../../../redux/slices/changeLang/changeLangSlice";
 
 const diameters = ["26", "30", "40"];
@@ -32,6 +36,11 @@ const PizzaItem: React.FC<PizzaItemProps> = ({
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
+  const findItem = itemsCart.find(
+    (item) => item.price === price[activeDiameter]
+  );
+  const orderCount = findItem ? findItem.count : 0;
+
   const onClickAddToCart = () => {
     type ItemAddToCart = {
       id: string;
@@ -56,11 +65,6 @@ const PizzaItem: React.FC<PizzaItemProps> = ({
     dispatch(addItemToCart(item));
     dispatch(setTotalPrice(price[activeDiameter]));
   };
-
-  const findItem = itemsCart.find(
-    (item) => item.price === price[activeDiameter]
-  );
-  const orderCount = findItem ? findItem.count : 0;
 
   return (
     <li
