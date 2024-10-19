@@ -6,6 +6,7 @@ type Props = {
 };
 
 const CartHeadSection: React.FC<Props> = ({ tittle }) => {
+  console.log('change CartHeadSection');
   return (
     <>
       <BsCart size="30" className="fill-lime-700" />

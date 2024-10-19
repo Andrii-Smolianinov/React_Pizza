@@ -1,30 +1,18 @@
-import React, { useState } from "react";
+import React, { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useSelector } from "react-redux";
 import { selectCart } from "../../redux/slices/cart/cartSlice";
 
-import {
-  CartItem,
-  ButtonClearCart,
-  ButtonComeBack,
-  ButtonCartOrder,
-  CartHeadSection,
-} from "../index";
+import { CartItem, ButtonClearCart, ButtonComeBack, CartHeadSection } from "../index";
 
 import cartIMG from "../../assets/img/cart-img.png";
-import dialogIMG from "../../assets/img/dialog.png";
 
 const CartList: React.FC = () => {
-  const [showDialogIMG, setShowDialogIMG] = useState<boolean | null>(false);
   const { totalPrice } = useSelector(selectCart);
   const { t } = useTranslation();
 
-  const onClickToButtonCartOrder = () => {
-    setShowDialogIMG(true);
-  };
-
-  return (
+  return (    
     <div className="">
       <div className="flex flex-wrap items-center justify-between">
         <div className="flex items-center my-4">
@@ -51,10 +39,6 @@ const CartList: React.FC = () => {
           className="invisible lg:visible 
           w-0 lg:w-72 h-80"
         ></img>
-
-        {showDialogIMG && (
-          <img alt="Dialog images" src={dialogIMG} className="lg:w-20 h-10"></img>
-        )}
       </div>
 
       <div className="flex flex-wrap justify-between content-between py-4">
@@ -71,7 +55,16 @@ const CartList: React.FC = () => {
           {t("uah")}
         </p>
 
-        <ButtonCartOrder onClickToButtonCartOrder={onClickToButtonCartOrder} />
+        <button
+          type="button"
+          className="block rounded-xl max-h-10 bg-lime-700 text-green-200 hover:bg-lime-200 hover:text-green-700        
+          px-2 lg:px-3
+          py-px lg:py-1
+          text-lg sm:text-xl lg:text-2xl
+          transition duration-300"
+        >
+          {t("order")}
+        </button>
       </div>
     </div>
   );
